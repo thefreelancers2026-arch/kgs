@@ -6,10 +6,10 @@
     <title>KGS Home Decors | Home Decor Shop in Virudhachalam</title>
     <meta name="description" content="Buy artificial plants, fountains, furniture and home decor items in Virudhachalam. Visit KGS Home Decors showroom. Best home decor shop in Virudhachalam, Tamil Nadu.">
     <meta name="keywords" content="home decor Virudhachalam, furniture shop Virudhachalam, artificial plants shop, water fountain, wall clocks, home decor Tamil Nadu, KGS home decors">
-    <!-- Premium Fonts -->
+    <!-- Premium Fonts — Cormorant Garamond for ultra-luxury hero, Montserrat for body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
     
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -20,632 +20,1048 @@
                 extend: {
                     colors: {
                         onyx: {
-                            900: '#0A0A0A', // Deepest background
-                            800: '#121212', // Surface
-                            700: '#1C1C1C', // Surface high
-                            600: '#2A2A2A', // Borders/dividers
+                            900: '#0A0A0A',
+                            800: '#111111',
+                            700: '#1A1A1A',
+                            600: '#252525',
+                            500: '#333333',
                         },
                         gold: {
-                            300: '#F2DCA5', // Light glow
-                            500: '#D4AF37', // Brand Gold
-                            600: '#B5952F', // Hover state
-                            700: '#8C7324', // Deep gold
+                            200: '#F5E6B8',
+                            300: '#F2DCA5',
+                            400: '#E5C76B',
+                            500: '#D4AF37',
+                            600: '#B8962E',
+                            700: '#8C7324',
                         },
                         sand: {
-                            50: '#F9F8F6', // Off white text
-                            100: '#EAE6DF',
-                            200: '#D5CEC4', // Muted text
+                            50: '#FAFAF8',
+                            100: '#EDE9E3',
+                            200: '#D5CEC4',
+                            300: '#B8AFA3',
                         }
                     },
                     fontFamily: {
+                        'display': ['"Cormorant Garamond"', 'serif'],
                         'serif': ['"Playfair Display"', 'serif'],
                         'sans': ['"Montserrat"', 'sans-serif'],
                     },
-                    backgroundImage: {
-                        'gold-gradient': 'linear-gradient(135deg, #D4AF37 0%, #B5952F 100%)',
-                        'dark-gradient': 'linear-gradient(to bottom, transparent, #0A0A0A)',
-                    },
-                    animation: {
-                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
-                        'slow-pan': 'slowPan 20s linear infinite alternate',
-                    },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        slowPan: {
-                            '0%': { transform: 'scale(1.05) translate(0, 0)' },
-                            '100%': { transform: 'scale(1.1) translate(-2%, -2%)' },
-                        }
-                    }
                 }
             }
         }
     </script>
     
     <style>
-        /* Custom Utilities */
-        body { background-color: #0A0A0A; color: #F9F8F6; }
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24; }
+        /* ══════════════════════════════════════════════
+           BASE & RESET
+           ══════════════════════════════════════════════ */
+        *, *::before, *::after { box-sizing: border-box; }
+        body { 
+            background-color: #0A0A0A; 
+            color: #FAFAF8; 
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined { 
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24; 
+        }
         
-        /* Smooth Scrollbar for dark theme */
-        ::-webkit-scrollbar { width: 8px; }
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #0A0A0A; }
-        ::-webkit-scrollbar-thumb { background: #2A2A2A; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb { background: #1A1A1A; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
 
-        /* Typography Hooks */
-        .hook-title {
-            background: linear-gradient(to right, #ffffff, #D5CEC4);
+        /* ══════════════════════════════════════════════
+           NAVIGATION — Premium glass with scroll states
+           ══════════════════════════════════════════════ */
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.4);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-nav.scrolled {
+            background: rgba(10, 10, 10, 0.85);
+            border-bottom-color: rgba(212, 175, 55, 0.08);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+        }
+
+        /* ══════════════════════════════════════════════
+           HERO TYPOGRAPHY — Ultra-premium
+           ══════════════════════════════════════════════ */
+        .hero-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            line-height: 1.05;
+            color: #FAFAF8;
+            position: relative;
+        }
+        .hero-heading-glow {
+            position: absolute;
+            inset: -20%;
+            background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        .hero-italic {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 300;
+            background: linear-gradient(135deg, #F2DCA5 0%, #D4AF37 40%, #F5E6B8 70%, #D4AF37 100%);
+            background-size: 200% 100%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 6s ease-in-out infinite;
         }
-        .text-glow { text-shadow: 0 0 40px rgba(212, 175, 55, 0.4); }
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
 
-        /* Gold Line Glow — premium highlight effect */
+        /* ══════════════════════════════════════════════
+           CINEMATIC ENTRANCE ANIMATIONS
+           ══════════════════════════════════════════════ */
+        .hero-enter {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: heroFadeUp 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes heroFadeUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Staggered delays for cinematic feel */
+        .hero-delay-1 { animation-delay: 0.3s; }
+        .hero-delay-2 { animation-delay: 0.6s; }
+        .hero-delay-3 { animation-delay: 0.9s; }
+        .hero-delay-4 { animation-delay: 1.2s; }
+        .hero-delay-5 { animation-delay: 1.5s; }
+
+        /* Background Ken Burns */
+        @keyframes slowPan {
+            0% { transform: scale(1.0); }
+            100% { transform: scale(1.12); }
+        }
+
+        /* ══════════════════════════════════════════════
+           SCROLL REVEAL — Slow, organic, staggered
+           ══════════════════════════════════════════════ */
+        .reveal { 
+            opacity: 0; 
+            transform: translateY(28px); 
+            transition: opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 1.6s cubic-bezier(0.16, 1, 0.3, 1); 
+        }
+        .reveal.active { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* ══════════════════════════════════════════════
+           PRODUCT CARDS — Premium hover states
+           ══════════════════════════════════════════════ */
+        .product-card {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.04);
+            transition: border-color 0.8s ease, box-shadow 0.8s ease;
+        }
+        .product-card:hover {
+            border-color: rgba(212, 175, 55, 0.15);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.04), 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .product-card img { 
+            transition: transform 2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s ease; 
+        }
+        .product-card:hover img { 
+            transform: scale(1.05); 
+        }
+
+        /* Gold line effect */
         .gold-line {
+            height: 1px;
+            width: 3.5rem;
+            background: linear-gradient(90deg, #D4AF37, rgba(212, 175, 55, 0.3));
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
+        }
+
+        /* ══════════════════════════════════════════════
+           WISHLIST STATES
+           ══════════════════════════════════════════════ */
+        .wish-active .material-symbols-outlined { 
+            font-variation-settings: 'FILL' 1, 'wght' 200, 'GRAD' 0, 'opsz' 24; 
+            color: #D4AF37 !important; 
+            transform: scale(1.15);
+            filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.4));
+        }
+
+        /* ══════════════════════════════════════════════
+           FLOATING ACTION BUTTONS — Refined
+           ══════════════════════════════════════════════ */
+        .fab-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(10, 10, 10, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.02);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            position: relative;
+        }
+        .fab-btn:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4), 0 0 20px rgba(212, 175, 55, 0.12);
+            transform: translateY(-2px);
+        }
+        .fab-btn:active { transform: translateY(0) scale(0.96); }
+        
+        .wish-badge {
+            position: absolute;
+            top: -3px;
+            right: -3px;
+            background: #D4AF37;
+            color: #0A0A0A;
+            font-size: 9px;
+            font-weight: 700;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #0A0A0A;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* ══════════════════════════════════════════════
+           WISHLIST MODAL
+           ══════════════════════════════════════════════ */
+        .wishlist-modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 16px;
+        }
+        .wishlist-modal-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .wishlist-modal {
+            background: #111111;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 440px;
+            max-height: 88vh;
+            overflow-y: auto;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.85), 0 0 80px rgba(212, 175, 55, 0.04);
+            transform: translateY(24px) scale(0.96);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .wishlist-modal-overlay.open .wishlist-modal {
+            transform: translateY(0) scale(1);
+        }
+        .wishlist-modal::-webkit-scrollbar { width: 3px; }
+        .wishlist-modal::-webkit-scrollbar-track { background: transparent; }
+        .wishlist-modal::-webkit-scrollbar-thumb { background: #252525; border-radius: 2px; }
+
+        /* ══════════════════════════════════════════════
+           SECTION DIVIDER GLOW
+           ══════════════════════════════════════════════ */
+        .section-glow {
+            position: absolute;
+            width: 50%;
+            height: 1px;
+            left: 25%;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.15), transparent);
+        }
+
+        /* ══════════════════════════════════════════════
+           AMBIENT FLOATING PARTICLES (CSS only)
+           ══════════════════════════════════════════════ */
+        .ambient-dot {
+            position: absolute;
+            width: 2px;
             height: 2px;
-            width: 4rem;
-            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
-            box-shadow: 0 0 6px rgba(212, 175, 55, 0.3), 0 0 1px rgba(212, 175, 55, 0.6);
-            border-radius: 1px;
+            background: rgba(212, 175, 55, 0.25);
+            border-radius: 50%;
+            animation: float 12s ease-in-out infinite;
         }
-        
-        /* Parallax & Reveal classes */
-        .reveal { opacity: 0; transform: translateY(40px); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        
-        /* Image hover FX */
-        .image-zoom-container img { transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1); }
-        .image-zoom-container:hover img { transform: scale(1.03); }
-
-        /* Wishlist Active State */
-        .wish-active { background-color: transparent !important; border-color: transparent !important; }
-        .wish-active .material-symbols-outlined { font-variation-settings: 'FILL' 1, 'wght' 200, 'GRAD' 0, 'opsz' 24; color: #D4AF37; transform: scale(1.1); }
-        
-        .glass-nav {
-            background: rgba(10, 10, 10, 0.6);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0; }
+            25% { opacity: 0.6; }
+            50% { transform: translateY(-60px) translateX(20px); opacity: 0.3; }
+            75% { opacity: 0.5; }
         }
 
-        /* CTA hover lift */
-        a[href^='tel'], a[href^='#contact'] { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-        a[href^='tel']:hover, a[href^='#contact']:hover { transform: scale(1.03); box-shadow: 0 0 18px rgba(212, 175, 55, 0.25); }
+        /* Scrolling Banner */
+        .stroke-text { 
+            -webkit-text-stroke: 1px rgba(213, 206, 196, 0.5); 
+            -webkit-text-fill-color: transparent; 
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ══════════════════════════════════════════════
+           BUTTON PREMIUM HOVER
+           ══════════════════════════════════════════════ */
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .btn-primary:hover::before { opacity: 1; }
+        .btn-primary:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.25); 
+        }
+
+        .btn-outline {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .btn-outline:hover {
+            border-color: #D4AF37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* ══════════════════════════════════════════════
+           RESPONSIVE — Mobile & Tablet
+           ══════════════════════════════════════════════ */
+        @media (max-width: 768px) {
+            .hero-heading {
+                font-size: clamp(2.4rem, 9vw, 3.6rem) !important;
+                letter-spacing: 0.015em;
+                line-height: 1.08 !important;
+            }
+            .hero-italic {
+                font-size: clamp(2rem, 7.5vw, 3rem) !important;
+            }
+            .hero-sub { font-size: 0.9rem !important; }
+
+            .product-grid {
+                grid-template-columns: 1fr !important;
+                gap: 12px !important;
+            }
+            .product-grid > div {
+                grid-column: span 1 !important;
+            }
+            .product-card-lg { height: 340px !important; }
+            .product-card-md { height: 300px !important; }
+
+            .contact-grid {
+                grid-template-columns: 1fr !important;
+                gap: 40px !important;
+            }
+
+            .reveal { transform: translateY(18px); }
+
+            /* Disable heavy animations on mobile */
+            .ambient-dot { display: none; }
+        }
+
+        @media (min-width: 481px) and (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .hero-heading {
+                font-size: clamp(2rem, 8.5vw, 3rem) !important;
+            }
+            .hero-italic {
+                font-size: clamp(1.7rem, 7vw, 2.5rem) !important;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.2s !important;
+            }
+        }
     </style>
 </head>
 <body class="font-sans antialiased selection:bg-gold-500 selection:text-onyx-900 leading-[1.75]">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300 pointer-events-auto" id="navbar">
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12 py-5 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-widest text-white font-serif uppercase">
+    <!-- ═══════════════════════════════════════
+         NAVIGATION
+         ═══════════════════════════════════════ -->
+    <nav class="fixed top-0 w-full z-50 glass-nav pointer-events-auto" id="navbar">
+        <div class="max-w-[1400px] mx-auto px-5 md:px-12 py-5 flex justify-between items-center">
+            <a href="#" class="text-[1.35rem] font-bold tracking-[0.25em] text-white font-serif uppercase">
                 KGS<span class="text-gold-500">.</span>
+            </a>
+            <div class="hidden md:flex gap-10 items-center">
+                <a class="nav-link text-[11px] tracking-[0.25em] uppercase text-gold-400 border-b border-gold-500/50 pb-1 font-medium" href="#collections">Collections</a>
+                <a class="nav-link text-[11px] tracking-[0.25em] uppercase text-sand-300 hover:text-white transition-colors duration-500" href="#showroom">Showroom</a>
+                <a class="nav-link text-[11px] tracking-[0.25em] uppercase text-sand-300 hover:text-white transition-colors duration-500" href="#contact">Contact</a>
             </div>
-            <div class="hidden md:flex gap-12 items-center">
-                <a class="text-sm tracking-[0.2em] uppercase text-gold-500 border-b border-gold-500 pb-1" href="#collections">Collections</a>
-                <a class="text-sm tracking-[0.2em] uppercase text-sand-200 hover:text-white transition-colors" href="#showroom">Showroom</a>
-                <a class="text-sm tracking-[0.2em] uppercase text-sand-200 hover:text-white transition-colors" href="#contact">Contact</a>
-            </div>
-            <div class="flex items-center gap-6">
-                <!-- Shopping Bag icon replaced with contact CTA for true luxury feel -->
-                <button class="md:hidden text-white hover:text-gold-500 transition-colors p-2 min-h-[44px] min-w-[44px] flex items-center justify-center">
-                    <span class="material-symbols-outlined text-3xl">menu_open</span>
-                </button>
+            <button class="md:hidden text-white hover:text-gold-500 transition-colors p-2 min-h-[44px] min-w-[44px] flex items-center justify-center" id="mobileMenuBtn">
+                <span class="material-symbols-outlined text-2xl">menu</span>
+            </button>
+        </div>
+        <!-- Mobile Menu Drawer -->
+        <div class="md:hidden overflow-hidden max-h-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" id="mobileMenu">
+            <div class="px-5 pb-6 pt-2 flex flex-col gap-4 border-t border-onyx-700/50">
+                <a class="text-sm tracking-[0.2em] uppercase text-gold-400 py-2" href="#collections" onclick="closeMobileMenu()">Collections</a>
+                <a class="text-sm tracking-[0.2em] uppercase text-sand-200 py-2" href="#showroom" onclick="closeMobileMenu()">Showroom</a>
+                <a class="text-sm tracking-[0.2em] uppercase text-sand-200 py-2" href="#contact" onclick="closeMobileMenu()">Contact</a>
+                <a href="tel:+919789182921" class="mt-2 inline-flex items-center justify-center gap-2 bg-gold-500 text-onyx-900 px-6 py-3 text-xs tracking-widest uppercase font-semibold min-h-[44px]">
+                    <span class="material-symbols-outlined text-sm">call</span> Call Now
+                </a>
             </div>
         </div>
     </nav>
 
     <main>
-        <!-- Dynamic Hero Section -->
-        <section class="relative min-h-[100dvh] pb-16 w-full flex items-center justify-center overflow-hidden">
-            <!-- Background Image -->
+        <!-- ═══════════════════════════════════════
+             HERO SECTION — Cinematic Entry
+             ═══════════════════════════════════════ -->
+        <section class="relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden">
+            <!-- Background with Ken Burns -->
             <div class="absolute inset-0 w-full h-full">
-                <!-- High-end luxury living room -->
                 <img src="assets/hero_indian_interior.png" 
-                     class="w-full h-full object-cover animate-slow-pan opacity-65" 
+                     class="w-full h-full object-cover opacity-50" 
+                     style="animation: slowPan 30s ease-in-out infinite alternate;"
                      alt="Modern Indian living room with premium home decor">
-                <!-- Heavy dark gradient overlay -->
-                <div class="absolute inset-0 bg-gradient-to-b from-onyx-900/60 via-onyx-900/40 to-onyx-900"></div>
-                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#0A0A0A_100%)]"></div>
+                <!-- Multi-layer overlay for depth -->
+                <div class="absolute inset-0 bg-gradient-to-b from-onyx-900/70 via-onyx-900/30 to-onyx-900"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-onyx-900/50 via-transparent to-onyx-900/50"></div>
+                <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#0A0A0A_85%)]"></div>
             </div>
 
-            <div class="relative z-10 text-center px-6 max-w-5xl mt-20">
-                <p class="text-gold-500 text-sm tracking-[0.4em] uppercase mb-6 animate-fade-in-up" style="animation-delay: 0.2s;">Home Decor Shop in Virudhachalam</p>
-                <h1 class="text-5xl md:text-7xl lg:text-[6rem] font-serif font-medium leading-[1.1] text-white mb-8 animate-fade-in-up hook-title" style="animation-delay: 0.4s;">
-                    Make Your Home Look Beautiful
-                    <span class="italic font-light text-sand-100">with Premium Decor.</span>
-                </h1>
-                <p class="text-sand-200 text-lg md:text-xl font-light max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-in-up" style="animation-delay: 0.6s;">
-                    Furniture, Plants, Fountains &amp; Stylish Decor — at our showroom in Virudhachalam. Open all days, 10 AM – 10 PM.
+            <!-- Ambient particles -->
+            <div class="ambient-dot" style="top: 20%; left: 15%; animation-delay: 0s;"></div>
+            <div class="ambient-dot" style="top: 60%; left: 75%; animation-delay: 3s;"></div>
+            <div class="ambient-dot" style="top: 35%; left: 55%; animation-delay: 6s;"></div>
+            <div class="ambient-dot" style="top: 75%; left: 30%; animation-delay: 9s;"></div>
+
+            <div class="relative z-10 text-center px-5 sm:px-8 max-w-5xl">
+                <!-- Eyebrow -->
+                <p class="hero-enter hero-delay-1 text-gold-500 text-[10px] sm:text-xs tracking-[0.4em] sm:tracking-[0.5em] uppercase mb-5 sm:mb-7 font-sans font-medium">
+                    ✦&nbsp;&nbsp; Home Decor Shop in Virudhachalam &nbsp;&nbsp;✦
                 </p>
-                <div class="animate-fade-in-up w-full flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 px-2" style="animation-delay: 0.8s;">
-                    <a href="#collections" class="inline-flex items-center justify-center bg-gold-500 text-onyx-900 px-6 py-4 lg:px-10 text-xs tracking-widest uppercase hover:bg-white transition-colors duration-500 w-full sm:w-auto min-h-[44px] font-semibold">
-                        View The Collection
+                
+                <!-- Main Heading — Cormorant Garamond for luxury editorial feel -->
+                <div class="relative">
+                    <div class="hero-heading-glow"></div>
+                    <h1 class="hero-enter hero-delay-2 hero-heading text-[2.8rem] sm:text-6xl md:text-7xl lg:text-[5.8rem] xl:text-[6.5rem] mb-3 sm:mb-4">
+                        Make Your Home
+                    </h1>
+                    <h1 class="hero-enter hero-delay-3 hero-heading text-[2.8rem] sm:text-6xl md:text-7xl lg:text-[5.8rem] xl:text-[6.5rem] mb-3 sm:mb-5">
+                        Look Beautiful
+                    </h1>
+                    <p class="hero-enter hero-delay-3 hero-italic text-[1.8rem] sm:text-4xl md:text-5xl lg:text-[3.8rem] xl:text-[4.2rem] mb-8 sm:mb-10">
+                        with Premium Decor.
+                    </p>
+                </div>
+                
+                <!-- Subtitle -->
+                <p class="hero-enter hero-delay-4 hero-sub text-sand-200/80 text-base sm:text-lg md:text-xl font-light max-w-xl mx-auto mb-10 sm:mb-12 leading-relaxed font-sans">
+                    Furniture, Plants, Fountains &amp; Stylish Decor — at our showroom in Virudhachalam.
+                </p>
+
+                <!-- CTAs -->
+                <div class="hero-enter hero-delay-5 w-full flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-5">
+                    <a href="#collections" class="btn-primary inline-flex items-center justify-center bg-gold-500 text-onyx-900 px-7 py-4 lg:px-10 text-[11px] tracking-[0.2em] uppercase w-full sm:w-auto min-h-[50px] font-semibold">
+                        View Collection
                     </a>
-                    <a href="tel:+919789182921" class="inline-flex items-center justify-center gap-2 border border-gold-500/40 text-gold-500 hover:border-gold-500 px-6 py-4 lg:px-8 text-xs tracking-widest uppercase transition-colors duration-500 w-full sm:w-auto min-h-[44px]">
-                        <span class="material-symbols-outlined text-base">call</span> Call Now
+                    <a href="tel:+919789182921" class="btn-outline inline-flex items-center justify-center gap-2 border border-gold-500/30 text-gold-400 px-7 py-4 lg:px-9 text-[11px] tracking-[0.2em] uppercase w-full sm:w-auto min-h-[50px] font-medium">
+                        <span class="material-symbols-outlined text-sm">call</span> Call Now
                     </a>
                 </div>
-                <p class="text-sand-200/40 text-xs tracking-[0.2em] uppercase mt-6 animate-fade-in-up" style="animation-delay: 1s;">Trusted by customers in Virudhachalam</p>
+
+                <!-- Trust badge -->
+                <p class="hero-enter hero-delay-5 text-sand-200/25 text-[10px] tracking-[0.25em] uppercase mt-8 font-sans">Trusted by customers across Virudhachalam</p>
+
+                <!-- Scroll indicator -->
+                <div class="hero-enter hero-delay-5 mt-10 sm:mt-14 flex flex-col items-center gap-2 opacity-30">
+                    <span class="text-[9px] tracking-[0.3em] uppercase text-sand-300 font-sans">Scroll</span>
+                    <div class="w-[1px] h-8 bg-gradient-to-b from-gold-500/60 to-transparent"></div>
+                </div>
             </div>
-
-
         </section>
 
-        <!-- The Collection Section (Dark Cards) -->
-        <section id="collections" class="py-32 px-6 md:px-12 bg-onyx-900">
+        <!-- Section divider glow -->
+        <div class="relative h-[1px]"><div class="section-glow top-0"></div></div>
+
+        <!-- ═══════════════════════════════════════
+             COLLECTIONS SECTION
+             ═══════════════════════════════════════ -->
+        <section id="collections" class="py-20 sm:py-28 lg:py-36 px-5 sm:px-6 md:px-12 bg-onyx-900">
             <div class="max-w-[1400px] mx-auto">
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8 reveal">
+                <!-- Section Header -->
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 sm:mb-20 gap-6 reveal">
                     <div>
-                        <h2 class="text-4xl md:text-5xl font-serif text-white mb-2">Our Products</h2>
-                        <p class="text-sand-200/60 font-light text-sm italic mb-4">Handpicked designs that instantly upgrade your home look</p>
-                        <div class="gold-line"></div>
+                        <p class="text-gold-500 text-[10px] tracking-[0.4em] uppercase mb-4 font-sans font-medium">Our Collection</p>
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-display font-medium text-white mb-3 leading-[1.1]">Handpicked for<br class="hidden sm:block"> Your Home</h2>
+                        <div class="gold-line mt-4"></div>
                     </div>
-                    <p class="text-sand-200 font-light max-w-md text-sm leading-relaxed text-left md:text-right">
-                        Everything you need to make your home look beautiful — furniture, clocks, plants, lighting & more. All available at our Virudhachalam showroom.
+                    <p class="text-sand-300 font-light max-w-sm text-sm leading-relaxed text-left md:text-right">
+                        Everything to make your home beautiful — furniture, clocks, plants, lighting &amp; more. Available at our Virudhachalam showroom.
                     </p>
                 </div>
 
-                <!-- Ultra-Smooth Asymmetrical Grid Layout -->
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
+                <!-- Product Grid -->
+                <div class="product-grid grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-5 lg:gap-6">
                     
-                    <!-- Row 1: Furniture & Office (2 Large) -->
-                    <!-- Item 1: Sofa Sets -->
-                    <div class="md:col-span-6 group relative h-[550px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-xl">
-                        <img src="assets/sofa_indian_1775734816101.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="Sofa sets in Indian home">
-                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-onyx-900/20 to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-70"></div>
-                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2 transition-all duration-300 pointer-events-auto group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/40" aria-label="Add to Wishlist">
-                            <span class="material-symbols-outlined text-white/50 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] group-hover/wish:text-gold-500 text-[26px] transition-all duration-300">favorite</span>
+                    <!-- 1: Sofa Sets -->
+                    <div class="md:col-span-6 group relative product-card product-card-lg h-[420px] sm:h-[520px] lg:h-[560px] bg-onyx-800 reveal rounded-sm">
+                        <img src="assets/sofa_indian_1775734816101.png" loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:opacity-85" alt="Sofa sets in Indian home">
+                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-onyx-900/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-1000"></div>
+                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2.5 transition-all duration-500 group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/50 min-h-[44px] min-w-[44px]" aria-label="Add to Wishlist" data-product="Sofa Sets">
+                            <span class="material-symbols-outlined text-white/40 group-hover/wish:text-gold-500 text-[24px] transition-all duration-500">favorite</span>
                         </button>
-                        <div class="absolute top-6 right-6"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">Best Seller</span></div>
-                        <div class="absolute bottom-10 left-10 right-10 flex justify-between items-end">
-                            <div class="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
-                                <h3 class="text-3xl font-serif text-white mb-2">Sofa Sets</h3>
-                                <p class="text-sand-200 text-sm tracking-widest uppercase">Stylish &amp; Comfortable</p>
+                        <div class="absolute top-5 right-5"><span class="text-[9px] tracking-[0.2em] uppercase bg-gold-500/10 border border-gold-500/25 text-gold-300 px-3 py-1 font-sans font-medium">Best Seller</span></div>
+                        <div class="absolute bottom-8 sm:bottom-10 left-6 sm:left-10 right-6 sm:right-10 flex justify-between items-end">
+                            <div class="transform translate-y-3 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                                <h3 class="text-2xl sm:text-3xl font-display font-medium text-white mb-1">Sofa Sets</h3>
+                                <p class="text-sand-300 text-[11px] tracking-[0.2em] uppercase font-sans">Stylish &amp; Comfortable</p>
                             </div>
-                            <span class="w-12 h-12 rounded-full border border-gold-500/30 flex items-center justify-center text-gold-500 group-hover:bg-gold-500 group-hover:text-onyx-900 transition-all duration-1000 transform translate-x-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 shadow-[0_0_20px_rgba(212,175,55,0.2)]">
-                                <span class="material-symbols-outlined">east</span>
+                            <span class="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-gold-500/20 flex items-center justify-center text-gold-500 group-hover:bg-gold-500 group-hover:text-onyx-900 transition-all duration-800 transform translate-x-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 flex-shrink-0">
+                                <span class="material-symbols-outlined text-lg">east</span>
                             </span>
                         </div>
                     </div>
 
-                    <!-- Item 2: Office Chairs & Tables -->
-                    <div class="md:col-span-6 group relative h-[550px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-xl" style="transition-delay: 100ms;">
-                        <img src="assets/office_chair_indian_1775734837287.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="Office chairs and desks">
-                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-onyx-900/20 to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-70"></div>
-                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2 transition-all duration-300 pointer-events-auto group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/40" aria-label="Add to Wishlist">
-                            <span class="material-symbols-outlined text-white/50 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] group-hover/wish:text-gold-500 text-[26px] transition-all duration-300">favorite</span>
+                    <!-- 2: Office Chairs -->
+                    <div class="md:col-span-6 group relative product-card product-card-lg h-[420px] sm:h-[520px] lg:h-[560px] bg-onyx-800 reveal reveal-delay-1 rounded-sm">
+                        <img src="assets/office_chair_indian_1775734837287.png" loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:opacity-85" alt="Office chairs and desks">
+                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-onyx-900/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-1000"></div>
+                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2.5 transition-all duration-500 group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/50 min-h-[44px] min-w-[44px]" aria-label="Add to Wishlist" data-product="Office Chairs & Tables">
+                            <span class="material-symbols-outlined text-white/40 group-hover/wish:text-gold-500 text-[24px] transition-all duration-500">favorite</span>
                         </button>
-                        <div class="absolute top-6 right-6"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">Available in Store</span></div>
-                        <div class="absolute bottom-10 left-10 right-10 flex justify-between items-end">
-                            <div class="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
-                                <h3 class="text-3xl font-serif text-white mb-2">Office Chairs &amp; Tables</h3>
-                                <p class="text-sand-200 text-sm tracking-widest uppercase">Modern &amp; Ergonomic</p>
+                        <div class="absolute top-5 right-5"><span class="text-[9px] tracking-[0.2em] uppercase bg-gold-500/10 border border-gold-500/25 text-gold-300 px-3 py-1 font-sans font-medium">In Store</span></div>
+                        <div class="absolute bottom-8 sm:bottom-10 left-6 sm:left-10 right-6 sm:right-10 flex justify-between items-end">
+                            <div class="transform translate-y-3 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                                <h3 class="text-2xl sm:text-3xl font-display font-medium text-white mb-1">Office Chairs &amp; Tables</h3>
+                                <p class="text-sand-300 text-[11px] tracking-[0.2em] uppercase font-sans">Modern &amp; Ergonomic</p>
                             </div>
-                            <span class="w-12 h-12 rounded-full border border-gold-500/30 flex items-center justify-center text-gold-500 group-hover:bg-gold-500 group-hover:text-onyx-900 transition-all duration-1000 transform translate-x-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 shadow-[0_0_20px_rgba(212,175,55,0.2)]">
-                                <span class="material-symbols-outlined">east</span>
+                            <span class="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-gold-500/20 flex items-center justify-center text-gold-500 group-hover:bg-gold-500 group-hover:text-onyx-900 transition-all duration-800 transform translate-x-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 flex-shrink-0">
+                                <span class="material-symbols-outlined text-lg">east</span>
                             </span>
                         </div>
                     </div>
 
-                    <!-- Row 2: Clocks, Frames, Statues (3 Medium) -->
-                    <!-- Item 3: Wall Clocks -->
-                    <div class="md:col-span-4 group relative h-[450px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-lg" style="transition-delay: 200ms;">
-                        <img src="assets/wall_clock_indian_1775734853010.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="Wall clocks for home">
-                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-60"></div>
-                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2 transition-all duration-300 pointer-events-auto group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/40" aria-label="Add to Wishlist">
-                            <span class="material-symbols-outlined text-white/50 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] group-hover/wish:text-gold-500 text-[26px] transition-all duration-300">favorite</span>
+                    <!-- 3: Wall Clocks -->
+                    <div class="md:col-span-4 group relative product-card product-card-md h-[320px] sm:h-[420px] lg:h-[460px] bg-onyx-800 reveal rounded-sm">
+                        <img src="assets/wall_clock_indian_1775734853010.png" loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:opacity-85" alt="Wall clocks for home">
+                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-80 group-hover:opacity-55 transition-opacity duration-1000"></div>
+                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2.5 transition-all duration-500 group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/50 min-h-[44px] min-w-[44px]" aria-label="Add to Wishlist" data-product="Wall Clocks">
+                            <span class="material-symbols-outlined text-white/40 group-hover/wish:text-gold-500 text-[24px] transition-all duration-500">favorite</span>
                         </button>
-                        <div class="absolute top-5 right-5"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">Best Seller</span></div>
-                        <div class="absolute bottom-8 left-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
-                            <h3 class="text-2xl font-serif text-white mb-1">Wall Clocks</h3>
-                            <p class="text-gold-500 text-xs tracking-wider uppercase">Stylish Home Decor</p>
+                        <div class="absolute top-5 right-5"><span class="text-[9px] tracking-[0.2em] uppercase bg-gold-500/10 border border-gold-500/25 text-gold-300 px-3 py-1 font-sans font-medium">Best Seller</span></div>
+                        <div class="absolute bottom-6 sm:bottom-8 left-6 sm:left-8">
+                            <h3 class="text-xl sm:text-2xl font-display font-medium text-white mb-1">Wall Clocks</h3>
+                            <p class="text-gold-400 text-[10px] tracking-[0.15em] uppercase font-sans">Stylish Home Decor</p>
                         </div>
                     </div>
 
-                    <!-- Item 4: Photo Frames -->
-                    <div class="md:col-span-4 group relative h-[450px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-lg" style="transition-delay: 300ms;">
-                        <img src="assets/photo_frame_indian_1775734866964.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="Photo frames for living room">
-                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-60"></div>
-                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2 transition-all duration-300 pointer-events-auto group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/40" aria-label="Add to Wishlist">
-                            <span class="material-symbols-outlined text-white/50 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] group-hover/wish:text-gold-500 text-[26px] transition-all duration-300">favorite</span>
+                    <!-- 4: Photo Frames -->
+                    <div class="md:col-span-4 group relative product-card product-card-md h-[320px] sm:h-[420px] lg:h-[460px] bg-onyx-800 reveal reveal-delay-1 rounded-sm">
+                        <img src="assets/photo_frame_indian_1775734866964.png" loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:opacity-85" alt="Photo frames for living room">
+                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-80 group-hover:opacity-55 transition-opacity duration-1000"></div>
+                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2.5 transition-all duration-500 group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/50 min-h-[44px] min-w-[44px]" aria-label="Add to Wishlist" data-product="Photo Frames">
+                            <span class="material-symbols-outlined text-white/40 group-hover/wish:text-gold-500 text-[24px] transition-all duration-500">favorite</span>
                         </button>
-                        <div class="absolute top-5 right-5"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">New Collection</span></div>
-                        <div class="absolute bottom-8 left-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
-                            <h3 class="text-2xl font-serif text-white mb-1">Photo Frames</h3>
-                            <p class="text-gold-500 text-xs tracking-wider uppercase">Modern Wall Decor</p>
+                        <div class="absolute top-5 right-5"><span class="text-[9px] tracking-[0.2em] uppercase bg-gold-500/10 border border-gold-500/25 text-gold-300 px-3 py-1 font-sans font-medium">New</span></div>
+                        <div class="absolute bottom-6 sm:bottom-8 left-6 sm:left-8">
+                            <h3 class="text-xl sm:text-2xl font-display font-medium text-white mb-1">Photo Frames</h3>
+                            <p class="text-gold-400 text-[10px] tracking-[0.15em] uppercase font-sans">Modern Wall Decor</p>
                         </div>
                     </div>
 
-                    <!-- Item 5: Decorative Statues -->
-                    <div class="md:col-span-4 group relative h-[450px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-lg" style="transition-delay: 400ms;">
-                        <img src="assets/statue_indian_1775734881322.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="Decorative statues for home">
-                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-60"></div>
-                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2 transition-all duration-300 pointer-events-auto group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/40" aria-label="Add to Wishlist">
-                            <span class="material-symbols-outlined text-white/50 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] group-hover/wish:text-gold-500 text-[26px] transition-all duration-300">favorite</span>
+                    <!-- 5: Decorative Statues -->
+                    <div class="md:col-span-4 group relative product-card product-card-md h-[320px] sm:h-[420px] lg:h-[460px] bg-onyx-800 reveal reveal-delay-2 rounded-sm">
+                        <img src="assets/statue_indian_1775734881322.png" loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:opacity-85" alt="Decorative statues for home">
+                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-80 group-hover:opacity-55 transition-opacity duration-1000"></div>
+                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2.5 transition-all duration-500 group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/50 min-h-[44px] min-w-[44px]" aria-label="Add to Wishlist" data-product="Decorative Statues">
+                            <span class="material-symbols-outlined text-white/40 group-hover/wish:text-gold-500 text-[24px] transition-all duration-500">favorite</span>
                         </button>
-                        <div class="absolute top-5 right-5"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">Available in Store</span></div>
-                        <div class="absolute bottom-8 left-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
-                            <h3 class="text-2xl font-serif text-white mb-1">Decorative Statues</h3>
-                            <p class="text-gold-500 text-xs tracking-wider uppercase">Premium Figurines</p>
+                        <div class="absolute top-5 right-5"><span class="text-[9px] tracking-[0.2em] uppercase bg-gold-500/10 border border-gold-500/25 text-gold-300 px-3 py-1 font-sans font-medium">In Store</span></div>
+                        <div class="absolute bottom-6 sm:bottom-8 left-6 sm:left-8">
+                            <h3 class="text-xl sm:text-2xl font-display font-medium text-white mb-1">Decorative Statues</h3>
+                            <p class="text-gold-400 text-[10px] tracking-[0.15em] uppercase font-sans">Premium Figurines</p>
                         </div>
                     </div>
 
-                    <!-- Row 3: Fountains, Plants, Lighting (3 Medium) -->
-                    <!-- Item 6: Water Fountains -->
-                    <div class="md:col-span-4 group relative h-[450px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-lg" style="transition-delay: 100ms;">
-                        <img src="assets/fountain_indian_1775734897565.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="Indoor water fountain">
-                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-60"></div>
-                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2 transition-all duration-300 pointer-events-auto group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/40" aria-label="Add to Wishlist">
-                            <span class="material-symbols-outlined text-white/50 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] group-hover/wish:text-gold-500 text-[26px] transition-all duration-300">favorite</span>
+                    <!-- 6: Water Fountains -->
+                    <div class="md:col-span-4 group relative product-card product-card-md h-[320px] sm:h-[420px] lg:h-[460px] bg-onyx-800 reveal rounded-sm">
+                        <img src="assets/fountain_indian_1775734897565.png" loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:opacity-85" alt="Indoor water fountain">
+                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-80 group-hover:opacity-55 transition-opacity duration-1000"></div>
+                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2.5 transition-all duration-500 group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/50 min-h-[44px] min-w-[44px]" aria-label="Add to Wishlist" data-product="Water Fountains">
+                            <span class="material-symbols-outlined text-white/40 group-hover/wish:text-gold-500 text-[24px] transition-all duration-500">favorite</span>
                         </button>
-                        <div class="absolute top-5 right-5"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">Best Seller</span></div>
-                        <div class="absolute bottom-8 left-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
-                            <h3 class="text-2xl font-serif text-white mb-1">Water Fountains</h3>
-                            <p class="text-gold-500 text-xs tracking-wider uppercase">For Home &amp; Office</p>
+                        <div class="absolute top-5 right-5"><span class="text-[9px] tracking-[0.2em] uppercase bg-gold-500/10 border border-gold-500/25 text-gold-300 px-3 py-1 font-sans font-medium">Best Seller</span></div>
+                        <div class="absolute bottom-6 sm:bottom-8 left-6 sm:left-8">
+                            <h3 class="text-xl sm:text-2xl font-display font-medium text-white mb-1">Water Fountains</h3>
+                            <p class="text-gold-400 text-[10px] tracking-[0.15em] uppercase font-sans">Home &amp; Office</p>
                         </div>
                     </div>
 
-                    <!-- Item 7: Artificial Plants -->
-                    <div class="md:col-span-4 group relative h-[450px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-lg" style="transition-delay: 200ms;">
-                        <img src="assets/plant_indian_1775734912222.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="Artificial plants for home">
-                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-60"></div>
-                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2 transition-all duration-300 pointer-events-auto group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/40" aria-label="Add to Wishlist">
-                            <span class="material-symbols-outlined text-white/50 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] group-hover/wish:text-gold-500 text-[26px] transition-all duration-300">favorite</span>
+                    <!-- 7: Artificial Plants -->
+                    <div class="md:col-span-4 group relative product-card product-card-md h-[320px] sm:h-[420px] lg:h-[460px] bg-onyx-800 reveal reveal-delay-1 rounded-sm">
+                        <img src="assets/plant_indian_1775734912222.png" loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:opacity-85" alt="Artificial plants for home">
+                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-80 group-hover:opacity-55 transition-opacity duration-1000"></div>
+                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2.5 transition-all duration-500 group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/50 min-h-[44px] min-w-[44px]" aria-label="Add to Wishlist" data-product="Artificial Plants">
+                            <span class="material-symbols-outlined text-white/40 group-hover/wish:text-gold-500 text-[24px] transition-all duration-500">favorite</span>
                         </button>
-                        <div class="absolute top-5 right-5"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">New Collection</span></div>
-                        <div class="absolute bottom-8 left-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
-                            <h3 class="text-2xl font-serif text-white mb-1">Artificial Plants</h3>
-                            <p class="text-gold-500 text-xs tracking-wider uppercase">Zero Maintenance</p>
+                        <div class="absolute top-5 right-5"><span class="text-[9px] tracking-[0.2em] uppercase bg-gold-500/10 border border-gold-500/25 text-gold-300 px-3 py-1 font-sans font-medium">New</span></div>
+                        <div class="absolute bottom-6 sm:bottom-8 left-6 sm:left-8">
+                            <h3 class="text-xl sm:text-2xl font-display font-medium text-white mb-1">Artificial Plants</h3>
+                            <p class="text-gold-400 text-[10px] tracking-[0.15em] uppercase font-sans">Zero Maintenance</p>
                         </div>
                     </div>
 
-                    <!-- Item 8: Lighting -->
-                    <div class="md:col-span-4 group relative h-[450px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-lg" style="transition-delay: 300ms;">
-                        <img src="assets/chandelier_img_1775732840371.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="LED chandeliers for living room">
-                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-60"></div>
-                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2 transition-all duration-300 pointer-events-auto group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/40" aria-label="Add to Wishlist">
-                            <span class="material-symbols-outlined text-white/50 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] group-hover/wish:text-gold-500 text-[26px] transition-all duration-300">favorite</span>
+                    <!-- 8: Chandeliers -->
+                    <div class="md:col-span-4 group relative product-card product-card-md h-[320px] sm:h-[420px] lg:h-[460px] bg-onyx-800 reveal reveal-delay-2 rounded-sm">
+                        <img src="assets/chandelier_img_1775732840371.png" loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:opacity-85" alt="LED chandeliers for living room">
+                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-80 group-hover:opacity-55 transition-opacity duration-1000"></div>
+                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2.5 transition-all duration-500 group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/50 min-h-[44px] min-w-[44px]" aria-label="Add to Wishlist" data-product="LED Chandeliers">
+                            <span class="material-symbols-outlined text-white/40 group-hover/wish:text-gold-500 text-[24px] transition-all duration-500">favorite</span>
                         </button>
-                        <div class="absolute top-5 right-5"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">Available in Store</span></div>
-                        <div class="absolute bottom-8 left-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
-                            <h3 class="text-2xl font-serif text-white mb-1">LED Chandeliers</h3>
-                            <p class="text-gold-500 text-xs tracking-wider uppercase">Modern Lighting</p>
+                        <div class="absolute top-5 right-5"><span class="text-[9px] tracking-[0.2em] uppercase bg-gold-500/10 border border-gold-500/25 text-gold-300 px-3 py-1 font-sans font-medium">In Store</span></div>
+                        <div class="absolute bottom-6 sm:bottom-8 left-6 sm:left-8">
+                            <h3 class="text-xl sm:text-2xl font-display font-medium text-white mb-1">LED Chandeliers</h3>
+                            <p class="text-gold-400 text-[10px] tracking-[0.15em] uppercase font-sans">Modern Lighting</p>
                         </div>
                     </div>
-
                 </div>
-            </div>
-            <!-- Affordability Line -->
-            <p class="text-center text-sand-200/40 text-sm tracking-[0.25em] uppercase mt-20 font-light italic">Premium Look at Affordable Prices</p>
-            <p class="text-center text-sand-200/25 text-xs tracking-[0.2em] uppercase mt-3 mb-10 font-light">All products available at our Virudhachalam showroom</p>
-            <div class="text-center">
-                <a href="tel:+919789182921" class="inline-flex items-center justify-center gap-2 bg-gold-500 text-onyx-900 px-6 md:px-10 py-3 md:py-4 text-xs md:text-sm font-semibold tracking-widest uppercase hover:bg-white">
-                    <span class="material-symbols-outlined text-base">call</span> Call Now to Check Availability
-                </a>
+
+                <!-- Bottom CTA -->
+                <div class="text-center mt-16 sm:mt-24 reveal">
+                    <p class="text-sand-200/30 text-[10px] tracking-[0.3em] uppercase mb-3 font-sans">Premium Look · Affordable Prices</p>
+                    <p class="text-sand-200/20 text-[10px] tracking-[0.2em] uppercase mb-8 font-sans">Available at our Virudhachalam showroom</p>
+                    <a href="tel:+919789182921" class="btn-primary inline-flex items-center justify-center gap-2.5 bg-gold-500 text-onyx-900 px-8 md:px-10 py-4 text-[11px] font-semibold tracking-[0.2em] uppercase min-h-[50px]">
+                        <span class="material-symbols-outlined text-sm">call</span> Call for Availability
+                    </a>
+                </div>
             </div>
         </section>
 
-        <!-- Editorial Feature Section (Asymmetric) -->
-        <section id="showroom" class="py-32 overflow-hidden bg-onyx-800 border-y border-onyx-700">
-            <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative">
-                <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-0">
+        <!-- ═══════════════════════════════════════
+             SHOWROOM / EDITORIAL
+             ═══════════════════════════════════════ -->
+        <section id="showroom" class="py-20 sm:py-28 lg:py-36 overflow-hidden bg-onyx-800">
+            <div class="relative h-[1px] mb-20 sm:mb-28"><div class="section-glow top-0"></div></div>
+            <div class="max-w-[1400px] mx-auto px-5 sm:px-6 md:px-12 relative">
+                <div class="flex flex-col lg:flex-row items-center gap-10 sm:gap-14 lg:gap-0">
                     
-                    <!-- Large Image Left -->
+                    <!-- Image -->
                     <div class="w-full lg:w-7/12 z-0 reveal">
-                        <div class="relative aspect-[4/3] image-zoom-container shadow-2xl">
-                            <img src="assets/showroom_indian.png" class="w-full h-full object-cover opacity-80" alt="KGS Home Decors showroom in Virudhachalam">
-                            <div class="absolute inset-0 border border-gold-500/20 m-6" style="box-shadow: inset 0 0 30px rgba(212,175,55,0.06);"></div>
+                        <div class="relative aspect-[4/3] overflow-hidden shadow-2xl">
+                            <img src="assets/showroom_indian.png" loading="lazy" class="w-full h-full object-cover opacity-75 hover:opacity-90 transition-opacity duration-1000" alt="KGS Home Decors showroom in Virudhachalam">
+                            <div class="absolute inset-0 border border-gold-500/10 m-3 sm:m-5 pointer-events-none" style="box-shadow: inset 0 0 40px rgba(212,175,55,0.04);"></div>
                         </div>
                     </div>
 
-                    <!-- Overlapping Text Block Right -->
-                    <div class="w-full lg:w-6/12 lg:-ml-24 z-10 reveal">
-                        <div class="bg-onyx-900 p-12 md:p-16 border border-onyx-700 shadow-2xl relative">
-                            <!-- Decorative Corner -->
-                            <div class="absolute top-0 left-0 w-8 h-[2px] bg-gold-500"></div>
-                            <div class="absolute top-0 left-0 w-[2px] h-8 bg-gold-500"></div>
+                    <!-- Text Block -->
+                    <div class="w-full lg:w-6/12 lg:-ml-20 z-10 reveal reveal-delay-2">
+                        <div class="bg-onyx-900 p-8 sm:p-12 lg:p-16 border border-onyx-600/50 shadow-2xl relative">
+                            <!-- Corner accents -->
+                            <div class="absolute top-0 left-0 w-10 h-[1px] bg-gradient-to-r from-gold-500 to-transparent"></div>
+                            <div class="absolute top-0 left-0 w-[1px] h-10 bg-gradient-to-b from-gold-500 to-transparent"></div>
+                            <div class="absolute bottom-0 right-0 w-10 h-[1px] bg-gradient-to-l from-gold-500/50 to-transparent"></div>
+                            <div class="absolute bottom-0 right-0 w-[1px] h-10 bg-gradient-to-t from-gold-500/50 to-transparent"></div>
 
-                            <span class="text-gold-500 text-sm tracking-[0.3em] uppercase mb-4 block">Our Showroom · Virudhachalam</span>
-                            <h2 class="text-4xl md:text-5xl font-serif text-white mb-8 leading-tight">Beautiful Decor for Every Home.</h2>
-                            <p class="text-sand-200 font-light leading-relaxed mb-10 text-lg">
-                                At KGS Home Decors, Virudhachalam, you can explore a wide range of stylish decor items for your home. Come visit our showroom and choose what fits your home perfectly.
+                            <p class="text-gold-500 text-[10px] tracking-[0.4em] uppercase mb-5 font-sans font-medium">Our Showroom · Virudhachalam</p>
+                            <h2 class="text-3xl sm:text-4xl lg:text-[2.8rem] font-display font-medium text-white mb-6 sm:mb-8 leading-[1.1]">Beautiful Decor<br>for Every Home.</h2>
+                            <p class="text-sand-200/70 font-light leading-[1.8] mb-8 sm:mb-10 text-[15px]">
+                                At KGS Home Decors, Virudhachalam, explore a wide range of stylish decor items. Visit our showroom and choose what fits your home perfectly.
                             </p>
                             
-                            <ul class="space-y-6 mb-12">
-                                <li class="flex items-center gap-5">
-                                    <span class="material-symbols-outlined text-gold-500 text-2xl" style="font-variation-settings: 'FILL' 1;">storefront</span>
-                                    <span class="text-white font-light tracking-wide">Walk-in Showroom in Virudhachalam</span>
+                            <ul class="space-y-5 mb-10 sm:mb-12">
+                                <li class="flex items-center gap-4">
+                                    <span class="material-symbols-outlined text-gold-500 text-xl" style="font-variation-settings: 'FILL' 1;">storefront</span>
+                                    <span class="text-white/80 font-light tracking-wide text-sm">Walk-in Showroom in Virudhachalam</span>
                                 </li>
-                                <li class="flex items-center gap-5">
-                                    <span class="material-symbols-outlined text-gold-500 text-2xl" style="font-variation-settings: 'FILL' 1;">verified</span>
-                                    <span class="text-white font-light tracking-wide">Premium Quality at Honest Prices</span>
+                                <li class="flex items-center gap-4">
+                                    <span class="material-symbols-outlined text-gold-500 text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                    <span class="text-white/80 font-light tracking-wide text-sm">Premium Quality at Honest Prices</span>
                                 </li>
                             </ul>
 
-                            <a href="#contact" class="inline-flex items-center gap-3 text-gold-500 hover:text-white transition-colors uppercase tracking-widest text-sm font-semibold pb-2 border-b border-gold-500/30 hover:border-white">
-                                Visit Our Showroom Today <span class="material-symbols-outlined text-lg">arrow_right_alt</span>
+                            <a href="#contact" class="btn-outline inline-flex items-center gap-3 text-gold-400 uppercase tracking-[0.15em] text-[11px] font-semibold pb-2 border-b border-gold-500/25 hover:border-gold-500 hover:text-white transition-all duration-500 min-h-[44px]">
+                                Visit Our Showroom <span class="material-symbols-outlined text-base">arrow_right_alt</span>
                             </a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- Infinite Scrolling Banner Hook -->
-        <div class="w-full bg-onyx-900 py-6 border-b border-onyx-800 overflow-hidden relative flex items-center">
-            <div class="whitespace-nowrap flex animate-[scroll_40s_linear_infinite] opacity-50">
-                <!-- Repeat to create infinite illusion, spaces are important -->
-                <span class="text-3xl lg:text-5xl font-serif text-transparent stroke-text uppercase tracking-widest px-8">Home Decor Virudhachalam</span>
-                <span class="text-gold-500 text-2xl mx-4">✦</span>
-                <span class="text-3xl lg:text-5xl font-serif text-transparent stroke-text uppercase tracking-widest px-8">Artificial Plants</span>
-                <span class="text-gold-500 text-2xl mx-4">✦</span>
-                <span class="text-3xl lg:text-5xl font-serif text-transparent stroke-text uppercase tracking-widest px-8">Furniture Shop</span>
-                <span class="text-gold-500 text-2xl mx-4">✦</span>
-                <span class="text-3xl lg:text-5xl font-serif text-transparent stroke-text uppercase tracking-widest px-8">Water Fountains</span>
-                <span class="text-gold-500 text-2xl mx-4">✦</span>
-                <span class="text-3xl lg:text-5xl font-serif text-transparent stroke-text uppercase tracking-widest px-8">Wall Clocks</span>
-                <span class="text-gold-500 text-2xl mx-4">✦</span>
-                <span class="text-3xl lg:text-5xl font-serif text-transparent stroke-text uppercase tracking-widest px-8">Premium Decor</span>
-                <span class="text-gold-500 text-2xl mx-4">✦</span>
+        <!-- Scrolling Marquee -->
+        <div class="w-full bg-onyx-900 py-5 sm:py-6 overflow-hidden relative flex items-center border-y border-onyx-700/30">
+            <div class="whitespace-nowrap flex opacity-30" style="animation: marquee 50s linear infinite;">
+                <span class="text-xl sm:text-3xl lg:text-5xl font-display text-transparent stroke-text uppercase tracking-widest px-4 sm:px-8">Home Decor Virudhachalam</span>
+                <span class="text-gold-500/50 text-lg sm:text-xl mx-2 sm:mx-4">✦</span>
+                <span class="text-xl sm:text-3xl lg:text-5xl font-display text-transparent stroke-text uppercase tracking-widest px-4 sm:px-8">Artificial Plants</span>
+                <span class="text-gold-500/50 text-lg sm:text-xl mx-2 sm:mx-4">✦</span>
+                <span class="text-xl sm:text-3xl lg:text-5xl font-display text-transparent stroke-text uppercase tracking-widest px-4 sm:px-8">Furniture Shop</span>
+                <span class="text-gold-500/50 text-lg sm:text-xl mx-2 sm:mx-4">✦</span>
+                <span class="text-xl sm:text-3xl lg:text-5xl font-display text-transparent stroke-text uppercase tracking-widest px-4 sm:px-8">Water Fountains</span>
+                <span class="text-gold-500/50 text-lg sm:text-xl mx-2 sm:mx-4">✦</span>
+                <span class="text-xl sm:text-3xl lg:text-5xl font-display text-transparent stroke-text uppercase tracking-widest px-4 sm:px-8">Wall Clocks</span>
+                <span class="text-gold-500/50 text-lg sm:text-xl mx-2 sm:mx-4">✦</span>
+                <span class="text-xl sm:text-3xl lg:text-5xl font-display text-transparent stroke-text uppercase tracking-widest px-4 sm:px-8">Premium Decor</span>
+                <span class="text-gold-500/50 text-lg sm:text-xl mx-2 sm:mx-4">✦</span>
+                <!-- Duplicate for seamless loop -->
+                <span class="text-xl sm:text-3xl lg:text-5xl font-display text-transparent stroke-text uppercase tracking-widest px-4 sm:px-8">Home Decor Virudhachalam</span>
+                <span class="text-gold-500/50 text-lg sm:text-xl mx-2 sm:mx-4">✦</span>
+                <span class="text-xl sm:text-3xl lg:text-5xl font-display text-transparent stroke-text uppercase tracking-widest px-4 sm:px-8">Artificial Plants</span>
+                <span class="text-gold-500/50 text-lg sm:text-xl mx-2 sm:mx-4">✦</span>
+                <span class="text-xl sm:text-3xl lg:text-5xl font-display text-transparent stroke-text uppercase tracking-widest px-4 sm:px-8">Furniture Shop</span>
+                <span class="text-gold-500/50 text-lg sm:text-xl mx-2 sm:mx-4">✦</span>
             </div>
-            <!-- Custom CSS embedded here for the stroke text effect -->
-            <style>
-                .stroke-text { 
-                    -webkit-text-stroke: 1px #D5CEC4; 
-                    -webkit-text-fill-color: transparent; 
-                }
-                @keyframes scroll {
-                    0% { transform: translateX(0); }
-                    100% { transform: translateX(-50%); } /* Translate half width because we duplicated content */
-                }
-            </style>
         </div>
 
-        <!-- Premium Footer Hook / Contact -->
-        <section id="contact" class="relative py-32 px-6 md:px-12 bg-onyx-900 overflow-hidden">
-            <!-- Background glow -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <!-- ═══════════════════════════════════════
+             CONTACT SECTION
+             ═══════════════════════════════════════ -->
+        <section id="contact" class="relative py-20 sm:py-28 lg:py-36 px-5 sm:px-6 md:px-12 bg-onyx-900 overflow-hidden">
+            <!-- Ambient glow -->
+            <div class="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gold-500/3 rounded-full blur-[150px] pointer-events-none"></div>
 
             <div class="max-w-[1400px] mx-auto relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <div class="contact-grid grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-20">
                     
+                    <!-- Left: Info -->
                     <div class="reveal">
-                        <h2 class="text-5xl md:text-7xl font-serif text-white mb-6 leading-tight">Let's Make Your<br>Home Beautiful.</h2>
-                        <p class="text-sand-200 font-light text-xl mb-2">Talk to us about what you need — we'll help you find the right decor for your home.</p>
-                        <p class="text-sand-200/50 text-sm tracking-widest uppercase mb-12">Visit our showroom in Virudhachalam</p>
+                        <p class="text-gold-500 text-[10px] tracking-[0.4em] uppercase mb-5 font-sans font-medium">Get In Touch</p>
+                        <h2 class="text-4xl sm:text-5xl lg:text-[3.5rem] font-display font-medium text-white mb-6 leading-[1.08]">Let's Make Your<br>Home Beautiful.</h2>
+                        <p class="text-sand-200/60 font-light text-[15px] sm:text-base mb-2 leading-relaxed">Talk to us about what you need — we'll help you find the right decor.</p>
+                        <p class="text-sand-200/30 text-[10px] tracking-[0.25em] uppercase mb-10 sm:mb-12 font-sans">Visit our showroom in Virudhachalam</p>
                         
-                        <div class="space-y-10">
-                            <div class="flex gap-6 items-start">
-                                <span class="material-symbols-outlined text-gold-500 text-3xl font-light">location_on</span>
+                        <div class="space-y-8">
+                            <div class="flex gap-5 items-start">
+                                <span class="material-symbols-outlined text-gold-500 text-2xl flex-shrink-0 mt-0.5">location_on</span>
                                 <div>
-                                    <h4 class="text-white text-lg tracking-widest uppercase mb-2">Visit Our Showroom</h4>
-                                    <p class="text-sand-200 font-light leading-relaxed">Junction Road, near EB Office,<br>Virudhachalam, Tamil Nadu</p>
-                                    <p class="text-gold-500/60 text-xs tracking-widest uppercase mt-2">Open All Days · 10 AM – 10 PM</p>
+                                    <h4 class="text-white text-sm tracking-[0.15em] uppercase mb-2 font-medium">Showroom</h4>
+                                    <p class="text-sand-200/60 font-light leading-relaxed text-sm">Junction Road, near EB Office,<br>Virudhachalam, Tamil Nadu</p>
                                 </div>
                             </div>
-                            <div class="flex gap-6 items-start">
-                                <span class="material-symbols-outlined text-gold-500 text-3xl font-light">call</span>
+                            <div class="flex gap-5 items-start">
+                                <span class="material-symbols-outlined text-gold-500 text-2xl flex-shrink-0 mt-0.5">call</span>
                                 <div>
-                                    <h4 class="text-white text-lg tracking-widest uppercase mb-2">Call Us</h4>
-                                    <a href="tel:+919789182921" class="text-sand-200 font-light leading-relaxed block hover:text-gold-500 transition-colors">+91 97891 82921</a>
-                                    <a href="tel:+918489499166" class="text-sand-200 font-light leading-relaxed block hover:text-gold-500 transition-colors">+91 84894 99166</a>
+                                    <h4 class="text-white text-sm tracking-[0.15em] uppercase mb-2 font-medium">Call Us</h4>
+                                    <a href="tel:+919789182921" class="text-sand-200/60 font-light block hover:text-gold-400 transition-colors duration-500 text-sm min-h-[40px] flex items-center">+91 97891 82921</a>
+                                    <a href="tel:+918489499166" class="text-sand-200/60 font-light block hover:text-gold-400 transition-colors duration-500 text-sm min-h-[40px] flex items-center">+91 84894 99166</a>
                                 </div>
                             </div>
-                            <div class="flex gap-6 items-start">
-                                <span class="material-symbols-outlined text-gold-500 text-3xl font-light">schedule</span>
+                            <div class="flex gap-5 items-start">
+                                <span class="material-symbols-outlined text-gold-500 text-2xl flex-shrink-0 mt-0.5">schedule</span>
                                 <div>
-                                    <h4 class="text-white text-lg tracking-widest uppercase mb-2">Store Hours</h4>
-                                    <p class="text-sand-200 font-light leading-relaxed">Open All Days<br>10:00 AM – 10:00 PM</p>
+                                    <h4 class="text-white text-sm tracking-[0.15em] uppercase mb-2 font-medium">Store Hours</h4>
+                                    <p class="text-sand-200/60 font-light leading-relaxed text-sm">Open All Days<br>10:00 AM – 10:00 PM</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex flex-col sm:flex-row gap-4 mt-12">
-                            <a href="tel:+919789182921" class="inline-flex items-center justify-center gap-3 bg-gold-500 hover:bg-white text-onyx-900 px-8 py-4 text-sm tracking-widest uppercase transition-all duration-500 font-semibold">
-                                <span class="material-symbols-outlined text-base">call</span> Call Now
+
+                        <div class="flex flex-col sm:flex-row gap-3 mt-10">
+                            <a href="tel:+919789182921" class="btn-primary inline-flex items-center justify-center gap-2.5 bg-gold-500 text-onyx-900 px-7 py-4 text-[11px] tracking-[0.2em] uppercase font-semibold min-h-[50px]">
+                                <span class="material-symbols-outlined text-sm">call</span> Call Now
                             </a>
-                            <a href="#contact" class="inline-flex items-center justify-center gap-3 border border-gold-500/40 text-gold-500 hover:border-gold-500 px-8 py-4 text-sm tracking-widest uppercase transition-all duration-500">
-                                <span class="material-symbols-outlined text-base">storefront</span> Visit Showroom
+                            <a href="https://wa.me/919789182921" target="_blank" class="btn-outline inline-flex items-center justify-center gap-2.5 border border-gold-500/25 text-gold-400 px-7 py-4 text-[11px] tracking-[0.2em] uppercase font-medium min-h-[50px]">
+                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51h-.57c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                WhatsApp
                             </a>
                         </div>
                     </div>
 
-                    <!-- Luxury Form -->
-                    <div class="bg-onyx-800 p-10 md:p-14 border border-onyx-700 reveal" style="box-shadow: 0 0 40px rgba(212,175,55,0.06), inset 0 0 0 1px rgba(212,175,55,0.05);">
-                        <p class="text-gold-500/60 text-xs tracking-widest uppercase text-center mb-2">Free · No Obligation</p>
-                        <h3 class="text-2xl text-white font-serif mb-8 text-center border-b border-onyx-700 pb-6" style="border-bottom-color: rgba(212,175,55,0.15);">Get Personalized Decor Suggestions</h3>
-                        <form class="space-y-8">
-                            <div class="group">
-                                <input type="text" placeholder="Full Name" class="w-full bg-transparent border-b border-onyx-600 py-4 text-white font-light focus:outline-none focus:border-gold-500 transition-colors placeholder-onyx-600 focus:placeholder-transparent">
-                            </div>
-                            <div class="group">
-                                <input type="tel" placeholder="Phone Number" class="w-full bg-transparent border-b border-onyx-600 py-4 text-white font-light focus:outline-none focus:border-gold-500 transition-colors placeholder-onyx-600 focus:placeholder-transparent">
-                            </div>
-                            <div class="group">
-                                <input type="text" placeholder="What are you looking for?" class="w-full bg-transparent border-b border-onyx-600 py-4 text-white font-light focus:outline-none focus:border-gold-500 transition-colors placeholder-onyx-600 focus:placeholder-transparent">
-                            </div>
-                            <a href="tel:+919789182921" class="block w-full bg-gold-500 hover:bg-gold-600 text-onyx-900 py-5 uppercase tracking-[0.2em] font-semibold transition-all duration-300 transform hover:-translate-y-1 mt-4 text-center" style="transition: box-shadow 0.4s, background 0.3s, transform 0.3s;" onmouseover="this.style.boxShadow='0 0 24px rgba(212,175,55,0.4)'" onmouseout="this.style.boxShadow='none'">
+                    <!-- Right: Form -->
+                    <div class="bg-onyx-800/80 p-7 sm:p-10 lg:p-14 border border-onyx-600/40 reveal reveal-delay-2 rounded-sm" style="box-shadow: 0 0 60px rgba(212,175,55,0.03);">
+                        <p class="text-gold-500/50 text-[10px] tracking-[0.3em] uppercase text-center mb-2 font-sans">Free · No Obligation</p>
+                        <h3 class="text-xl sm:text-2xl text-white font-display font-medium mb-7 sm:mb-8 text-center border-b border-onyx-600/50 pb-6" style="border-bottom-color: rgba(212,175,55,0.08);">Get Personalized Suggestions</h3>
+                        <form class="space-y-7">
+                            <input type="text" placeholder="Full Name" class="w-full bg-transparent border-b border-onyx-600/60 py-4 text-white font-light focus:outline-none focus:border-gold-500 transition-colors duration-500 placeholder-onyx-500 text-sm min-h-[48px]">
+                            <input type="tel" placeholder="Phone Number" class="w-full bg-transparent border-b border-onyx-600/60 py-4 text-white font-light focus:outline-none focus:border-gold-500 transition-colors duration-500 placeholder-onyx-500 text-sm min-h-[48px]">
+                            <input type="text" placeholder="What are you looking for?" class="w-full bg-transparent border-b border-onyx-600/60 py-4 text-white font-light focus:outline-none focus:border-gold-500 transition-colors duration-500 placeholder-onyx-500 text-sm min-h-[48px]">
+                            <a href="tel:+919789182921" class="btn-primary block w-full bg-gold-500 text-onyx-900 py-4 uppercase tracking-[0.2em] font-semibold text-center text-[11px] min-h-[50px] flex items-center justify-center mt-2">
                                 Get a Call Back
                             </a>
                         </form>
                     </div>
-
                 </div>
             </div>
         </section>
-
     </main>
 
-    <footer class="bg-[#050505] py-10 px-6 md:px-12 border-t border-onyx-800">
+    <!-- ═══════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════ -->
+    <footer class="bg-[#060606] py-8 sm:py-10 px-5 sm:px-6 md:px-12 border-t border-onyx-700/30">
         <div class="max-w-[1400px] mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
-                <div class="text-xl font-bold tracking-widest text-white font-serif uppercase">
-                    KGS<span class="text-gold-500">.</span>
-                </div>
-                <p class="text-onyx-600 text-xs tracking-wider uppercase">Junction Road, near EB Office, Virudhachalam, Tamil Nadu · Open All Days 10 AM – 10 PM</p>
-                <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-                    <a href="tel:+919789182921" class="text-onyx-600 hover:text-gold-500 transition-colors text-sm tracking-wider">+91 97891 82921</a>
-                    <span class="hidden sm:block text-onyx-700">·</span>
-                    <a href="https://www.instagram.com/kgshomedecors_virudhachalam" target="_blank" class="text-onyx-600 hover:text-gold-500 transition-colors text-sm tracking-wider">Instagram</a>
-                    <span class="hidden sm:block text-onyx-700">·</span>
-                    <a href="#" class="text-onyx-600 hover:text-gold-500 transition-colors text-sm">Facebook</a>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-5 mb-6">
+                <div class="text-lg font-bold tracking-[0.25em] text-white font-serif uppercase">KGS<span class="text-gold-500">.</span></div>
+                <p class="text-onyx-500 text-[10px] tracking-[0.15em] uppercase text-center">Junction Road, near EB Office, Virudhachalam, Tamil Nadu</p>
+                <div class="flex items-center gap-5">
+                    <a href="tel:+919789182921" class="text-onyx-500 hover:text-gold-400 transition-colors duration-500 text-xs tracking-wider min-h-[44px] flex items-center">+91 97891 82921</a>
+                    <span class="text-onyx-600/30">·</span>
+                    <a href="https://www.instagram.com/kgshomedecors_virudhachalam" target="_blank" class="text-onyx-500 hover:text-gold-400 transition-colors duration-500 text-xs tracking-wider min-h-[44px] flex items-center">Instagram</a>
                 </div>
             </div>
-            <p class="text-center text-onyx-600/50 text-xs tracking-wider italic mb-6">"Visit once — you'll definitely find something you love."</p>
-            <div class="border-t border-onyx-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-onyx-600 text-xs tracking-wider uppercase">© 2024 KGS Home Decors. All Rights Reserved.</p>
-                <p class="text-onyx-600/50 text-xs tracking-wider">Follow us on Instagram for latest collections · <a href="https://www.instagram.com/kgshomedecors_virudhachalam" target="_blank" class="hover:text-gold-500 transition-colors">@kgshomedecors_virudhachalam</a></p>
+            <div class="border-t border-onyx-700/20 pt-5 flex flex-col sm:flex-row justify-between items-center gap-3">
+                <p class="text-onyx-600/40 text-[10px] tracking-[0.1em] uppercase">© 2024 KGS Home Decors</p>
+                <p class="text-onyx-600/30 text-[10px] tracking-wider">
+                    <a href="https://www.instagram.com/kgshomedecors_virudhachalam" target="_blank" class="hover:text-gold-500 transition-colors duration-500">@kgshomedecors_virudhachalam</a>
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- Intersection Observer for Scroll Reveals -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const reveals = document.querySelectorAll(".reveal");
-
-            const revealOnScroll = () => {
-                for (let i = 0; i < reveals.length; i++) {
-                    const windowHeight = window.innerHeight;
-                    const elementTop = reveals[i].getBoundingClientRect().top;
-                    const elementVisible = 100;
-
-                    if (elementTop < windowHeight - elementVisible) {
-                        reveals[i].classList.add("active");
-                    }
-                }
-            }
-
-            window.addEventListener("scroll", revealOnScroll);
-            revealOnScroll(); // Trigger once on load
-        });
-    </script>
-    <!-- Floating Ultra-Premium Communication Dock -->
-    <div class="fixed bottom-6 right-6 md:bottom-8 md:right-10 z-50 flex flex-col items-end pointer-events-none">
-        
-        <!-- Wishlist Context Menu -->
-        <div id="wishlistBanner" class="hidden pointer-events-auto bg-[#121212]/95 backdrop-blur-2xl border border-gold-500/20 rounded-2xl shadow-[0_30px_60px_rgba(0,0,0,0.8)] p-5 mb-4 w-[calc(100vw-3rem)] max-w-[320px] transform translate-y-6 opacity-0 transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] origin-bottom-right">
-            <div class="flex justify-between items-center mb-4">
-                <span class="text-sand-100 font-serif text-base tracking-wide">Your Selected Items</span>
-                <span id="wishCount" class="bg-gold-500/10 text-gold-500 border border-gold-500/20 text-[10px] px-2.5 py-1 rounded-full font-semibold tracking-widest uppercase">0</span>
-            </div>
-            <p class="text-onyx-600/80 text-xs font-light mb-5 leading-relaxed">Send these straight to our WhatsApp and we'll reply with pricing and availability.</p>
-            <button id="sendWishlistBtn" class="w-full bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-500 hover:to-gold-400 text-onyx-900 py-3 rounded-lg text-xs uppercase tracking-[0.2em] font-bold transition-all flex justify-center items-center gap-2 shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] hover:scale-[1.02]">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51h-.57c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> 
-                Send Request
-            </button>
-        </div>
-
-        <!-- Glassmorphic Dock -->
-        <div class="pointer-events-auto flex items-center justify-center p-1 bg-onyx-900/90 backdrop-blur-3xl border border-onyx-600/50 rounded-full shadow-[0_20px_40px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.05)] transition-all">
-            
-            <a href="tel:+919789182921" class="flex flex-col items-center justify-center w-12 h-12 rounded-full text-sand-200 hover:text-gold-500 hover:bg-onyx-800 transition-colors group">
-                <span class="material-symbols-outlined text-[20px] transition-transform group-hover:-translate-y-0.5">call</span>
-            </a>
-            
-            <div class="w-[1px] h-5 bg-onyx-700/80 mx-1"></div>
-            
-            <a href="https://wa.me/919789182921" target="_blank" class="flex flex-col items-center justify-center w-12 h-12 rounded-full text-sand-200 hover:text-gold-500 hover:bg-onyx-800 transition-colors group">
-                <svg class="w-5 h-5 fill-current transition-transform group-hover:-translate-y-0.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51h-.57c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </a>
-
-            <!-- dynamic wishlist wrapper inside dock -->
-            <div id="dockWishlistWrap" class="hidden flex items-center transition-all duration-300 ease-out origin-left">
-                <div class="w-[1px] h-5 bg-onyx-700/80 mx-1"></div>
-                <button id="toggleWishlistBtn" class="relative flex flex-col items-center justify-center w-12 h-12 rounded-full text-gold-500 hover:bg-gold-500/10 transition-colors group">
-                    <span class="material-symbols-outlined text-[20px] transition-transform group-hover:-translate-y-0.5" style="font-variation-settings: 'FILL' 1;">favorite</span>
-                    <span id="wishBadge" class="absolute top-2 right-2 bg-gold-500 text-onyx-900 font-bold text-[9px] w-3.5 h-3.5 flex items-center justify-center rounded-full border border-onyx-900 shadow-sm tracking-tighter">0</span>
+    <!-- ═══════════════════════════════════════
+         WISHLIST MODAL
+         ═══════════════════════════════════════ -->
+    <div class="wishlist-modal-overlay" id="wishlistModal">
+        <div class="wishlist-modal">
+            <div class="flex justify-between items-center p-6 pb-4 border-b" style="border-color: rgba(212,175,55,0.08);">
+                <div>
+                    <h3 class="text-lg font-display font-medium text-white">Your Selected Items</h3>
+                    <p class="text-sand-200/30 text-[10px] tracking-[0.1em] uppercase mt-1 font-sans">Send via WhatsApp</p>
+                </div>
+                <button id="closeWishlistModal" class="text-sand-200/40 hover:text-white transition-colors duration-500 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full hover:bg-onyx-700/40">
+                    <span class="material-symbols-outlined text-lg">close</span>
                 </button>
             </div>
-
+            <div id="wishlistItems" class="p-5 space-y-2.5 max-h-[220px] overflow-y-auto">
+                <p class="text-sand-200/30 text-sm text-center py-6 font-light" id="emptyWishMsg">No items selected yet.<br><span class="text-[10px] tracking-wider uppercase mt-1 block">Tap ♡ on any product</span></p>
+            </div>
+            <div class="px-5 pb-2">
+                <div class="border-t pt-5 space-y-3" style="border-color: rgba(212,175,55,0.06);">
+                    <input type="text" id="wishUserName" placeholder="Your Name" class="w-full bg-transparent border-b border-onyx-600/50 py-3 text-white text-sm font-light focus:outline-none focus:border-gold-500 transition-colors duration-500 placeholder-onyx-500 min-h-[44px]">
+                    <input type="tel" id="wishUserPhone" placeholder="Phone Number" class="w-full bg-transparent border-b border-onyx-600/50 py-3 text-white text-sm font-light focus:outline-none focus:border-gold-500 transition-colors duration-500 placeholder-onyx-500 min-h-[44px]">
+                </div>
+            </div>
+            <div class="p-5 pt-4">
+                <button id="sendWishlistWhatsApp" class="btn-primary w-full bg-gold-500 text-onyx-900 py-4 rounded-lg text-[10px] uppercase tracking-[0.2em] font-bold flex justify-center items-center gap-2 min-h-[50px]">
+                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51h-.57c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Send Request via WhatsApp
+                </button>
+            </div>
         </div>
     </div>
 
-    <!-- Wishlist Logic App -->
+    <!-- ═══════════════════════════════════════
+         FLOATING ACTION BUTTONS
+         ═══════════════════════════════════════ -->
+    <div class="fixed bottom-6 right-4 sm:bottom-8 sm:right-6 md:right-10 z-50 flex flex-col items-center gap-3" id="fabContainer">
+        <button class="fab-btn hidden" id="fabWishlist" aria-label="Open Wishlist">
+            <span class="material-symbols-outlined text-gold-500 text-[20px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+            <span class="wish-badge hidden" id="fabWishBadge">0</span>
+        </button>
+        <a href="https://wa.me/919789182921" target="_blank" class="fab-btn" aria-label="WhatsApp">
+            <svg class="w-[18px] h-[18px] fill-current text-sand-200" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51h-.57c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="tel:+919789182921" class="fab-btn" aria-label="Call Us">
+            <span class="material-symbols-outlined text-sand-200 text-[20px]">call</span>
+        </a>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         SCRIPTS
+         ═══════════════════════════════════════ -->
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const wishlist = JSON.parse(localStorage.getItem("kgs_wishlist") || "[]");
-            const dockWishlistWrap = document.getElementById("dockWishlistWrap");
-            const toggleWishlistBtn = document.getElementById("toggleWishlistBtn");
-            const wishlistBanner = document.getElementById("wishlistBanner");
-            const wishBadge = document.getElementById("wishBadge");
-            const sendWishlistBtn = document.getElementById("sendWishlistBtn");
-            const wishCount = document.getElementById("wishCount");
+    document.addEventListener("DOMContentLoaded", function() {
 
-            // Init buttons on load
-            document.querySelectorAll(".wishlist-btn").forEach(btn => {
-                const group = btn.closest(".group");
-                const titleNode = group ? group.querySelector("h3") : null;
-                const productName = titleNode ? titleNode.innerText.trim() : "";
-                
-                if (wishlist.includes(productName)) {
-                    btn.classList.add("wish-active");
+        // ── Nav scroll-aware styling ──
+        const navbar = document.getElementById("navbar");
+        let lastScroll = 0;
+        window.addEventListener("scroll", () => {
+            const y = window.scrollY;
+            if (y > 60) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+            lastScroll = y;
+        }, { passive: true });
+
+        // ── Mobile Menu ──
+        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+        let menuOpen = false;
+        mobileMenuBtn.addEventListener("click", () => {
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+            } else {
+                mobileMenu.style.maxHeight = "0px";
+            }
+        });
+        window.closeMobileMenu = function() {
+            menuOpen = false;
+            mobileMenu.style.maxHeight = "0px";
+        };
+
+        // ── Scroll Reveal (IntersectionObserver) ──
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                    revealObserver.unobserve(entry.target);
                 }
+            });
+        }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
 
-                btn.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
-                    const idx = wishlist.indexOf(productName);
-                    if (idx === -1) {
-                        wishlist.push(productName);
-                        btn.classList.add("wish-active");
-                    } else {
-                        wishlist.splice(idx, 1);
-                        btn.classList.remove("wish-active");
-                    }
+        // ── WISHLIST SYSTEM ──
+        const wishlist = JSON.parse(localStorage.getItem("kgs_wishlist") || "[]");
+        const fabWishlist = document.getElementById("fabWishlist");
+        const fabWishBadge = document.getElementById("fabWishBadge");
+        const wishlistModal = document.getElementById("wishlistModal");
+        const closeWishlistModal = document.getElementById("closeWishlistModal");
+        const wishlistItems = document.getElementById("wishlistItems");
+        const emptyWishMsg = document.getElementById("emptyWishMsg");
+        const sendWishlistWhatsApp = document.getElementById("sendWishlistWhatsApp");
+        const wishUserName = document.getElementById("wishUserName");
+        const wishUserPhone = document.getElementById("wishUserPhone");
+
+        const productImages = {
+            'Sofa Sets': 'assets/sofa_indian_1775734816101.png',
+            'Office Chairs & Tables': 'assets/office_chair_indian_1775734837287.png',
+            'Wall Clocks': 'assets/wall_clock_indian_1775734853010.png',
+            'Photo Frames': 'assets/photo_frame_indian_1775734866964.png',
+            'Decorative Statues': 'assets/statue_indian_1775734881322.png',
+            'Water Fountains': 'assets/fountain_indian_1775734897565.png',
+            'Artificial Plants': 'assets/plant_indian_1775734912222.png',
+            'LED Chandeliers': 'assets/chandelier_img_1775732840371.png',
+        };
+
+        document.querySelectorAll(".wishlist-btn").forEach(btn => {
+            const productName = btn.getAttribute("data-product") || "";
+            if (wishlist.includes(productName)) btn.classList.add("wish-active");
+
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const idx = wishlist.indexOf(productName);
+                if (idx === -1) {
+                    wishlist.push(productName);
+                    btn.classList.add("wish-active");
+                } else {
+                    wishlist.splice(idx, 1);
+                    btn.classList.remove("wish-active");
+                }
+                localStorage.setItem("kgs_wishlist", JSON.stringify(wishlist));
+                updateWishlistUI();
+            });
+        });
+
+        function updateWishlistUI() {
+            const count = wishlist.length;
+            if (count > 0) {
+                fabWishlist.classList.remove("hidden");
+                fabWishBadge.classList.remove("hidden");
+                fabWishBadge.innerText = count;
+                fabWishBadge.style.transform = "scale(1.3)";
+                setTimeout(() => fabWishBadge.style.transform = "scale(1)", 250);
+            } else {
+                fabWishlist.classList.add("hidden");
+                fabWishBadge.classList.add("hidden");
+            }
+            renderWishlistItems();
+        }
+
+        function renderWishlistItems() {
+            wishlistItems.querySelectorAll(".wish-item").forEach(el => el.remove());
+            if (wishlist.length === 0) { emptyWishMsg.classList.remove("hidden"); return; }
+            emptyWishMsg.classList.add("hidden");
+
+            wishlist.forEach(name => {
+                const item = document.createElement("div");
+                item.className = "wish-item flex items-center gap-3 bg-onyx-700/20 border border-onyx-600/30 rounded-lg p-3";
+                const imgSrc = productImages[name] || "";
+                item.innerHTML = `
+                    ${imgSrc ? `<img src="${imgSrc}" class="w-9 h-9 rounded object-cover flex-shrink-0 opacity-70" alt="${name}">` : ''}
+                    <span class="text-sand-100/80 text-sm font-light flex-1">${name}</span>
+                    <button class="wish-remove text-sand-200/20 hover:text-red-400 transition-colors duration-400 min-h-[36px] min-w-[36px] flex items-center justify-center rounded-full hover:bg-onyx-700/40" data-name="${name}">
+                        <span class="material-symbols-outlined text-sm">close</span>
+                    </button>
+                `;
+                wishlistItems.appendChild(item);
+            });
+
+            wishlistItems.querySelectorAll(".wish-remove").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const name = btn.getAttribute("data-name");
+                    const idx = wishlist.indexOf(name);
+                    if (idx !== -1) wishlist.splice(idx, 1);
                     localStorage.setItem("kgs_wishlist", JSON.stringify(wishlist));
+                    document.querySelectorAll('.wishlist-btn').forEach(hb => {
+                        if (hb.getAttribute("data-product") === name) hb.classList.remove("wish-active");
+                    });
                     updateWishlistUI();
                 });
             });
+        }
 
-            function updateWishlistUI() {
-                const count = wishlist.length;
-                wishBadge.innerText = count;
-                wishCount.innerText = count;
-                
-                if (count > 0) {
-                    dockWishlistWrap.classList.remove("hidden");
-                } else {
-                    dockWishlistWrap.classList.add("hidden");
-                    wishlistBanner.classList.add("hidden");
-                    wishlistBanner.classList.replace("translate-y-0", "translate-y-6");
-                    wishlistBanner.classList.replace("opacity-100", "opacity-0");
-                }
-            }
-
-            // Toggle Banner
-            toggleWishlistBtn.addEventListener("click", () => {
-                if (wishlistBanner.classList.contains("hidden")) {
-                    wishlistBanner.classList.remove("hidden");
-                    setTimeout(() => {
-                        wishlistBanner.classList.replace("translate-y-4", "translate-y-0");
-                        wishlistBanner.classList.replace("opacity-0", "opacity-100");
-                    }, 10);
-                } else {
-                    wishlistBanner.classList.replace("translate-y-0", "translate-y-4");
-                    wishlistBanner.classList.replace("opacity-100", "opacity-0");
-                    setTimeout(() => wishlistBanner.classList.add("hidden"), 500);
-                }
-            });
-
-            // Send via WhatsApp
-            sendWishlistBtn.addEventListener("click", () => {
-                let msg = "Hi KGS Home Decors! I am interested in these products:\n\n";
-                wishlist.forEach((item, i) => msg += (i+1) + ". " + item + "\n");
-                msg += "\nPlease let me know their availability and best price. Thanks!";
-                
-                const waUrl = "https://wa.me/919789182921?text=" + encodeURIComponent(msg);
-                window.open(waUrl, "_blank");
-            });
-
-            // Initial UI update
-            updateWishlistUI();
+        fabWishlist.addEventListener("click", () => {
+            renderWishlistItems();
+            wishlistModal.classList.add("open");
+            document.body.style.overflow = "hidden";
         });
+
+        function closeModal() {
+            wishlistModal.classList.remove("open");
+            document.body.style.overflow = "";
+        }
+        closeWishlistModal.addEventListener("click", closeModal);
+        wishlistModal.addEventListener("click", (e) => { if (e.target === wishlistModal) closeModal(); });
+
+        sendWishlistWhatsApp.addEventListener("click", () => {
+            if (wishlist.length === 0) return;
+            const userName = wishUserName.value.trim();
+            const userPhone = wishUserPhone.value.trim();
+            let msg = "Hi, I am interested in these items:\n\n";
+            wishlist.forEach((item, i) => msg += (i + 1) + ". " + item + "\n");
+            if (userName) msg += "\nName: " + userName;
+            if (userPhone) msg += "\nPhone: " + userPhone;
+            msg += "\n\nPlease let me know availability and pricing. Thank you!";
+            window.open("https://wa.me/919789182921?text=" + encodeURIComponent(msg), "_blank");
+        });
+
+        updateWishlistUI();
+    });
     </script>
 </body>
 </html>

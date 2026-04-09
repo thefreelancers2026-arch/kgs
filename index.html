@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KGS Home Decors | Home Decor Shop in Virudhachalam</title>
+    <meta name="description" content="Buy artificial plants, fountains, furniture and home decor items in Virudhachalam. Visit KGS Home Decors showroom. Best home decor shop in Virudhachalam, Tamil Nadu.">
+    <meta name="keywords" content="home decor Virudhachalam, furniture shop Virudhachalam, artificial plants shop, water fountain, wall clocks, home decor Tamil Nadu, KGS home decors">
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        onyx: {
+                            900: '#0A0A0A', // Deepest background
+                            800: '#121212', // Surface
+                            700: '#1C1C1C', // Surface high
+                            600: '#2A2A2A', // Borders/dividers
+                        },
+                        gold: {
+                            300: '#F2DCA5', // Light glow
+                            500: '#D4AF37', // Brand Gold
+                            600: '#B5952F', // Hover state
+                            700: '#8C7324', // Deep gold
+                        },
+                        sand: {
+                            50: '#F9F8F6', // Off white text
+                            100: '#EAE6DF',
+                            200: '#D5CEC4', // Muted text
+                        }
+                    },
+                    fontFamily: {
+                        'serif': ['"Playfair Display"', 'serif'],
+                        'sans': ['"Montserrat"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(135deg, #D4AF37 0%, #B5952F 100%)',
+                        'dark-gradient': 'linear-gradient(to bottom, transparent, #0A0A0A)',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                        'slow-pan': 'slowPan 20s linear infinite alternate',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slowPan: {
+                            '0%': { transform: 'scale(1.05) translate(0, 0)' },
+                            '100%': { transform: 'scale(1.1) translate(-2%, -2%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Utilities */
+        body { background-color: #0A0A0A; color: #F9F8F6; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24; }
+        
+        /* Smooth Scrollbar for dark theme */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #2A2A2A; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+
+        /* Typography Hooks */
+        .hook-title {
+            background: linear-gradient(to right, #ffffff, #D5CEC4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-glow { text-shadow: 0 0 40px rgba(212, 175, 55, 0.4); }
+
+        /* Gold Line Glow — premium highlight effect */
+        .gold-line {
+            height: 2px;
+            width: 4rem;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+            box-shadow: 0 0 6px rgba(212, 175, 55, 0.3), 0 0 1px rgba(212, 175, 55, 0.6);
+            border-radius: 1px;
+        }
+        
+        /* Parallax & Reveal classes */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Image hover FX */
+        .image-zoom-container { overflow: hidden; }
+        .image-zoom-container img { transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+        .image-zoom-container:hover img { transform: scale(1.08); }
+        
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* CTA hover lift */
+        a[href^='tel'], a[href^='#contact'] { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        a[href^='tel']:hover, a[href^='#contact']:hover { transform: scale(1.03); box-shadow: 0 0 18px rgba(212, 175, 55, 0.25); }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-gold-500 selection:text-onyx-900 leading-[1.75]">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300 pointer-events-auto" id="navbar">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 py-5 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-widest text-white font-serif uppercase">
+                KGS<span class="text-gold-500">.</span>
+            </div>
+            <div class="hidden md:flex gap-12 items-center">
+                <a class="text-sm tracking-[0.2em] uppercase text-gold-500 border-b border-gold-500 pb-1" href="#collections">Collections</a>
+                <a class="text-sm tracking-[0.2em] uppercase text-sand-200 hover:text-white transition-colors" href="#showroom">Showroom</a>
+                <a class="text-sm tracking-[0.2em] uppercase text-sand-200 hover:text-white transition-colors" href="#contact">Contact</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <!-- Shopping Bag icon replaced with contact CTA for true luxury feel -->
+                <a href="tel:+919789182921" class="hidden md:block border border-gold-500/50 text-gold-500 hover:bg-gold-500 hover:text-onyx-900 px-6 py-2 text-xs tracking-widest uppercase transition-all duration-500">
+                    Call Now
+                </a>
+                <button class="md:hidden text-white hover:text-gold-500 transition-colors">
+                    <span class="material-symbols-outlined text-3xl">menu_open</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Dynamic Hero Section -->
+        <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+            <!-- Background Image -->
+            <div class="absolute inset-0 w-full h-full">
+                <!-- High-end luxury living room -->
+                <img src="assets/hero_indian_interior.png" 
+                     class="w-full h-full object-cover animate-slow-pan opacity-65" 
+                     alt="Modern Indian living room with premium home decor">
+                <!-- Heavy dark gradient overlay -->
+                <div class="absolute inset-0 bg-gradient-to-b from-onyx-900/60 via-onyx-900/40 to-onyx-900"></div>
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#0A0A0A_100%)]"></div>
+            </div>
+
+            <div class="relative z-10 text-center px-6 max-w-5xl mt-20">
+                <p class="text-gold-500 text-sm tracking-[0.4em] uppercase mb-6 animate-fade-in-up" style="animation-delay: 0.2s;">Home Decor Shop in Virudhachalam</p>
+                <h1 class="text-5xl md:text-7xl lg:text-[6rem] font-serif font-medium leading-[1.1] text-white mb-8 animate-fade-in-up hook-title" style="animation-delay: 0.4s;">
+                    Make Your Home Look Beautiful
+                    <span class="italic font-light text-sand-100">with Premium Decor.</span>
+                </h1>
+                <p class="text-sand-200 text-lg md:text-xl font-light max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-in-up" style="animation-delay: 0.6s;">
+                    Furniture, Plants, Fountains &amp; Stylish Decor — at our showroom in Virudhachalam. Open all days, 10 AM – 10 PM.
+                </p>
+                <div class="animate-fade-in-up flex flex-col sm:flex-row items-center justify-center gap-4" style="animation-delay: 0.8s;">
+                    <a href="#collections" class="inline-block bg-gold-500 text-onyx-900 px-10 py-4 text-sm font-semibold tracking-widest uppercase hover:bg-white transition-colors duration-500">
+                        View The Collection
+                    </a>
+                    <a href="tel:+919789182921" class="inline-flex items-center gap-2 border border-gold-500/40 text-gold-500 hover:border-gold-500 px-8 py-4 text-sm tracking-widest uppercase transition-colors duration-500">
+                        <span class="material-symbols-outlined text-base">call</span> Call Now
+                    </a>
+                </div>
+                <p class="text-sand-200/40 text-xs tracking-[0.2em] uppercase mt-6 animate-fade-in-up" style="animation-delay: 1s;">Trusted by customers in Virudhachalam</p>
+            </div>
+
+
+        </section>
+
+        <!-- The Collection Section (Dark Cards) -->
+        <section id="collections" class="py-32 px-6 md:px-12 bg-onyx-900">
+            <div class="max-w-[1400px] mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8 reveal">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-serif text-white mb-2">Our Products</h2>
+                        <p class="text-sand-200/60 font-light text-sm italic mb-4">Handpicked designs that instantly upgrade your home look</p>
+                        <div class="gold-line"></div>
+                    </div>
+                    <p class="text-sand-200 font-light max-w-md text-sm leading-relaxed text-left md:text-right">
+                        Everything you need to make your home look beautiful — furniture, clocks, plants, lighting & more. All available at our Virudhachalam showroom.
+                    </p>
+                </div>
+
+                <!-- Ultra-Smooth Asymmetrical Grid Layout -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
+                    
+                    <!-- Row 1: Furniture & Office (2 Large) -->
+                    <!-- Item 1: Sofa Sets -->
+                    <div class="md:col-span-6 group relative h-[550px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-xl">
+                        <img src="assets/sofa_indian_1775734816101.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="Sofa sets in Indian home">
+                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-onyx-900/20 to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-70"></div>
+                        <div class="absolute top-6 right-6"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">Best Seller</span></div>
+                        <div class="absolute bottom-10 left-10 right-10 flex justify-between items-end">
+                            <div class="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
+                                <h3 class="text-3xl font-serif text-white mb-2">Sofa Sets</h3>
+                                <p class="text-sand-200 text-sm tracking-widest uppercase">Stylish &amp; Comfortable</p>
+                            </div>
+                            <span class="w-12 h-12 rounded-full border border-gold-500/30 flex items-center justify-center text-gold-500 group-hover:bg-gold-500 group-hover:text-onyx-900 transition-all duration-1000 transform translate-x-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 shadow-[0_0_20px_rgba(212,175,55,0.2)]">
+                                <span class="material-symbols-outlined">east</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Office Chairs & Tables -->
+                    <div class="md:col-span-6 group relative h-[550px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-xl" style="transition-delay: 100ms;">
+                        <img src="assets/office_chair_indian_1775734837287.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="Office chairs and desks">
+                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-onyx-900/20 to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-70"></div>
+                        <div class="absolute top-6 right-6"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">Available in Store</span></div>
+                        <div class="absolute bottom-10 left-10 right-10 flex justify-between items-end">
+                            <div class="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
+                                <h3 class="text-3xl font-serif text-white mb-2">Office Chairs &amp; Tables</h3>
+                                <p class="text-sand-200 text-sm tracking-widest uppercase">Modern &amp; Ergonomic</p>
+                            </div>
+                            <span class="w-12 h-12 rounded-full border border-gold-500/30 flex items-center justify-center text-gold-500 group-hover:bg-gold-500 group-hover:text-onyx-900 transition-all duration-1000 transform translate-x-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 shadow-[0_0_20px_rgba(212,175,55,0.2)]">
+                                <span class="material-symbols-outlined">east</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Clocks, Frames, Statues (3 Medium) -->
+                    <!-- Item 3: Wall Clocks -->
+                    <div class="md:col-span-4 group relative h-[450px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-lg" style="transition-delay: 200ms;">
+                        <img src="assets/wall_clock_indian_1775734853010.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="Wall clocks for home">
+                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-60"></div>
+                        <div class="absolute top-5 right-5"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">Best Seller</span></div>
+                        <div class="absolute bottom-8 left-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
+                            <h3 class="text-2xl font-serif text-white mb-1">Wall Clocks</h3>
+                            <p class="text-gold-500 text-xs tracking-wider uppercase">Stylish Home Decor</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Photo Frames -->
+                    <div class="md:col-span-4 group relative h-[450px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-lg" style="transition-delay: 300ms;">
+                        <img src="assets/photo_frame_indian_1775734866964.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="Photo frames for living room">
+                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-60"></div>
+                        <div class="absolute top-5 right-5"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">New Collection</span></div>
+                        <div class="absolute bottom-8 left-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
+                            <h3 class="text-2xl font-serif text-white mb-1">Photo Frames</h3>
+                            <p class="text-gold-500 text-xs tracking-wider uppercase">Modern Wall Decor</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: Decorative Statues -->
+                    <div class="md:col-span-4 group relative h-[450px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-lg" style="transition-delay: 400ms;">
+                        <img src="assets/statue_indian_1775734881322.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="Decorative statues for home">
+                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-60"></div>
+                        <div class="absolute top-5 right-5"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">Available in Store</span></div>
+                        <div class="absolute bottom-8 left-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
+                            <h3 class="text-2xl font-serif text-white mb-1">Decorative Statues</h3>
+                            <p class="text-gold-500 text-xs tracking-wider uppercase">Premium Figurines</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Fountains, Plants, Lighting (3 Medium) -->
+                    <!-- Item 6: Water Fountains -->
+                    <div class="md:col-span-4 group relative h-[450px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-lg" style="transition-delay: 100ms;">
+                        <img src="assets/fountain_indian_1775734897565.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="Indoor water fountain">
+                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-60"></div>
+                        <div class="absolute top-5 right-5"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">Best Seller</span></div>
+                        <div class="absolute bottom-8 left-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
+                            <h3 class="text-2xl font-serif text-white mb-1">Water Fountains</h3>
+                            <p class="text-gold-500 text-xs tracking-wider uppercase">For Home &amp; Office</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 7: Artificial Plants -->
+                    <div class="md:col-span-4 group relative h-[450px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-lg" style="transition-delay: 200ms;">
+                        <img src="assets/plant_indian_1775734912222.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="Artificial plants for home">
+                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-60"></div>
+                        <div class="absolute top-5 right-5"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">New Collection</span></div>
+                        <div class="absolute bottom-8 left-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
+                            <h3 class="text-2xl font-serif text-white mb-1">Artificial Plants</h3>
+                            <p class="text-gold-500 text-xs tracking-wider uppercase">Zero Maintenance</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 8: Lighting -->
+                    <div class="md:col-span-4 group relative h-[450px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-lg" style="transition-delay: 300ms;">
+                        <img src="assets/chandelier_img_1775732840371.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="LED chandeliers for living room">
+                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-60"></div>
+                        <div class="absolute top-5 right-5"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">Available in Store</span></div>
+                        <div class="absolute bottom-8 left-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
+                            <h3 class="text-2xl font-serif text-white mb-1">LED Chandeliers</h3>
+                            <p class="text-gold-500 text-xs tracking-wider uppercase">Modern Lighting</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Affordability Line -->
+            <p class="text-center text-sand-200/40 text-sm tracking-[0.25em] uppercase mt-20 font-light italic">Premium Look at Affordable Prices</p>
+            <p class="text-center text-sand-200/25 text-xs tracking-[0.2em] uppercase mt-3 mb-10 font-light">All products available at our Virudhachalam showroom</p>
+            <div class="text-center">
+                <a href="tel:+919789182921" class="inline-flex items-center justify-center gap-2 bg-gold-500 text-onyx-900 px-6 md:px-10 py-3 md:py-4 text-xs md:text-sm font-semibold tracking-widest uppercase hover:bg-white">
+                    <span class="material-symbols-outlined text-base">call</span> Call Now to Check Availability
+                </a>
+            </div>
+        </section>
+
+        <!-- Editorial Feature Section (Asymmetric) -->
+        <section id="showroom" class="py-32 overflow-hidden bg-onyx-800 border-y border-onyx-700">
+            <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative">
+                <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-0">
+                    
+                    <!-- Large Image Left -->
+                    <div class="w-full lg:w-7/12 z-0 reveal">
+                        <div class="relative aspect-[4/3] image-zoom-container shadow-2xl">
+                            <img src="assets/showroom_indian.png" class="w-full h-full object-cover opacity-80" alt="KGS Home Decors showroom in Virudhachalam">
+                            <div class="absolute inset-0 border border-gold-500/20 m-6" style="box-shadow: inset 0 0 30px rgba(212,175,55,0.06);"></div>
+                        </div>
+                    </div>
+
+                    <!-- Overlapping Text Block Right -->
+                    <div class="w-full lg:w-6/12 lg:-ml-24 z-10 reveal">
+                        <div class="bg-onyx-900 p-12 md:p-16 border border-onyx-700 shadow-2xl relative">
+                            <!-- Decorative Corner -->
+                            <div class="absolute top-0 left-0 w-8 h-[2px] bg-gold-500"></div>
+                            <div class="absolute top-0 left-0 w-[2px] h-8 bg-gold-500"></div>
+
+                            <span class="text-gold-500 text-sm tracking-[0.3em] uppercase mb-4 block">Our Showroom · Virudhachalam</span>
+                            <h2 class="text-4xl md:text-5xl font-serif text-white mb-8 leading-tight">Beautiful Decor for Every Home.</h2>
+                            <p class="text-sand-200 font-light leading-relaxed mb-10 text-lg">
+                                At KGS Home Decors, Virudhachalam, you can explore a wide range of stylish decor items for your home. Come visit our showroom and choose what fits your home perfectly.
+                            </p>
+                            
+                            <ul class="space-y-6 mb-12">
+                                <li class="flex items-center gap-5">
+                                    <span class="material-symbols-outlined text-gold-500 text-2xl" style="font-variation-settings: 'FILL' 1;">storefront</span>
+                                    <span class="text-white font-light tracking-wide">Walk-in Showroom in Virudhachalam</span>
+                                </li>
+                                <li class="flex items-center gap-5">
+                                    <span class="material-symbols-outlined text-gold-500 text-2xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                    <span class="text-white font-light tracking-wide">Premium Quality at Honest Prices</span>
+                                </li>
+                            </ul>
+
+                            <a href="#contact" class="inline-flex items-center gap-3 text-gold-500 hover:text-white transition-colors uppercase tracking-widest text-sm font-semibold pb-2 border-b border-gold-500/30 hover:border-white">
+                                Visit Our Showroom Today <span class="material-symbols-outlined text-lg">arrow_right_alt</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Infinite Scrolling Banner Hook -->
+        <div class="w-full bg-onyx-900 py-6 border-b border-onyx-800 overflow-hidden relative flex items-center">
+            <div class="whitespace-nowrap flex animate-[scroll_40s_linear_infinite] opacity-50">
+                <!-- Repeat to create infinite illusion, spaces are important -->
+                <span class="text-3xl lg:text-5xl font-serif text-transparent stroke-text uppercase tracking-widest px-8">Home Decor Virudhachalam</span>
+                <span class="text-gold-500 text-2xl mx-4">✦</span>
+                <span class="text-3xl lg:text-5xl font-serif text-transparent stroke-text uppercase tracking-widest px-8">Artificial Plants</span>
+                <span class="text-gold-500 text-2xl mx-4">✦</span>
+                <span class="text-3xl lg:text-5xl font-serif text-transparent stroke-text uppercase tracking-widest px-8">Furniture Shop</span>
+                <span class="text-gold-500 text-2xl mx-4">✦</span>
+                <span class="text-3xl lg:text-5xl font-serif text-transparent stroke-text uppercase tracking-widest px-8">Water Fountains</span>
+                <span class="text-gold-500 text-2xl mx-4">✦</span>
+                <span class="text-3xl lg:text-5xl font-serif text-transparent stroke-text uppercase tracking-widest px-8">Wall Clocks</span>
+                <span class="text-gold-500 text-2xl mx-4">✦</span>
+                <span class="text-3xl lg:text-5xl font-serif text-transparent stroke-text uppercase tracking-widest px-8">Premium Decor</span>
+                <span class="text-gold-500 text-2xl mx-4">✦</span>
+            </div>
+            <!-- Custom CSS embedded here for the stroke text effect -->
+            <style>
+                .stroke-text { 
+                    -webkit-text-stroke: 1px #D5CEC4; 
+                    -webkit-text-fill-color: transparent; 
+                }
+                @keyframes scroll {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-50%); } /* Translate half width because we duplicated content */
+                }
+            </style>
+        </div>
+
+        <!-- Premium Footer Hook / Contact -->
+        <section id="contact" class="relative py-32 px-6 md:px-12 bg-onyx-900 overflow-hidden">
+            <!-- Background glow -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+            <div class="max-w-[1400px] mx-auto relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                    
+                    <div class="reveal">
+                        <h2 class="text-5xl md:text-7xl font-serif text-white mb-6 leading-tight">Let's Make Your<br>Home Beautiful.</h2>
+                        <p class="text-sand-200 font-light text-xl mb-2">Talk to us about what you need — we'll help you find the right decor for your home.</p>
+                        <p class="text-sand-200/50 text-sm tracking-widest uppercase mb-12">Visit our showroom in Virudhachalam</p>
+                        
+                        <div class="space-y-10">
+                            <div class="flex gap-6 items-start">
+                                <span class="material-symbols-outlined text-gold-500 text-3xl font-light">location_on</span>
+                                <div>
+                                    <h4 class="text-white text-lg tracking-widest uppercase mb-2">Visit Our Showroom</h4>
+                                    <p class="text-sand-200 font-light leading-relaxed">Junction Road, near EB Office,<br>Virudhachalam, Tamil Nadu</p>
+                                    <p class="text-gold-500/60 text-xs tracking-widest uppercase mt-2">Open All Days · 10 AM – 10 PM</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6 items-start">
+                                <span class="material-symbols-outlined text-gold-500 text-3xl font-light">call</span>
+                                <div>
+                                    <h4 class="text-white text-lg tracking-widest uppercase mb-2">Call Us</h4>
+                                    <a href="tel:+919789182921" class="text-sand-200 font-light leading-relaxed block hover:text-gold-500 transition-colors">+91 97891 82921</a>
+                                    <a href="tel:+918489499166" class="text-sand-200 font-light leading-relaxed block hover:text-gold-500 transition-colors">+91 84894 99166</a>
+                                </div>
+                            </div>
+                            <div class="flex gap-6 items-start">
+                                <span class="material-symbols-outlined text-gold-500 text-3xl font-light">schedule</span>
+                                <div>
+                                    <h4 class="text-white text-lg tracking-widest uppercase mb-2">Store Hours</h4>
+                                    <p class="text-sand-200 font-light leading-relaxed">Open All Days<br>10:00 AM – 10:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-4 mt-12">
+                            <a href="tel:+919789182921" class="inline-flex items-center justify-center gap-3 bg-gold-500 hover:bg-white text-onyx-900 px-8 py-4 text-sm tracking-widest uppercase transition-all duration-500 font-semibold">
+                                <span class="material-symbols-outlined text-base">call</span> Call Now
+                            </a>
+                            <a href="#contact" class="inline-flex items-center justify-center gap-3 border border-gold-500/40 text-gold-500 hover:border-gold-500 px-8 py-4 text-sm tracking-widest uppercase transition-all duration-500">
+                                <span class="material-symbols-outlined text-base">storefront</span> Visit Showroom
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Luxury Form -->
+                    <div class="bg-onyx-800 p-10 md:p-14 border border-onyx-700 reveal" style="box-shadow: 0 0 40px rgba(212,175,55,0.06), inset 0 0 0 1px rgba(212,175,55,0.05);">
+                        <p class="text-gold-500/60 text-xs tracking-widest uppercase text-center mb-2">Free · No Obligation</p>
+                        <h3 class="text-2xl text-white font-serif mb-8 text-center border-b border-onyx-700 pb-6" style="border-bottom-color: rgba(212,175,55,0.15);">Get Personalized Decor Suggestions</h3>
+                        <form class="space-y-8">
+                            <div class="group">
+                                <input type="text" placeholder="Full Name" class="w-full bg-transparent border-b border-onyx-600 py-4 text-white font-light focus:outline-none focus:border-gold-500 transition-colors placeholder-onyx-600 focus:placeholder-transparent">
+                            </div>
+                            <div class="group">
+                                <input type="tel" placeholder="Phone Number" class="w-full bg-transparent border-b border-onyx-600 py-4 text-white font-light focus:outline-none focus:border-gold-500 transition-colors placeholder-onyx-600 focus:placeholder-transparent">
+                            </div>
+                            <div class="group">
+                                <input type="text" placeholder="What are you looking for?" class="w-full bg-transparent border-b border-onyx-600 py-4 text-white font-light focus:outline-none focus:border-gold-500 transition-colors placeholder-onyx-600 focus:placeholder-transparent">
+                            </div>
+                            <a href="tel:+919789182921" class="block w-full bg-gold-500 hover:bg-gold-600 text-onyx-900 py-5 uppercase tracking-[0.2em] font-semibold transition-all duration-300 transform hover:-translate-y-1 mt-4 text-center" style="transition: box-shadow 0.4s, background 0.3s, transform 0.3s;" onmouseover="this.style.boxShadow='0 0 24px rgba(212,175,55,0.4)'" onmouseout="this.style.boxShadow='none'">
+                                Get a Call Back
+                            </a>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#050505] py-10 px-6 md:px-12 border-t border-onyx-800">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
+                <div class="text-xl font-bold tracking-widest text-white font-serif uppercase">
+                    KGS<span class="text-gold-500">.</span>
+                </div>
+                <p class="text-onyx-600 text-xs tracking-wider uppercase">Junction Road, near EB Office, Virudhachalam, Tamil Nadu · Open All Days 10 AM – 10 PM</p>
+                <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+                    <a href="tel:+919789182921" class="text-onyx-600 hover:text-gold-500 transition-colors text-sm tracking-wider">+91 97891 82921</a>
+                    <span class="hidden sm:block text-onyx-700">·</span>
+                    <a href="https://www.instagram.com/kgshomedecors_virudhachalam" target="_blank" class="text-onyx-600 hover:text-gold-500 transition-colors text-sm tracking-wider">Instagram</a>
+                    <span class="hidden sm:block text-onyx-700">·</span>
+                    <a href="#" class="text-onyx-600 hover:text-gold-500 transition-colors text-sm">Facebook</a>
+                </div>
+            </div>
+            <p class="text-center text-onyx-600/50 text-xs tracking-wider italic mb-6">"Visit once — you'll definitely find something you love."</p>
+            <div class="border-t border-onyx-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-onyx-600 text-xs tracking-wider uppercase">© 2024 KGS Home Decors. All Rights Reserved.</p>
+                <p class="text-onyx-600/50 text-xs tracking-wider">Follow us on Instagram for latest collections · <a href="https://www.instagram.com/kgshomedecors_virudhachalam" target="_blank" class="hover:text-gold-500 transition-colors">@kgshomedecors_virudhachalam</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Intersection Observer for Scroll Reveals -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const reveals = document.querySelectorAll(".reveal");
+
+            const revealOnScroll = () => {
+                for (let i = 0; i < reveals.length; i++) {
+                    const windowHeight = window.innerHeight;
+                    const elementTop = reveals[i].getBoundingClientRect().top;
+                    const elementVisible = 100;
+
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveals[i].classList.add("active");
+                    }
+                }
+            }
+
+            window.addEventListener("scroll", revealOnScroll);
+            revealOnScroll(); // Trigger once on load
+        });
+    </script>
+</body>
+</html>

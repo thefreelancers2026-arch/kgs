@@ -97,9 +97,12 @@
         .reveal.active { opacity: 1; transform: translateY(0); }
         
         /* Image hover FX */
-        .image-zoom-container { overflow: hidden; }
-        .image-zoom-container img { transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
-        .image-zoom-container:hover img { transform: scale(1.08); }
+        .image-zoom-container img { transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1); }
+        .image-zoom-container:hover img { transform: scale(1.03); }
+
+        /* Wishlist Active State */
+        .wish-active { background-color: rgba(212,175,55,0.15) !important; border-color: rgba(212,175,55,0.5) !important; }
+        .wish-active .material-symbols-outlined { font-variation-settings: 'FILL' 1, 'wght' 200, 'GRAD' 0, 'opsz' 24; color: #D4AF37; transform: scale(1.1); }
         
         .glass-nav {
             background: rgba(10, 10, 10, 0.6);
@@ -128,10 +131,7 @@
             </div>
             <div class="flex items-center gap-6">
                 <!-- Shopping Bag icon replaced with contact CTA for true luxury feel -->
-                <a href="tel:+919789182921" class="hidden md:block border border-gold-500/50 text-gold-500 hover:bg-gold-500 hover:text-onyx-900 px-6 py-2 text-xs tracking-widest uppercase transition-all duration-500">
-                    Call Now
-                </a>
-                <button class="md:hidden text-white hover:text-gold-500 transition-colors">
+                <button class="md:hidden text-white hover:text-gold-500 transition-colors p-2 min-h-[44px] min-w-[44px] flex items-center justify-center">
                     <span class="material-symbols-outlined text-3xl">menu_open</span>
                 </button>
             </div>
@@ -140,7 +140,7 @@
 
     <main>
         <!-- Dynamic Hero Section -->
-        <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <section class="relative min-h-[100dvh] pb-16 w-full flex items-center justify-center overflow-hidden">
             <!-- Background Image -->
             <div class="absolute inset-0 w-full h-full">
                 <!-- High-end luxury living room -->
@@ -161,11 +161,11 @@
                 <p class="text-sand-200 text-lg md:text-xl font-light max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-in-up" style="animation-delay: 0.6s;">
                     Furniture, Plants, Fountains &amp; Stylish Decor — at our showroom in Virudhachalam. Open all days, 10 AM – 10 PM.
                 </p>
-                <div class="animate-fade-in-up flex flex-col sm:flex-row items-center justify-center gap-4" style="animation-delay: 0.8s;">
-                    <a href="#collections" class="inline-block bg-gold-500 text-onyx-900 px-10 py-4 text-sm font-semibold tracking-widest uppercase hover:bg-white transition-colors duration-500">
+                <div class="animate-fade-in-up w-full flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 px-2" style="animation-delay: 0.8s;">
+                    <a href="#collections" class="inline-flex items-center justify-center bg-gold-500 text-onyx-900 px-6 py-4 lg:px-10 text-xs tracking-widest uppercase hover:bg-white transition-colors duration-500 w-full sm:w-auto min-h-[44px] font-semibold">
                         View The Collection
                     </a>
-                    <a href="tel:+919789182921" class="inline-flex items-center gap-2 border border-gold-500/40 text-gold-500 hover:border-gold-500 px-8 py-4 text-sm tracking-widest uppercase transition-colors duration-500">
+                    <a href="tel:+919789182921" class="inline-flex items-center justify-center gap-2 border border-gold-500/40 text-gold-500 hover:border-gold-500 px-6 py-4 lg:px-8 text-xs tracking-widest uppercase transition-colors duration-500 w-full sm:w-auto min-h-[44px]">
                         <span class="material-symbols-outlined text-base">call</span> Call Now
                     </a>
                 </div>
@@ -197,6 +197,9 @@
                     <div class="md:col-span-6 group relative h-[550px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-xl">
                         <img src="assets/sofa_indian_1775734816101.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="Sofa sets in Indian home">
                         <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-onyx-900/20 to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-70"></div>
+                        <button class="wishlist-btn absolute top-5 xl:top-6 left-5 xl:left-6 z-20 w-10 h-10 rounded-full bg-onyx-900/60 backdrop-blur-sm border border-gold-500/20 flex items-center justify-center transition-all duration-300 pointer-events-auto" aria-label="Add to Wishlist">
+                            <span class="material-symbols-outlined text-gold-500/60 text-[22px] transition-all duration-300">favorite</span>
+                        </button>
                         <div class="absolute top-6 right-6"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">Best Seller</span></div>
                         <div class="absolute bottom-10 left-10 right-10 flex justify-between items-end">
                             <div class="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
@@ -213,6 +216,9 @@
                     <div class="md:col-span-6 group relative h-[550px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-xl" style="transition-delay: 100ms;">
                         <img src="assets/office_chair_indian_1775734837287.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="Office chairs and desks">
                         <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-onyx-900/20 to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-70"></div>
+                        <button class="wishlist-btn absolute top-5 xl:top-6 left-5 xl:left-6 z-20 w-10 h-10 rounded-full bg-onyx-900/60 backdrop-blur-sm border border-gold-500/20 flex items-center justify-center transition-all duration-300 pointer-events-auto" aria-label="Add to Wishlist">
+                            <span class="material-symbols-outlined text-gold-500/60 text-[22px] transition-all duration-300">favorite</span>
+                        </button>
                         <div class="absolute top-6 right-6"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">Available in Store</span></div>
                         <div class="absolute bottom-10 left-10 right-10 flex justify-between items-end">
                             <div class="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
@@ -230,6 +236,9 @@
                     <div class="md:col-span-4 group relative h-[450px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-lg" style="transition-delay: 200ms;">
                         <img src="assets/wall_clock_indian_1775734853010.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="Wall clocks for home">
                         <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-60"></div>
+                        <button class="wishlist-btn absolute top-5 xl:top-6 left-5 xl:left-6 z-20 w-10 h-10 rounded-full bg-onyx-900/60 backdrop-blur-sm border border-gold-500/20 flex items-center justify-center transition-all duration-300 pointer-events-auto" aria-label="Add to Wishlist">
+                            <span class="material-symbols-outlined text-gold-500/60 text-[22px] transition-all duration-300">favorite</span>
+                        </button>
                         <div class="absolute top-5 right-5"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">Best Seller</span></div>
                         <div class="absolute bottom-8 left-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
                             <h3 class="text-2xl font-serif text-white mb-1">Wall Clocks</h3>
@@ -241,6 +250,9 @@
                     <div class="md:col-span-4 group relative h-[450px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-lg" style="transition-delay: 300ms;">
                         <img src="assets/photo_frame_indian_1775734866964.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="Photo frames for living room">
                         <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-60"></div>
+                        <button class="wishlist-btn absolute top-5 xl:top-6 left-5 xl:left-6 z-20 w-10 h-10 rounded-full bg-onyx-900/60 backdrop-blur-sm border border-gold-500/20 flex items-center justify-center transition-all duration-300 pointer-events-auto" aria-label="Add to Wishlist">
+                            <span class="material-symbols-outlined text-gold-500/60 text-[22px] transition-all duration-300">favorite</span>
+                        </button>
                         <div class="absolute top-5 right-5"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">New Collection</span></div>
                         <div class="absolute bottom-8 left-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
                             <h3 class="text-2xl font-serif text-white mb-1">Photo Frames</h3>
@@ -252,6 +264,9 @@
                     <div class="md:col-span-4 group relative h-[450px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-lg" style="transition-delay: 400ms;">
                         <img src="assets/statue_indian_1775734881322.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="Decorative statues for home">
                         <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-60"></div>
+                        <button class="wishlist-btn absolute top-5 xl:top-6 left-5 xl:left-6 z-20 w-10 h-10 rounded-full bg-onyx-900/60 backdrop-blur-sm border border-gold-500/20 flex items-center justify-center transition-all duration-300 pointer-events-auto" aria-label="Add to Wishlist">
+                            <span class="material-symbols-outlined text-gold-500/60 text-[22px] transition-all duration-300">favorite</span>
+                        </button>
                         <div class="absolute top-5 right-5"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">Available in Store</span></div>
                         <div class="absolute bottom-8 left-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
                             <h3 class="text-2xl font-serif text-white mb-1">Decorative Statues</h3>
@@ -264,6 +279,9 @@
                     <div class="md:col-span-4 group relative h-[450px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-lg" style="transition-delay: 100ms;">
                         <img src="assets/fountain_indian_1775734897565.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="Indoor water fountain">
                         <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-60"></div>
+                        <button class="wishlist-btn absolute top-5 xl:top-6 left-5 xl:left-6 z-20 w-10 h-10 rounded-full bg-onyx-900/60 backdrop-blur-sm border border-gold-500/20 flex items-center justify-center transition-all duration-300 pointer-events-auto" aria-label="Add to Wishlist">
+                            <span class="material-symbols-outlined text-gold-500/60 text-[22px] transition-all duration-300">favorite</span>
+                        </button>
                         <div class="absolute top-5 right-5"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">Best Seller</span></div>
                         <div class="absolute bottom-8 left-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
                             <h3 class="text-2xl font-serif text-white mb-1">Water Fountains</h3>
@@ -275,6 +293,9 @@
                     <div class="md:col-span-4 group relative h-[450px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-lg" style="transition-delay: 200ms;">
                         <img src="assets/plant_indian_1775734912222.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="Artificial plants for home">
                         <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-60"></div>
+                        <button class="wishlist-btn absolute top-5 xl:top-6 left-5 xl:left-6 z-20 w-10 h-10 rounded-full bg-onyx-900/60 backdrop-blur-sm border border-gold-500/20 flex items-center justify-center transition-all duration-300 pointer-events-auto" aria-label="Add to Wishlist">
+                            <span class="material-symbols-outlined text-gold-500/60 text-[22px] transition-all duration-300">favorite</span>
+                        </button>
                         <div class="absolute top-5 right-5"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">New Collection</span></div>
                         <div class="absolute bottom-8 left-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
                             <h3 class="text-2xl font-serif text-white mb-1">Artificial Plants</h3>
@@ -286,6 +307,9 @@
                     <div class="md:col-span-4 group relative h-[450px] image-zoom-container bg-onyx-800 reveal rounded-sm shadow-lg" style="transition-delay: 300ms;">
                         <img src="assets/chandelier_img_1775732840371.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]" alt="LED chandeliers for living room">
                         <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-90 transition-opacity duration-1000 group-hover:opacity-60"></div>
+                        <button class="wishlist-btn absolute top-5 xl:top-6 left-5 xl:left-6 z-20 w-10 h-10 rounded-full bg-onyx-900/60 backdrop-blur-sm border border-gold-500/20 flex items-center justify-center transition-all duration-300 pointer-events-auto" aria-label="Add to Wishlist">
+                            <span class="material-symbols-outlined text-gold-500/60 text-[22px] transition-all duration-300">favorite</span>
+                        </button>
                         <div class="absolute top-5 right-5"><span class="text-[10px] tracking-widest uppercase bg-gold-500/20 border border-gold-500/40 text-gold-300 px-3 py-1">Available in Store</span></div>
                         <div class="absolute bottom-8 left-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
                             <h3 class="text-2xl font-serif text-white mb-1">LED Chandeliers</h3>
@@ -498,6 +522,114 @@
 
             window.addEventListener("scroll", revealOnScroll);
             revealOnScroll(); // Trigger once on load
+        });
+    </script>
+    <!-- Floating Action Buttons & Wishlist Menu -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 items-end pointer-events-none">
+        
+        <!-- Wishlist Banner -->
+        <div id="wishlistBanner" class="hidden pointer-events-auto bg-onyx-800 border border-gold-500/30 rounded-lg shadow-2xl p-4 mb-2 mr-2 w-64 transform translate-y-4 opacity-0 transition-all duration-500">
+            <div class="flex justify-between items-center mb-3">
+                <span class="text-white font-serif text-sm">Your Wishlist</span>
+                <span id="wishCount" class="bg-gold-500 text-onyx-900 text-[10px] px-2 py-0.5 rounded-full font-bold">0</span>
+            </div>
+            <button id="sendWishlistBtn" class="w-full bg-gold-500 hover:bg-white text-onyx-900 py-2 text-xs uppercase tracking-widest font-semibold transition-colors flex justify-center items-center gap-2">
+                <span class="material-symbols-outlined text-sm">send</span> Send to WhatsApp
+            </button>
+        </div>
+
+        <button id="toggleWishlistBtn" class="hidden pointer-events-auto h-12 w-12 rounded-full bg-onyx-800 border border-gold-500/30 text-gold-500 flex items-center justify-center hover:bg-gold-500 hover:text-onyx-900 hover:scale-105 transition-all shadow-lg relative">
+            <span class="material-symbols-outlined">favorite</span>
+            <span id="wishBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full border border-onyx-900">0</span>
+        </button>
+
+        <a href="tel:+919789182921" class="pointer-events-auto h-12 w-12 rounded-full bg-onyx-800 border border-gold-500/30 text-gold-500 flex items-center justify-center hover:bg-gold-500 hover:text-onyx-900 hover:scale-105 transition-all shadow-lg">
+            <span class="material-symbols-outlined">call</span>
+        </a>
+        <a href="https://wa.me/919789182921" target="_blank" class="pointer-events-auto h-12 w-12 rounded-full bg-onyx-800 border border-gold-500/30 text-gold-500 flex items-center justify-center hover:bg-gold-500 hover:text-onyx-900 hover:scale-105 transition-all shadow-lg">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.12.553 4.108 1.542 5.867L.085 23.36l5.59-1.468A11.957 11.957 0 0 0 12.03 24c6.646 0 12.03-5.385 12.03-12.031S18.676 0 12.031 0zM17.5 16.3c-.24.67-1.16 1.25-1.93 1.34-1.25.13-2.93-.6-5.46-2.07-2.67-1.55-4.49-4.22-4.63-4.41-.14-.2-1.12-1.49-1.12-2.84 0-1.35.7-2.03.95-2.29.25-.26.54-.33.72-.33.18 0 .36 0 .52.01.17 0 .4-.07.61.43.22.52.75 1.83.82 1.96.07.13.12.28.02.48-.1.2-.15.32-.3.49-.15.17-.32.38-.45.52-.15.17-.32.35-.13.68.19.33.85 1.41 1.82 2.27 1.25 1.11 2.3 1.43 2.63 1.59.33.16.53.13.73-.1.2-.23.86-1 .1 1.28.24 1.47.1 1.67-.11.23-.21.46-.7.62-.95z"/></svg>
+        </a>
+    </div>
+
+    <!-- Wishlist Logic App -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const wishlist = JSON.parse(localStorage.getItem("kgs_wishlist") || "[]");
+            const toggleWishlistBtn = document.getElementById("toggleWishlistBtn");
+            const wishlistBanner = document.getElementById("wishlistBanner");
+            const wishBadge = document.getElementById("wishBadge");
+            const sendWishlistBtn = document.getElementById("sendWishlistBtn");
+            const wishCount = document.getElementById("wishCount");
+
+            // Init buttons on load
+            document.querySelectorAll(".wishlist-btn").forEach(btn => {
+                const group = btn.closest(".group");
+                const titleNode = group ? group.querySelector("h3") : null;
+                const productName = titleNode ? titleNode.innerText.trim() : "";
+                
+                if (wishlist.includes(productName)) {
+                    btn.classList.add("wish-active");
+                }
+
+                btn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const idx = wishlist.indexOf(productName);
+                    if (idx === -1) {
+                        wishlist.push(productName);
+                        btn.classList.add("wish-active");
+                    } else {
+                        wishlist.splice(idx, 1);
+                        btn.classList.remove("wish-active");
+                    }
+                    localStorage.setItem("kgs_wishlist", JSON.stringify(wishlist));
+                    updateWishlistUI();
+                });
+            });
+
+            function updateWishlistUI() {
+                const count = wishlist.length;
+                wishBadge.innerText = count;
+                wishCount.innerText = count + " Items";
+                
+                if (count > 0) {
+                    toggleWishlistBtn.classList.remove("hidden");
+                } else {
+                    toggleWishlistBtn.classList.add("hidden");
+                    wishlistBanner.classList.add("hidden");
+                    wishlistBanner.classList.replace("translate-y-0", "translate-y-4");
+                    wishlistBanner.classList.replace("opacity-100", "opacity-0");
+                }
+            }
+
+            // Toggle Banner
+            toggleWishlistBtn.addEventListener("click", () => {
+                if (wishlistBanner.classList.contains("hidden")) {
+                    wishlistBanner.classList.remove("hidden");
+                    setTimeout(() => {
+                        wishlistBanner.classList.replace("translate-y-4", "translate-y-0");
+                        wishlistBanner.classList.replace("opacity-0", "opacity-100");
+                    }, 10);
+                } else {
+                    wishlistBanner.classList.replace("translate-y-0", "translate-y-4");
+                    wishlistBanner.classList.replace("opacity-100", "opacity-0");
+                    setTimeout(() => wishlistBanner.classList.add("hidden"), 500);
+                }
+            });
+
+            // Send via WhatsApp
+            sendWishlistBtn.addEventListener("click", () => {
+                let msg = "Hi KGS Home Decors! I am interested in these products:\n\n";
+                wishlist.forEach((item, i) => msg += (i+1) + ". " + item + "\n");
+                msg += "\nPlease let me know their availability and best price. Thanks!";
+                
+                const waUrl = "https://wa.me/919789182921?text=" + encodeURIComponent(msg);
+                window.open(waUrl, "_blank");
+            });
+
+            // Initial UI update
+            updateWishlistUI();
         });
     </script>
 </body>

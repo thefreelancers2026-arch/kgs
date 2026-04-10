@@ -454,16 +454,26 @@
             .hero-trust-badge,
             .hero-scroll-indicator { display: none !important; }
 
-            /* ── Mobile Product Grid ── */
+            /* ── Mobile Product Grid (Horizontal Scroll) ── */
             .product-grid {
-                display: grid !important;
-                grid-template-columns: 1fr !important;
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                overflow-y: hidden !important;
                 gap: 16px !important;
-                overflow-x: visible !important;
+                padding-bottom: 24px !important;
+                -webkit-overflow-scrolling: touch;
+                scroll-snap-type: x mandatory;
+                scrollbar-width: none; /* Firefox */
+            }
+            .product-grid::-webkit-scrollbar {
+                display: none; /* Safari and Chrome */
             }
             .product-grid > div {
-                max-width: 100% !important;
-                grid-column: auto !important;
+                min-width: 85vw !important;
+                max-width: 85vw !important;
+                scroll-snap-align: center;
+                flex-shrink: 0;
             }
             .product-card-lg { height: 340px !important; }
             .product-card-md { height: 300px !important; }

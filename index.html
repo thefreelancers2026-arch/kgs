@@ -6,6 +6,23 @@
     <title>KGS Home Decors | Home Decor Shop in Virudhachalam</title>
     <meta name="description" content="Buy artificial plants, fountains, furniture and home decor items in Virudhachalam. Visit KGS Home Decors showroom. Best home decor shop in Virudhachalam, Tamil Nadu.">
     <meta name="keywords" content="home decor Virudhachalam, furniture shop Virudhachalam, artificial plants shop, water fountain, wall clocks, home decor Tamil Nadu, KGS home decors">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kgshomedecors.com/">
+    <meta property="og:title" content="KGS Home Decors | Premium Home Decor in Virudhachalam">
+    <meta property="og:description" content="Buy artificial plants, fountains, furniture and home decor items in Virudhachalam. Best home decor shop in Tamil Nadu.">
+    <meta property="og:image" content="https://kgshomedecors.com/assets/hero_indian_interior.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://kgshomedecors.com/">
+    <meta property="twitter:title" content="KGS Home Decors | Premium Home Decor in Virudhachalam">
+    <meta property="twitter:description" content="Buy artificial plants, fountains, furniture and home decor items in Virudhachalam.">
+    <meta property="twitter:image" content="https://kgshomedecors.com/assets/hero_indian_interior.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <!-- Premium Fonts — Cormorant Garamond for ultra-luxury hero, Montserrat for body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -570,6 +587,100 @@
             0% { opacity: 0; transform: scale(0.96) translateY(20px); filter: blur(8px); }
             100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
         }
+        
+        /* Search Results Dropdown */
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #111111;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 12px;
+            margin-top: 8px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 60;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        .search-result-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .search-result-item:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+        .search-result-item img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+        .search-no-results {
+            padding: 20px;
+            text-align: center;
+            color: rgba(213, 206, 196, 0.5);
+        }
+        
+        /* FAQ Accordion */
+        .faq-item {
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 20px 0;
+            background: none;
+            border: none;
+            color: #FAFAF8;
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question:hover {
+            color: #D4AF37;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-answer.open {
+            max-height: 200px;
+        }
+        .faq-answer p {
+            padding-bottom: 20px;
+            color: rgba(213, 206, 196, 0.7);
+            line-height: 1.7;
+        }
+        
+        /* Trust Badges */
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 8px;
+        }
+        .trust-badge-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body class="font-sans antialiased selection:bg-gold-500 selection:text-onyx-900 leading-[1.8]">
@@ -578,25 +689,54 @@
          NAVIGATION
          ═══════════════════════════════════════ -->
     <nav class="fixed top-0 w-full z-50 glass-nav pointer-events-auto" id="navbar">
-        <div class="max-w-[1400px] mx-auto px-4 sm:px-5 md:px-12 py-4 sm:py-5 flex justify-between items-center">
-            <a href="#" class="text-[1.35rem] font-bold tracking-[0.25em] text-white font-serif uppercase">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-5 md:px-12 py-4 sm:py-5 flex justify-between items-center gap-4">
+            <a href="#" class="text-[1.35rem] font-bold tracking-[0.25em] text-white font-serif uppercase flex-shrink-0">
                 KGS<span class="text-gold-500">.</span>
             </a>
+            
+            <!-- Search Bar -->
+            <div class="hidden md:flex flex-1 max-w-md mx-4">
+                <div class="relative w-full">
+                    <input type="text" id="searchInput" placeholder="Search products..." 
+                           class="w-full bg-onyx-800/50 border border-onyx-600/30 rounded-full py-2 pl-10 pr-4 text-sm text-white placeholder-sand-300/50 focus:outline-none focus:border-gold-500/50 focus:bg-onyx-800/80 transition-all">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-sand-300/50 text-lg">search</span>
+                    <button id="searchClose" class="absolute right-3 top-1/2 -translate-y-1/2 text-sand-300/50 hover:text-gold-500 hidden">
+                        <span class="material-symbols-outlined text-lg">close</span>
+                    </button>
+                </div>
+            </div>
+            
             <div class="hidden md:flex gap-10 items-center">
                 <a class="nav-link text-[11px] tracking-[0.25em] uppercase text-gold-400 border-b border-gold-500/50 pb-1 font-medium" href="#collections">Collections</a>
-                <a class="nav-link text-[11px] tracking-[0.25em] uppercase text-sand-300 hover:text-white transition-colors duration-500" href="#showroom">Showroom</a>
-                <a class="nav-link text-[11px] tracking-[0.25em] uppercase text-sand-300 hover:text-white transition-colors duration-500" href="#contact">Contact</a>
+                <a class="nav-link text-[11px] tracking-[0.25em] uppercase text-sand-100 hover:text-white transition-colors duration-500" href="#showroom">Showroom</a>
+                <a class="nav-link text-[11px] tracking-[0.25em] uppercase text-sand-100 hover:text-white transition-colors duration-500" href="#contact">Contact</a>
             </div>
+            
+            <!-- Mobile Search Button -->
+            <button class="md:hidden text-white hover:text-gold-500 transition-colors p-2 min-h-[44px] min-w-[44px] flex items-center justify-center" id="mobileSearchBtn">
+                <span class="material-symbols-outlined text-2xl">search</span>
+            </button>
+            
             <button class="md:hidden text-white hover:text-gold-500 transition-colors p-2 min-h-[44px] min-w-[44px] flex items-center justify-center" id="mobileMenuBtn">
                 <span class="material-symbols-outlined text-2xl">menu</span>
             </button>
         </div>
+        
+        <!-- Mobile Search Bar -->
+        <div class="md:hidden px-4 pb-3 hidden" id="mobileSearchBar">
+            <div class="relative">
+                <input type="text" id="mobileSearchInput" placeholder="Search products..." 
+                       class="w-full bg-onyx-800/50 border border-onyx-600/30 rounded-full py-2 pl-10 pr-4 text-sm text-white placeholder-sand-300/50 focus:outline-none focus:border-gold-500/50">
+                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-sand-300/50 text-lg">search</span>
+            </div>
+        </div>
+        
         <!-- Mobile Menu Drawer -->
         <div class="md:hidden overflow-hidden max-h-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" id="mobileMenu">
             <div class="px-5 pb-6 pt-2 flex flex-col gap-4 border-t border-onyx-700/50">
                 <a class="text-sm tracking-[0.2em] uppercase text-gold-400 py-2" href="#collections" onclick="closeMobileMenu()">Collections</a>
-                <a class="text-sm tracking-[0.2em] uppercase text-sand-200 py-2" href="#showroom" onclick="closeMobileMenu()">Showroom</a>
-                <a class="text-sm tracking-[0.2em] uppercase text-sand-200 py-2" href="#contact" onclick="closeMobileMenu()">Contact</a>
+                <a class="text-sm tracking-[0.2em] uppercase text-sand-100 py-2" href="#showroom" onclick="closeMobileMenu()">Showroom</a>
+                <a class="text-sm tracking-[0.2em] uppercase text-sand-100 py-2" href="#contact" onclick="closeMobileMenu()">Contact</a>
                 <a href="https://wa.me/919789182921" class="mt-2 inline-flex items-center justify-center gap-2 bg-gold-500 text-onyx-900 px-6 py-3 text-xs tracking-widest uppercase font-semibold min-h-[44px]">
                     <span class="material-symbols-outlined text-sm">forum</span> Chat Support
                 </a>
@@ -870,14 +1010,139 @@
                     <div class="bg-onyx-800/80 p-7 sm:p-10 lg:p-14 border border-onyx-600/40 reveal reveal-delay-2 rounded-sm" style="box-shadow: 0 0 60px rgba(212,175,55,0.03);">
                         <p class="text-gold-500/50 text-[10px] tracking-[0.3em] uppercase text-center mb-2 font-sans">Free · No Obligation</p>
                         <h3 class="text-xl sm:text-2xl text-white font-display font-medium mb-7 sm:mb-8 text-center border-b border-onyx-600/50 pb-6" style="border-bottom-color: rgba(212,175,55,0.08);">Get Personalized Suggestions</h3>
-                        <form class="space-y-7">
-                            <input type="text" placeholder="Full Name" class="w-full bg-transparent border-b border-onyx-600/60 py-4 text-white font-light focus:outline-none focus:border-gold-500 transition-colors duration-500 placeholder-onyx-500 text-sm min-h-[48px]">
-                            <input type="tel" placeholder="Phone Number" class="w-full bg-transparent border-b border-onyx-600/60 py-4 text-white font-light focus:outline-none focus:border-gold-500 transition-colors duration-500 placeholder-onyx-500 text-sm min-h-[48px]">
-                            <input type="text" placeholder="What are you looking for?" class="w-full bg-transparent border-b border-onyx-600/60 py-4 text-white font-light focus:outline-none focus:border-gold-500 transition-colors duration-500 placeholder-onyx-500 text-sm min-h-[48px]">
-                            <a href="tel:+919789182921" class="btn-primary block w-full bg-gold-500 text-onyx-900 py-4 uppercase tracking-[0.2em] font-semibold text-center text-[11px] min-h-[50px] flex items-center justify-center mt-2">
-                                Get a Call Back
-                            </a>
+                        
+                        <!-- Trust Badges -->
+                        <div class="grid grid-cols-2 gap-3 mb-8">
+                            <div class="trust-badge">
+                                <div class="trust-badge-icon">
+                                    <span class="material-symbols-outlined text-gold-500 text-sm">verified</span>
+                                </div>
+                                <div>
+                                    <p class="text-white text-xs font-medium">100% Original</p>
+                                    <p class="text-sand-300/60 text-[10px]">Products</p>
+                                </div>
+                            </div>
+                            <div class="trust-badge">
+                                <div class="trust-badge-icon">
+                                    <span class="material-symbols-outlined text-gold-500 text-sm">local_shipping</span>
+                                </div>
+                                <div>
+                                    <p class="text-white text-xs font-medium">Free Delivery</p>
+                                    <p class="text-sand-300/60 text-[10px]">Tamil Nadu</p>
+                                </div>
+                            </div>
+                            <div class="trust-badge">
+                                <div class="trust-badge-icon">
+                                    <span class="material-symbols-outlined text-gold-500 text-sm">autorenew</span>
+                                </div>
+                                <div>
+                                    <p class="text-white text-xs font-medium">Easy Returns</p>
+                                    <p class="text-sand-300/60 text-[10px]">7 Days</p>
+                                </div>
+                            </div>
+                            <div class="trust-badge">
+                                <div class="trust-badge-icon">
+                                    <span class="material-symbols-outlined text-gold-500 text-sm">support_agent</span>
+                                </div>
+                                <div>
+                                    <p class="text-white text-xs font-medium">24/7 Support</p>
+                                    <p class="text-sand-300/60 text-[10px]">WhatsApp</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Functional Form -->
+                        <form action="https://formspree.io/f/xpwzgvry" method="POST" class="space-y-7">
+                            <div>
+                                <label for="name" class="sr-only">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Full Name" required
+                                       class="w-full bg-transparent border-b border-onyx-600/60 py-4 text-white font-light focus:outline-none focus:border-gold-500 transition-colors duration-500 placeholder-sand-300/50 text-sm min-h-[48px]">
+                            </div>
+                            <div>
+                                <label for="phone" class="sr-only">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required
+                                       class="w-full bg-transparent border-b border-onyx-600/60 py-4 text-white font-light focus:outline-none focus:border-gold-500 transition-colors duration-500 placeholder-sand-300/50 text-sm min-h-[48px]">
+                            </div>
+                            <div>
+                                <label for="message" class="sr-only">What are you looking for?</label>
+                                <input type="text" id="message" name="message" placeholder="What are you looking for?"
+                                       class="w-full bg-transparent border-b border-onyx-600/60 py-4 text-white font-light focus:outline-none focus:border-gold-500 transition-colors duration-500 placeholder-sand-300/50 text-sm min-h-[48px]">
+                            </div>
+                            <button type="submit" class="btn-primary block w-full bg-gold-500 text-onyx-900 py-4 uppercase tracking-[0.2em] font-semibold text-center text-[11px] min-h-[50px] flex items-center justify-center mt-2">
+                                <span class="material-symbols-outlined text-sm mr-2">send</span> Send Request
+                            </button>
+                            <p class="text-sand-300/40 text-[10px] text-center">We usually respond within 30 minutes</p>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section id="faq" class="py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-onyx-800">
+            <div class="max-w-[800px] mx-auto">
+                <p class="text-gold-500 text-[10px] tracking-[0.4em] uppercase mb-4 font-sans font-medium text-center">FAQ</p>
+                <h2 class="text-3xl sm:text-4xl font-display font-medium text-white mb-12 text-center">Frequently Asked Questions</h2>
+                
+                <div class="space-y-2">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>What products do you offer?</span>
+                            <span class="material-symbols-outlined text-gold-500 transition-transform">expand_more</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We offer 500+ home decor products including sofas, office furniture, wall clocks, photo frames, decorative statues, water fountains, artificial plants, and LED chandeliers. All products are available at our showroom in Virudhachalam.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>Do you deliver across Tamil Nadu?</span>
+                            <span class="material-symbols-outlined text-gold-500 transition-transform">expand_more</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! We deliver across Tamil Nadu. Free delivery for orders above ₹5,000. Express delivery available for urgent orders.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>Can I visit your showroom?</span>
+                            <span class="material-symbols-outlined text-gold-500 transition-transform">expand_more</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely! Our showroom is open all days from 10:00 AM to 10:00 PM at Junction Road, near EB Office, Virudhachalam. Walk in and explore our entire collection.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>What payment options are available?</span>
+                            <span class="material-symbols-outlined text-gold-500 transition-transform">expand_more</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We accept all payment methods including UPI, Credit/Debit Cards, Net Banking, and Cash on Delivery (COD). For online orders, payments are securely processed via Razorpay.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>What is your return policy?</span>
+                            <span class="material-symbols-outlined text-gold-500 transition-transform">expand_more</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We offer 7-day easy returns for all products. If you're not satisfied with your purchase, contact us and we'll arrange a pickup.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>How can I place an order?</span>
+                            <span class="material-symbols-outlined text-gold-500 transition-transform">expand_more</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You can order through our website, WhatsApp (+91 97891 82921), or visit our showroom directly. Our team is available 24/7 on WhatsApp to assist you.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1398,6 +1663,124 @@
         }
 
         updateWishlistUI();
+        
+        // ── SEARCH FUNCTIONALITY ──
+        const searchInput = document.getElementById('searchInput');
+        const mobileSearchBtn = document.getElementById('mobileSearchBtn');
+        const mobileSearchBar = document.getElementById('mobileSearchBar');
+        const mobileSearchInput = document.getElementById('mobileSearchInput');
+        const searchClose = document.getElementById('searchClose');
+        
+        function performSearch(query, targetElement) {
+            if (!targetElement) return;
+            targetElement.innerHTML = '';
+            if (query.length < 2) {
+                targetElement.style.display = 'none';
+                return;
+            }
+            
+            const results = DEMO_PRODUCTS.filter(p => p.name.toLowerCase().includes(query.toLowerCase()));
+            
+            if (results.length === 0) {
+                targetElement.innerHTML = '<div class="search-no-results">No products found</div>';
+            } else {
+                results.slice(0, 8).forEach(prod => {
+                    const item = document.createElement('div');
+                    item.className = 'search-result-item';
+                    item.innerHTML = `
+                        <img src="${prod.img}" alt="${prod.name}">
+                        <div>
+                            <p class="text-white text-sm">${prod.name}</p>
+                            <p class="text-gold-400 text-xs">${prod.price}</p>
+                        </div>
+                    `;
+                    item.addEventListener('click', () => {
+                        // Filter to that category
+                        const tab = document.querySelector(`.category-tab[data-filter="${prod.category}"]`);
+                        if (tab) {
+                            document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
+                            tab.classList.add('active');
+                            renderProducts(prod.category);
+                            document.getElementById('collections').scrollIntoView({ behavior: 'smooth' });
+                        }
+                        targetElement.style.display = 'none';
+                    });
+                    targetElement.appendChild(item);
+                });
+            }
+            targetElement.style.display = 'block';
+        }
+        
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const container = searchInput.parentElement;
+                let resultsDiv = container.querySelector('.search-results');
+                if (!resultsDiv) {
+                    resultsDiv = document.createElement('div');
+                    resultsDiv.className = 'search-results';
+                    container.appendChild(resultsDiv);
+                }
+                performSearch(e.target.value, resultsDiv);
+                searchClose.classList.toggle('hidden', e.target.value.length === 0);
+            });
+            
+            searchInput.addEventListener('blur', () => {
+                setTimeout(() => {
+                    const results = searchInput.parentElement.querySelector('.search-results');
+                    if (results) results.style.display = 'none';
+                }, 200);
+            });
+        }
+        
+        if (mobileSearchBtn && mobileSearchBar) {
+            mobileSearchBtn.addEventListener('click', () => {
+                mobileSearchBar.classList.toggle('hidden');
+                if (!mobileSearchBar.classList.contains('hidden')) {
+                    mobileSearchInput.focus();
+                }
+            });
+            
+            mobileSearchInput.addEventListener('input', (e) => {
+                const container = mobileSearchInput.parentElement.parentElement;
+                let resultsDiv = container.querySelector('.search-results');
+                if (!resultsDiv) {
+                    resultsDiv = document.createElement('div');
+                    resultsDiv.className = 'search-results';
+                    resultsDiv.style.position = 'relative';
+                    resultsDiv.style.marginTop = '8px';
+                    container.appendChild(resultsDiv);
+                }
+                performSearch(e.target.value, resultsDiv);
+            });
+        }
+        
+        if (searchClose) {
+            searchClose.addEventListener('click', () => {
+                searchInput.value = '';
+                const results = searchInput.parentElement.querySelector('.search-results');
+                if (results) results.style.display = 'none';
+                searchClose.classList.add('hidden');
+                searchInput.focus();
+            });
+        }
+        
+        // ── FAQ ACCORDION ──
+        window.toggleFaq = function(btn) {
+            const answer = btn.nextElementSibling;
+            const icon = btn.querySelector('.material-symbols-outlined');
+            
+            // Close others
+            document.querySelectorAll('.faq-answer').forEach(a => {
+                if (a !== answer) {
+                    a.classList.remove('open');
+                    a.previousElementSibling.querySelector('.material-symbols-outlined').style.transform = 'rotate(0deg)';
+                }
+            });
+            
+            answer.classList.toggle('open');
+            icon.style.transform = answer.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
+        };
+        
     });
     </script>
 </body>

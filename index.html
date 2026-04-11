@@ -513,6 +513,63 @@
                 transition-duration: 0.2s !important;
             }
         }
+        /* ══════════════════════════════════════════════
+           CATEGORY TABS (Minimal & Elegant Glass)
+           ══════════════════════════════════════════════ */
+        .category-tab {
+            white-space: nowrap;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 10px 22px;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.015);
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(213, 206, 196, 0.5); /* sand-300 fading */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            cursor: pointer;
+        }
+        .category-tab:hover {
+            color: #FAFAF8;
+            border-color: rgba(212, 175, 55, 0.2);
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateY(-1px);
+        }
+        .category-tab.active {
+            color: #0A0A0A;
+            background: #D4AF37;
+            border-color: #D4AF37;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
+            font-weight: 600;
+            transform: translateY(0);
+        }
+
+        .cat-scroll-container {
+            position: relative;
+        }
+        .cat-scroll-container::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0;
+            width: 60px;
+            background: linear-gradient(to right, transparent, #0A0A0A);
+            pointer-events: none;
+        }
+
+        .cat-scroll::-webkit-scrollbar { display: none; }
+        .cat-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .fade-in-scale {
+            opacity: 0;
+            animation: fadeInBlur 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeInBlur {
+            0% { opacity: 0; transform: scale(0.96) translateY(20px); filter: blur(8px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+        }
     </style>
 </head>
 <body class="font-sans antialiased selection:bg-gold-500 selection:text-onyx-900 leading-[1.8]">
@@ -638,130 +695,24 @@
                     </p>
                 </div>
 
-                <!-- Product Grid -->
-                <div class="product-grid grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-5 lg:gap-6">
-                    
-                    <!-- 1: Sofa Sets -->
-                    <div class="md:col-span-6 group relative product-card product-card-lg h-[420px] sm:h-[520px] lg:h-[560px] bg-onyx-800 reveal rounded-sm">
-                        <img src="assets/sofa_indian_1775734816101.png" loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:opacity-85" alt="Sofa sets in Indian home">
-                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-onyx-900/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-1000"></div>
-                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2.5 transition-all duration-500 group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/50 min-h-[44px] min-w-[44px]" aria-label="Add to Wishlist" data-product="Sofa Sets">
-                            <span class="material-symbols-outlined text-white/40 group-hover/wish:text-gold-500 text-[24px] transition-all duration-500">favorite</span>
-                        </button>
-                        <div class="absolute top-5 right-5"><span class="text-[9px] tracking-[0.2em] uppercase bg-gold-500/10 border border-gold-500/25 text-gold-300 px-3 py-1 font-sans font-medium">Best Seller</span></div>
-                        <div class="absolute bottom-8 sm:bottom-10 left-6 sm:left-10 right-6 sm:right-10 flex justify-between items-end">
-                            <div class="transform translate-y-3 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]">
-                                <h3 class="text-2xl sm:text-3xl font-display font-medium text-white mb-1">Sofa Sets</h3>
-                                <p class="text-sand-300 text-[11px] tracking-[0.2em] uppercase font-sans">Stylish &amp; Comfortable</p>
-                            </div>
-                            <span class="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-gold-500/20 flex items-center justify-center text-gold-500 group-hover:bg-gold-500 group-hover:text-onyx-900 transition-all duration-800 transform translate-x-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 flex-shrink-0">
-                                <span class="material-symbols-outlined text-lg">east</span>
-                            </span>
-                        </div>
+                <!-- Category Tabs -->
+                <div class="mb-12 w-full overflow-hidden reveal cat-scroll-container">
+                    <div class="cat-scroll flex gap-3 sm:gap-4 overflow-x-auto pb-6 pt-2 px-1 items-center" id="categoryTabs">
+                        <button class="category-tab active" data-filter="All">All</button>
+                        <button class="category-tab" data-filter="Sofas & Seating">Sofas</button>
+                        <button class="category-tab" data-filter="Office Chairs & Tables">Office Desks</button>
+                        <button class="category-tab" data-filter="Wall Clocks">Clocks</button>
+                        <button class="category-tab" data-filter="Photo Frames">Frames</button>
+                        <button class="category-tab" data-filter="Decorative Statues">Statues</button>
+                        <button class="category-tab" data-filter="Water Fountains">Fountains</button>
+                        <button class="category-tab" data-filter="Artificial Plants">Plants</button>
+                        <button class="category-tab" data-filter="LED Chandeliers">Lighting</button>
                     </div>
+                </div>
 
-                    <!-- 2: Office Chairs -->
-                    <div class="md:col-span-6 group relative product-card product-card-lg h-[420px] sm:h-[520px] lg:h-[560px] bg-onyx-800 reveal reveal-delay-1 rounded-sm">
-                        <img src="assets/office_chair_indian_1775734837287.png" loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:opacity-85" alt="Office chairs and desks">
-                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-onyx-900/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-1000"></div>
-                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2.5 transition-all duration-500 group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/50 min-h-[44px] min-w-[44px]" aria-label="Add to Wishlist" data-product="Office Chairs & Tables">
-                            <span class="material-symbols-outlined text-white/40 group-hover/wish:text-gold-500 text-[24px] transition-all duration-500">favorite</span>
-                        </button>
-                        <div class="absolute top-5 right-5"><span class="text-[9px] tracking-[0.2em] uppercase bg-gold-500/10 border border-gold-500/25 text-gold-300 px-3 py-1 font-sans font-medium">In Store</span></div>
-                        <div class="absolute bottom-8 sm:bottom-10 left-6 sm:left-10 right-6 sm:right-10 flex justify-between items-end">
-                            <div class="transform translate-y-3 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]">
-                                <h3 class="text-2xl sm:text-3xl font-display font-medium text-white mb-1">Office Chairs &amp; Tables</h3>
-                                <p class="text-sand-300 text-[11px] tracking-[0.2em] uppercase font-sans">Modern &amp; Ergonomic</p>
-                            </div>
-                            <span class="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-gold-500/20 flex items-center justify-center text-gold-500 group-hover:bg-gold-500 group-hover:text-onyx-900 transition-all duration-800 transform translate-x-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 flex-shrink-0">
-                                <span class="material-symbols-outlined text-lg">east</span>
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- 3: Wall Clocks -->
-                    <div class="md:col-span-4 group relative product-card product-card-md h-[320px] sm:h-[420px] lg:h-[460px] bg-onyx-800 reveal rounded-sm">
-                        <img src="assets/wall_clock_indian_1775734853010.png" loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:opacity-85" alt="Wall clocks for home">
-                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-80 group-hover:opacity-55 transition-opacity duration-1000"></div>
-                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2.5 transition-all duration-500 group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/50 min-h-[44px] min-w-[44px]" aria-label="Add to Wishlist" data-product="Wall Clocks">
-                            <span class="material-symbols-outlined text-white/40 group-hover/wish:text-gold-500 text-[24px] transition-all duration-500">favorite</span>
-                        </button>
-                        <div class="absolute top-5 right-5"><span class="text-[9px] tracking-[0.2em] uppercase bg-gold-500/10 border border-gold-500/25 text-gold-300 px-3 py-1 font-sans font-medium">Best Seller</span></div>
-                        <div class="absolute bottom-6 sm:bottom-8 left-6 sm:left-8">
-                            <h3 class="text-xl sm:text-2xl font-display font-medium text-white mb-1">Wall Clocks</h3>
-                            <p class="text-gold-400 text-[10px] tracking-[0.15em] uppercase font-sans">Stylish Home Decor</p>
-                        </div>
-                    </div>
-
-                    <!-- 4: Photo Frames -->
-                    <div class="md:col-span-4 group relative product-card product-card-md h-[320px] sm:h-[420px] lg:h-[460px] bg-onyx-800 reveal reveal-delay-1 rounded-sm">
-                        <img src="assets/photo_frame_indian_1775734866964.png" loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:opacity-85" alt="Photo frames for living room">
-                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-80 group-hover:opacity-55 transition-opacity duration-1000"></div>
-                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2.5 transition-all duration-500 group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/50 min-h-[44px] min-w-[44px]" aria-label="Add to Wishlist" data-product="Photo Frames">
-                            <span class="material-symbols-outlined text-white/40 group-hover/wish:text-gold-500 text-[24px] transition-all duration-500">favorite</span>
-                        </button>
-                        <div class="absolute top-5 right-5"><span class="text-[9px] tracking-[0.2em] uppercase bg-gold-500/10 border border-gold-500/25 text-gold-300 px-3 py-1 font-sans font-medium">New</span></div>
-                        <div class="absolute bottom-6 sm:bottom-8 left-6 sm:left-8">
-                            <h3 class="text-xl sm:text-2xl font-display font-medium text-white mb-1">Photo Frames</h3>
-                            <p class="text-gold-400 text-[10px] tracking-[0.15em] uppercase font-sans">Modern Wall Decor</p>
-                        </div>
-                    </div>
-
-                    <!-- 5: Decorative Statues -->
-                    <div class="md:col-span-4 group relative product-card product-card-md h-[320px] sm:h-[420px] lg:h-[460px] bg-onyx-800 reveal reveal-delay-2 rounded-sm">
-                        <img src="assets/statue_indian_1775734881322.png" loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:opacity-85" alt="Decorative statues for home">
-                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-80 group-hover:opacity-55 transition-opacity duration-1000"></div>
-                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2.5 transition-all duration-500 group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/50 min-h-[44px] min-w-[44px]" aria-label="Add to Wishlist" data-product="Decorative Statues">
-                            <span class="material-symbols-outlined text-white/40 group-hover/wish:text-gold-500 text-[24px] transition-all duration-500">favorite</span>
-                        </button>
-                        <div class="absolute top-5 right-5"><span class="text-[9px] tracking-[0.2em] uppercase bg-gold-500/10 border border-gold-500/25 text-gold-300 px-3 py-1 font-sans font-medium">In Store</span></div>
-                        <div class="absolute bottom-6 sm:bottom-8 left-6 sm:left-8">
-                            <h3 class="text-xl sm:text-2xl font-display font-medium text-white mb-1">Decorative Statues</h3>
-                            <p class="text-gold-400 text-[10px] tracking-[0.15em] uppercase font-sans">Premium Figurines</p>
-                        </div>
-                    </div>
-
-                    <!-- 6: Water Fountains -->
-                    <div class="md:col-span-4 group relative product-card product-card-md h-[320px] sm:h-[420px] lg:h-[460px] bg-onyx-800 reveal rounded-sm">
-                        <img src="assets/fountain_indian_1775734897565.png" loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:opacity-85" alt="Indoor water fountain">
-                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-80 group-hover:opacity-55 transition-opacity duration-1000"></div>
-                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2.5 transition-all duration-500 group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/50 min-h-[44px] min-w-[44px]" aria-label="Add to Wishlist" data-product="Water Fountains">
-                            <span class="material-symbols-outlined text-white/40 group-hover/wish:text-gold-500 text-[24px] transition-all duration-500">favorite</span>
-                        </button>
-                        <div class="absolute top-5 right-5"><span class="text-[9px] tracking-[0.2em] uppercase bg-gold-500/10 border border-gold-500/25 text-gold-300 px-3 py-1 font-sans font-medium">Best Seller</span></div>
-                        <div class="absolute bottom-6 sm:bottom-8 left-6 sm:left-8">
-                            <h3 class="text-xl sm:text-2xl font-display font-medium text-white mb-1">Water Fountains</h3>
-                            <p class="text-gold-400 text-[10px] tracking-[0.15em] uppercase font-sans">Home &amp; Office</p>
-                        </div>
-                    </div>
-
-                    <!-- 7: Artificial Plants -->
-                    <div class="md:col-span-4 group relative product-card product-card-md h-[320px] sm:h-[420px] lg:h-[460px] bg-onyx-800 reveal reveal-delay-1 rounded-sm">
-                        <img src="assets/plant_indian_1775734912222.png" loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:opacity-85" alt="Artificial plants for home">
-                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-80 group-hover:opacity-55 transition-opacity duration-1000"></div>
-                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2.5 transition-all duration-500 group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/50 min-h-[44px] min-w-[44px]" aria-label="Add to Wishlist" data-product="Artificial Plants">
-                            <span class="material-symbols-outlined text-white/40 group-hover/wish:text-gold-500 text-[24px] transition-all duration-500">favorite</span>
-                        </button>
-                        <div class="absolute top-5 right-5"><span class="text-[9px] tracking-[0.2em] uppercase bg-gold-500/10 border border-gold-500/25 text-gold-300 px-3 py-1 font-sans font-medium">New</span></div>
-                        <div class="absolute bottom-6 sm:bottom-8 left-6 sm:left-8">
-                            <h3 class="text-xl sm:text-2xl font-display font-medium text-white mb-1">Artificial Plants</h3>
-                            <p class="text-gold-400 text-[10px] tracking-[0.15em] uppercase font-sans">Zero Maintenance</p>
-                        </div>
-                    </div>
-
-                    <!-- 8: Chandeliers -->
-                    <div class="md:col-span-4 group relative product-card product-card-md h-[320px] sm:h-[420px] lg:h-[460px] bg-onyx-800 reveal reveal-delay-2 rounded-sm">
-                        <img src="assets/chandelier_img_1775732840371.png" loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:opacity-85" alt="LED chandeliers for living room">
-                        <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-80 group-hover:opacity-55 transition-opacity duration-1000"></div>
-                        <button class="wishlist-btn absolute top-4 left-4 z-20 p-2.5 transition-all duration-500 group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/50 min-h-[44px] min-w-[44px]" aria-label="Add to Wishlist" data-product="LED Chandeliers">
-                            <span class="material-symbols-outlined text-white/40 group-hover/wish:text-gold-500 text-[24px] transition-all duration-500">favorite</span>
-                        </button>
-                        <div class="absolute top-5 right-5"><span class="text-[9px] tracking-[0.2em] uppercase bg-gold-500/10 border border-gold-500/25 text-gold-300 px-3 py-1 font-sans font-medium">In Store</span></div>
-                        <div class="absolute bottom-6 sm:bottom-8 left-6 sm:left-8">
-                            <h3 class="text-xl sm:text-2xl font-display font-medium text-white mb-1">LED Chandeliers</h3>
-                            <p class="text-gold-400 text-[10px] tracking-[0.15em] uppercase font-sans">Modern Lighting</p>
-                        </div>
-                    </div>
+                <!-- Product Grid Container (Injected by JS) -->
+                <div id="dynamic-product-grid" class="product-grid grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-5 lg:gap-6 min-h-[400px]">
+                    <!-- Products rendered via JS -->
                 </div>
 
                 <!-- Premium Mobile swipe hint -->
@@ -994,9 +945,48 @@
     </div>
 
     <!-- ═══════════════════════════════════════
+         CART MODAL
+         ═══════════════════════════════════════ -->
+    <div class="wishlist-modal-overlay" id="cartModal">
+        <div class="wishlist-modal">
+            <!-- Drag handle for mobile -->
+            <div class="sm:hidden flex justify-center pt-3 pb-1">
+                <div class="w-10 h-1 rounded-full bg-onyx-600/60"></div>
+            </div>
+            <div class="flex justify-between items-start p-6 pb-4 border-b" style="border-color: rgba(212,175,55,0.08);">
+                <div>
+                    <h3 class="text-lg font-display font-medium text-white mb-1">Your Shopping Cart</h3>
+                    <p class="text-sand-200/40 text-[11px] tracking-[0.05em] mt-1 font-sans leading-[1.6]">Ready to proceed to checkout?</p>
+                </div>
+                <button id="closeCartModal" class="text-sand-200/40 hover:text-white transition-colors duration-500 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full hover:bg-onyx-700/40 flex-shrink-0 ml-2">
+                    <span class="material-symbols-outlined text-lg">close</span>
+                </button>
+            </div>
+            <div id="cartItems" class="p-5 space-y-3 max-h-[300px] overflow-y-auto">
+                <p class="text-sand-200/30 text-sm text-center py-8 font-light" id="emptyCartMsg">Your cart is empty.<br><span class="text-[10px] tracking-wider uppercase mt-1 block">Add premium items to continue</span></p>
+            </div>
+            <div class="px-5 pb-2">
+                <div class="border-t pt-4 flex justify-between items-center" style="border-color: rgba(212,175,55,0.06);">
+                    <p class="text-sand-200/50 text-xs tracking-[0.1em] uppercase font-sans font-medium">Subtotal</p>
+                    <p class="text-gold-500 text-lg font-medium" id="cartTotal">₹0</p>
+                </div>
+            </div>
+            <div class="p-5 pt-4">
+                <button onclick="alert('Proceeding to Shopify Checkout... (Coming Soon in Main Build, Client can test this UI design)')" class="btn-primary w-full bg-gold-400 hover:bg-gold-500 text-onyx-900 py-4 rounded-lg text-[11px] uppercase tracking-[0.2em] font-bold flex justify-center items-center gap-2.5 min-h-[52px]">
+                    <span class="material-symbols-outlined text-[18px]">lock</span> Secure Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ═══════════════════════════════════════
          FLOATING ACTION BUTTONS
          ═══════════════════════════════════════ -->
     <div class="fixed bottom-5 right-4 sm:bottom-8 sm:right-6 md:right-10 z-50 flex flex-col items-center gap-[10px] sm:gap-3" id="fabContainer">
+        <button class="fab-btn hidden" id="fabCart" aria-label="Open Cart" style="background: rgba(26,26,26,0.9); border: 1px solid rgba(212,175,55,0.2);">
+            <span class="material-symbols-outlined text-gold-500/90 text-[18px]">shopping_cart</span>
+            <span class="wish-badge hidden" id="fabCartBadge" style="background: #D4AF37; color: #0A0A0A;">0</span>
+        </button>
         <button class="fab-btn fab-wishlist hidden" id="fabWishlist" aria-label="Open Wishlist">
             <span class="material-symbols-outlined text-gold-500/70 text-[18px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
             <span class="wish-badge hidden" id="fabWishBadge">0</span>
@@ -1068,18 +1058,116 @@
         const wishUserName = document.getElementById("wishUserName");
         const wishUserPhone = document.getElementById("wishUserPhone");
 
-        const productImages = {
-            'Sofa Sets': 'assets/sofa_indian_1775734816101.png',
-            'Office Chairs & Tables': 'assets/office_chair_indian_1775734837287.png',
-            'Wall Clocks': 'assets/wall_clock_indian_1775734853010.png',
-            'Photo Frames': 'assets/photo_frame_indian_1775734866964.png',
-            'Decorative Statues': 'assets/statue_indian_1775734881322.png',
-            'Water Fountains': 'assets/fountain_indian_1775734897565.png',
-            'Artificial Plants': 'assets/plant_indian_1775734912222.png',
-            'LED Chandeliers': 'assets/chandelier_img_1775732840371.png',
-        };
+        
+        // ── CART SYSTEM ──
+        const cart = JSON.parse(localStorage.getItem("kgs_cart") || "[]");
+        const fabCart = document.getElementById("fabCart");
+        const fabCartBadge = document.getElementById("fabCartBadge");
+        const cartModal = document.getElementById("cartModal");
+        const closeCartModal = document.getElementById("closeCartModal");
+        const cartItemsWrapper = document.getElementById("cartItems");
+        const emptyCartMsg = document.getElementById("emptyCartMsg");
+        const cartTotalEl = document.getElementById("cartTotal");
+// --- DYNAMIC PRODUCT DATA (From PRD) ---
+        const DEMO_PRODUCTS = [
+            { name: "Velvet 3-Seater Sofa", category: "Sofas & Seating", price: "₹24,999", img: "assets/sofa_indian_1775734816101.png", tag: "Best Seller", col: "md:col-span-6", type: "lg" },
+            { name: "Premium Lounger", category: "Sofas & Seating", price: "₹18,500", img: "assets/sofa_indian_1775734816101.png", tag: "", col: "md:col-span-6", type: "lg" },
+            { name: "Luxury Recliner", category: "Sofas & Seating", price: "₹32,000", img: "assets/sofa_indian_1775734816101.png", tag: "Premium", col: "md:col-span-6", type: "lg" },
+            { name: "Executive Mesh Chair", category: "Office Chairs & Tables", price: "₹4,200", img: "assets/office_chair_indian_1775734837287.png", tag: "In Store", col: "md:col-span-6", type: "lg" },
+            { name: "Wooden Study Desk", category: "Office Chairs & Tables", price: "₹9,800", img: "assets/office_chair_indian_1775734837287.png", tag: "", col: "md:col-span-6", type: "lg" },
+            { name: "Antique Sweep Clock", category: "Wall Clocks", price: "₹2,100", img: "assets/wall_clock_indian_1775734853010.png", tag: "Best Seller", col: "md:col-span-4", type: "md" },
+            { name: "Minimalist Metal Clock", category: "Wall Clocks", price: "₹1,850", img: "assets/wall_clock_indian_1775734853010.png", tag: "New", col: "md:col-span-4", type: "md" },
+            { name: "Designer Pendulum", category: "Wall Clocks", price: "₹3,400", img: "assets/wall_clock_indian_1775734853010.png", tag: "", col: "md:col-span-4", type: "md" },
+            { name: "Collage Frame Set", category: "Photo Frames", price: "₹1,200", img: "assets/photo_frame_indian_1775734866964.png", tag: "New", col: "md:col-span-4", type: "md" },
+            { name: "Minimal Wood Frame", category: "Photo Frames", price: "₹650", img: "assets/photo_frame_indian_1775734866964.png", tag: "", col: "md:col-span-4", type: "md" },
+            { name: "Silver Elegance Frame", category: "Photo Frames", price: "₹890", img: "assets/photo_frame_indian_1775734866964.png", tag: "In Store", col: "md:col-span-4", type: "md" },
+            { name: "Golden Buddha", category: "Decorative Statues", price: "₹3,200", img: "assets/statue_indian_1775734881322.png", tag: "In Store", col: "md:col-span-4", type: "md" },
+            { name: "Abstract Couple", category: "Decorative Statues", price: "₹2,800", img: "assets/statue_indian_1775734881322.png", tag: "", col: "md:col-span-4", type: "md" },
+            { name: "Brass Ganesha", category: "Decorative Statues", price: "₹4,500", img: "assets/statue_indian_1775734881322.png", tag: "Best Seller", col: "md:col-span-4", type: "md" },
+            { name: "Indoor Table Fountain", category: "Water Fountains", price: "₹5,600", img: "assets/fountain_indian_1775734897565.png", tag: "Best Seller", col: "md:col-span-6", type: "lg" },
+            { name: "Zen Rock Fountain", category: "Water Fountains", price: "₹7,200", img: "assets/fountain_indian_1775734897565.png", tag: "New", col: "md:col-span-6", type: "lg" },
+            { name: "Bonsai Tree Plant", category: "Artificial Plants", price: "₹950", img: "assets/plant_indian_1775734912222.png", tag: "New", col: "md:col-span-4", type: "md" },
+            { name: "Monstera Floor Plant", category: "Artificial Plants", price: "₹2,400", img: "assets/plant_indian_1775734912222.png", tag: "", col: "md:col-span-4", type: "md" },
+            { name: "Hanging Vines", category: "Artificial Plants", price: "₹600", img: "assets/plant_indian_1775734912222.png", tag: "", col: "md:col-span-4", type: "md" },
+            { name: "Crystal Tier Chandelier", category: "LED Chandeliers", price: "₹18,500", img: "assets/chandelier_img_1775732840371.png", tag: "In Store", col: "md:col-span-6", type: "lg" },
+            { name: "Modern Ring Pendant", category: "LED Chandeliers", price: "₹12,400", img: "assets/chandelier_img_1775732840371.png", tag: "New", col: "md:col-span-6", type: "lg" }
+        ];
 
-        document.querySelectorAll(".wishlist-btn").forEach(btn => {
+        // Ensure productImages map exists for wishlist UI
+        const productImages = {};
+        DEMO_PRODUCTS.forEach(p => productImages[p.name] = p.img);
+
+        const dynamicGrid = document.getElementById("dynamic-product-grid");
+        const categoryTabs = document.querySelectorAll(".category-tab");
+
+        function renderProducts(filterCategory) {
+            dynamicGrid.innerHTML = '';
+            
+            const filtered = filterCategory === 'All' 
+                ? DEMO_PRODUCTS 
+                : DEMO_PRODUCTS.filter(p => p.category === filterCategory);
+
+            filtered.forEach((prod, index) => {
+                const staggerDelay = index * 0.08; // 80ms stagger
+                const hClass = prod.type === 'lg' ? 'h-[420px] sm:h-[520px] lg:h-[560px]' : 'h-[320px] sm:h-[420px] lg:h-[460px]';
+                const tagHtml = prod.tag ? `<div class="absolute top-5 right-5"><span class="text-[9px] tracking-[0.2em] uppercase bg-gold-500/10 border border-gold-500/25 text-gold-300 px-3 py-1 font-sans font-medium">${prod.tag}</span></div>` : '';
+                const titleHtml = prod.type === 'lg'
+                    ? `<div class="transform translate-y-3 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                            <h3 class="text-2xl sm:text-3xl font-display font-medium text-white mb-1">${prod.name}</h3>
+                            <p class="text-sand-300 text-[11px] tracking-[0.2em] uppercase font-sans">${prod.price}</p>
+                       </div>
+                       <span class="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-gold-500/20 flex items-center justify-center text-gold-500 group-hover:bg-gold-500 group-hover:text-onyx-900 transition-all duration-800 transform translate-x-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 flex-shrink-0">
+                            <span class="material-symbols-outlined text-lg">east</span>
+                       </span>`
+                    : `<h3 class="text-xl sm:text-2xl font-display font-medium text-white mb-1">${prod.name}</h3>
+                       <p class="text-gold-400 text-[10px] tracking-[0.15em] uppercase font-sans">${prod.price}</p>`;
+                
+                const bottomClass = prod.type === 'lg' 
+                    ? 'bottom-8 sm:bottom-10 left-6 sm:left-10 right-6 sm:right-10 flex justify-between items-end'
+                    : 'bottom-6 sm:bottom-8 left-6 sm:left-8';
+                    
+                const isWish = wishlist.includes(prod.name) ? 'wish-active' : '';
+                const inCart = cart.includes(prod.name) ? 'cart-active' : '';
+                const html = `
+                    <div class="${prod.col} group relative product-card product-card-${prod.type} ${hClass} bg-onyx-800 reveal active rounded-sm fade-in-scale" style="animation-delay: ${staggerDelay}s;">
+                        <img src="${prod.img}" loading="lazy" class="w-full h-full object-cover opacity-60 group-hover:opacity-85" alt="${prod.name}">
+                        <div class="absolute inset-0 bg-gradient-to-t ${prod.type === 'lg' ? 'from-onyx-900 via-onyx-900/30' : 'from-onyx-900 via-transparent'} to-transparent opacity-80 group-hover:opacity-${prod.type === 'lg' ? '60' : '55'} transition-opacity duration-1000"></div>
+                        <button class="wishlist-btn ${isWish} absolute top-4 left-4 z-20 p-2.5 transition-all duration-500 group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/50 min-h-[44px] min-w-[44px]" aria-label="Add to Wishlist" data-product="${prod.name}">
+                            <span class="material-symbols-outlined text-white/40 group-hover/wish:text-gold-500 text-[24px] transition-all duration-500">favorite</span>
+                        </button>
+                        
+                        <button class="cart-btn ${inCart} absolute top-[64px] left-4 z-20 p-2.5 transition-all duration-500 group/cart flex items-center justify-center rounded-full hover:bg-onyx-900/50 min-h-[44px] min-w-[44px]" aria-label="Add to Cart" data-product="${prod.name}" data-price="${prod.price}">
+                            <span class="material-symbols-outlined text-white/40 group-hover/cart:text-gold-500 text-[22px] transition-all duration-500 cart-icon">${inCart ? 'check' : 'shopping_cart'}</span>
+                        </button>
+                        ${tagHtml}
+                        <div class="absolute ${bottomClass}">
+                            ${titleHtml}
+                        </div>
+                    </div>
+                `;
+                dynamicGrid.insertAdjacentHTML('beforeend', html);
+            });
+            
+            // Re-attach wishlist listeners for the newly injected buttons
+            attachWishlistListeners();
+        attachCartListeners();
+        }
+
+        // Handle category clicks
+        categoryTabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                if (tab.classList.contains("active")) return;
+                categoryTabs.forEach(t => t.classList.remove("active"));
+                tab.classList.add("active");
+                renderProducts(tab.getAttribute("data-filter"));
+            });
+        });
+
+        // Initialize grid
+        renderProducts("All");
+
+        function attachWishlistListeners() {
+            document.querySelectorAll(".wishlist-btn").forEach(btn => {
             const productName = btn.getAttribute("data-product") || "";
             if (wishlist.includes(productName)) btn.classList.add("wish-active");
 
@@ -1098,6 +1186,7 @@
                 updateWishlistUI();
             });
         });
+        }
 
         function updateWishlistUI() {
             const count = wishlist.length;
@@ -1147,6 +1236,122 @@
             });
         }
 
+        function attachCartListeners() {
+            document.querySelectorAll(".cart-btn").forEach(btn => {
+                const productName = btn.getAttribute("data-product") || "";
+                
+                btn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const idx = cart.indexOf(productName);
+                    const icon = btn.querySelector('.cart-icon');
+                    
+                    if (idx === -1) {
+                        cart.push(productName);
+                        btn.classList.add("cart-active");
+                        // Micro-animation
+                        icon.style.transform = "scale(0.8)";
+                        setTimeout(() => {
+                            icon.innerText = "check";
+                            icon.style.transform = "scale(1.1)";
+                            icon.classList.add("text-gold-500");
+                            icon.classList.remove("text-white/40");
+                            setTimeout(() => icon.style.transform = "scale(1)", 150);
+                        }, 150);
+                    } else {
+                        cart.splice(idx, 1);
+                        btn.classList.remove("cart-active");
+                        icon.style.transform = "scale(0.8)";
+                        setTimeout(() => {
+                            icon.innerText = "shopping_cart";
+                            icon.style.transform = "scale(1.1)";
+                            icon.classList.remove("text-gold-500");
+                            icon.classList.add("text-white/40");
+                            setTimeout(() => icon.style.transform = "scale(1)", 150);
+                        }, 150);
+                    }
+                    localStorage.setItem("kgs_cart", JSON.stringify(cart));
+                    updateCartUI();
+                });
+            });
+        }
+
+        function updateCartUI() {
+            const count = cart.length;
+            if (count > 0) {
+                fabCart.classList.remove("hidden");
+                fabCartBadge.classList.remove("hidden");
+                fabCartBadge.innerText = count;
+                fabCartBadge.style.transform = "scale(1.3)";
+                setTimeout(() => fabCartBadge.style.transform = "scale(1)", 250);
+            } else {
+                fabCart.classList.add("hidden");
+                fabCartBadge.classList.add("hidden");
+            }
+            renderCartItems();
+        }
+
+        function renderCartItems() {
+            if (!cartItemsWrapper) return;
+            cartItemsWrapper.querySelectorAll(".cart-item").forEach(el => el.remove());
+            
+            if (cart.length === 0) { 
+                emptyCartMsg.classList.remove("hidden"); 
+                if(cartTotalEl) cartTotalEl.innerText = "₹0";
+                return; 
+            }
+            emptyCartMsg.classList.add("hidden");
+
+            let total = 0;
+            cart.forEach(name => {
+                const prod = DEMO_PRODUCTS.find(p => p.name === name);
+                if (!prod) return;
+                
+                const priceNum = parseInt(prod.price.replace(/[^0-9]/g, ''));
+                total += priceNum;
+
+                const item = document.createElement("div");
+                item.className = "cart-item flex items-center gap-4 bg-onyx-700/20 border border-onyx-600/30 rounded-lg p-3";
+                item.innerHTML = `
+                    <img src="${prod.img}" class="w-12 h-12 rounded object-cover flex-shrink-0 opacity-80" alt="${name}">
+                    <div class="flex-1">
+                        <h4 class="text-white/90 text-xs font-medium">${name}</h4>
+                        <p class="text-gold-500/80 text-[11px] tracking-wider mt-1">${prod.price}</p>
+                    </div>
+                    <button class="cart-remove text-sand-200/20 hover:text-red-400 transition-colors duration-400 min-h-[36px] min-w-[36px] flex items-center justify-center rounded-full hover:bg-onyx-700/40" data-name="${name}">
+                        <span class="material-symbols-outlined text-sm">close</span>
+                    </button>
+                `;
+                cartItemsWrapper.appendChild(item);
+            });
+
+            if(cartTotalEl) {
+                cartTotalEl.innerText = "₹" + total.toLocaleString('en-IN');
+            }
+
+            cartItemsWrapper.querySelectorAll(".cart-remove").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const name = btn.getAttribute("data-name");
+                    const idx = cart.indexOf(name);
+                    if (idx !== -1) cart.splice(idx, 1);
+                    localStorage.setItem("kgs_cart", JSON.stringify(cart));
+                    
+                    document.querySelectorAll('.cart-btn').forEach(hb => {
+                        if (hb.getAttribute("data-product") === name) {
+                            hb.classList.remove("cart-active");
+                            const icon = hb.querySelector('.cart-icon');
+                            if(icon) {
+                                icon.innerText = "shopping_cart";
+                                icon.classList.remove("text-gold-500");
+                                icon.classList.add("text-white/40");
+                            }
+                        }
+                    });
+                    updateCartUI();
+                });
+            });
+        }
+
         fabWishlist.addEventListener("click", () => {
             renderWishlistItems();
             wishlistModal.classList.add("open");
@@ -1159,6 +1364,24 @@
         }
         closeWishlistModal.addEventListener("click", closeModal);
         wishlistModal.addEventListener("click", (e) => { if (e.target === wishlistModal) closeModal(); });
+
+        if(fabCart) {
+            fabCart.addEventListener("click", () => {
+                cartModal.classList.add("open");
+                document.body.style.overflow = 'hidden';
+            });
+            closeCartModal.addEventListener("click", () => {
+                cartModal.classList.remove("open");
+                document.body.style.overflow = '';
+            });
+            cartModal.addEventListener("click", (e) => {
+                if (e.target === cartModal) {
+                    cartModal.classList.remove("open");
+                    document.body.style.overflow = '';
+                }
+            });
+            updateCartUI(); // initial call
+        }
 
         sendWishlistWhatsApp.addEventListener("click", () => {
             if (wishlist.length === 0) return;

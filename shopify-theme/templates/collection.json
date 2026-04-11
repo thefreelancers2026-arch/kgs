@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {}
+    },
+    "featured": {
+      "type": "product-grid",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "featured"
+  ]
+}

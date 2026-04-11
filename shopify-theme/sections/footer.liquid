@@ -1,0 +1,53 @@
+{% comment %}
+  Section: Footer
+  KGS Home Decors - Premium Dark Luxury Theme
+{% endcomment %}
+
+<footer class="bg-[#060606] py-8 sm:py-10 px-5 sm:px-6 md:px-12 border-t border-onyx-700/30">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-5 mb-6">
+      <div class="text-lg font-bold tracking-[0.25em] text-white font-serif uppercase">
+        {{ settings.header_logo_text | default: 'KGS' }}<span class="text-gold-500">.</span>
+      </div>
+      <p class="text-onyx-500 text-[10px] tracking-[0.15em] uppercase text-center">{{ settings.footer_address | default: 'Junction Road, near EB Office, Virudhachalam, Tamil Nadu' }}</p>
+      <div class="flex items-center gap-5">
+        <a href="tel:{{ settings.contact_phone | default: '+919789182921' }}" class="text-onyx-500 hover:text-gold-400 transition-colors duration-500 text-xs tracking-wider min-h-[44px] flex items-center">{{ settings.contact_phone | default: '+91 97891 82921' }}</a>
+        <span class="text-onyx-600/30">·</span>
+        <a href="https://www.instagram.com/kgshomedecors_virudhachalam" target="_blank" class="text-onyx-500 hover:text-gold-400 transition-colors duration-500 text-xs tracking-wider min-h-[44px] flex items-center">Instagram</a>
+      </div>
+    </div>
+    <div class="border-t border-onyx-700/20 pt-5 flex flex-col sm:flex-row justify-between items-center gap-3">
+      <p class="text-onyx-600/40 text-[10px] tracking-[0.1em] uppercase">{{ settings.footer_copyright | default: '© 2024 KGS Home Decors' }}</p>
+      <p class="text-onyx-600/30 text-[10px] tracking-wider">
+        <a href="https://www.instagram.com/kgshomedecors_virudhachalam" target="_blank" class="hover:text-gold-500 transition-colors duration-500">@kgshomedecors_virudhachalam</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "tag": "section",
+  "class": "section-footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "footer_copyright",
+      "default": "© 2024 KGS Home Decors",
+      "label": "Copyright Text"
+    },
+    {
+      "type": "text",
+      "id": "footer_address",
+      "default": "Junction Road, near EB Office, Virudhachalam, Tamil Nadu",
+      "label": "Address"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer"
+    }
+  ]
+}
+{% endschema %}

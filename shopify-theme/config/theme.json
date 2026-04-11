@@ -1,0 +1,77 @@
+{
+  "name": "KGS Home Decors",
+  "version": "1.0.0",
+  "author": "The Freelancers",
+  "description": "Premium dark luxury Shopify theme for KGS Home Decors - Home decor shop in Virudhachalam, Tamil Nadu",
+  "platform_version": "2.0",
+  "settings": {
+    "colors": {
+      "onyx-900": "#0A0A0A",
+      "onyx-800": "#111111",
+      "onyx-700": "#1A1A1A",
+      "onyx-600": "#252525",
+      "gold-500": "#D4AF37",
+      "gold-400": "#E5C76B",
+      "gold-300": "#F2DCA5",
+      "gold-200": "#F5E6B8",
+      "sand-50": "#FAFAF8",
+      "sand-100": "#EDE9E3",
+      "sand-200": "#D5CEC4",
+      "sand-300": "#B8AFA3"
+    },
+    "fonts": {
+      "display": "Cormorant Garamond, serif",
+      "serif": "Playfair Display, serif",
+      "sans": "Montserrat, sans-serif"
+    }
+  },
+  "sections": {
+    "announcement": {
+      "type": "announcement",
+      "settings": {}
+    },
+    "header": {
+      "type": "header",
+      "settings": {}
+    },
+    "hero": {
+      "type": "hero",
+      "settings": {}
+    },
+    "product-grid": {
+      "type": "product-grid",
+      "settings": {}
+    },
+    "showroom": {
+      "type": "showroom",
+      "settings": {}
+    },
+    "marquee": {
+      "type": "marquee",
+      "settings": {}
+    },
+    "contact": {
+      "type": "contact-form",
+      "settings": {}
+    },
+    "footer": {
+      "type": "footer",
+      "settings": {}
+    },
+    "fab-buttons": {
+      "type": "fab-buttons",
+      "settings": {}
+    }
+  },
+  "content_for_index": [
+    "announcement",
+    "header",
+    "hero",
+    "product-grid",
+    "showroom",
+    "marquee",
+    "contact",
+    "footer",
+    "fab-buttons"
+  ]
+}

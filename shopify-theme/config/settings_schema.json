@@ -1,0 +1,233 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "KGS Home Decors",
+    "theme_version": "1.0.0",
+    "theme_author": "The Freelancers",
+    "theme_documentation_url": "https://github.com/thefreelancers2026-arch/kgs",
+    "theme_support_url": "https://github.com/thefreelancers2026-arch/kgs/issues"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Color Scheme"
+      },
+      {
+        "type": "color",
+        "id": "color_onyx_900",
+        "default": "#0A0A0A",
+        "label": "Background (Onyx 900)"
+      },
+      {
+        "type": "color",
+        "id": "color_onyx_800",
+        "default": "#111111",
+        "label": "Surface Dark (Onyx 800)"
+      },
+      {
+        "type": "color",
+        "id": "color_onyx_700",
+        "default": "#1A1A1A",
+        "label": "Surface (Onyx 700)"
+      },
+      {
+        "type": "color",
+        "id": "color_gold_500",
+        "default": "#D4AF37",
+        "label": "Accent Gold"
+      },
+      {
+        "type": "color",
+        "id": "color_gold_400",
+        "default": "#E5C76B",
+        "label": "Accent Gold Light"
+      },
+      {
+        "type": "color",
+        "id": "color_sand_50",
+        "default": "#FAFAF8",
+        "label": "Text Light (Sand 50)"
+      },
+      {
+        "type": "color",
+        "id": "color_sand_200",
+        "default": "#D5CEC4",
+        "label": "Text Muted (Sand 200)"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Fonts"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_heading",
+        "default": "Cormorant Garamond",
+        "label": "Heading Font"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "default": "Montserrat",
+        "label": "Body Font"
+      }
+    ]
+  },
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Navigation"
+      },
+      {
+        "type": "text",
+        "id": "header_logo_text",
+        "default": "KGS",
+        "label": "Logo Text"
+      },
+      {
+        "type": "link_list",
+        "id": "menu",
+        "default": "main-menu",
+        "label": "Menu"
+      }
+    ]
+  },
+  {
+    "name": "Hero Section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Hero"
+      },
+      {
+        "type": "image_picker",
+        "id": "hero_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "text",
+        "id": "hero_heading",
+        "default": "Make Your Home Look Beautiful",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "hero_subheading",
+        "default": "with Premium Decor.",
+        "label": "Subheading"
+      },
+      {
+        "type": "text",
+        "id": "hero_description",
+        "default": "Furniture, Plants, Fountains & Stylish Decor — at our showroom in Virudhachalam.",
+        "label": "Description"
+      },
+      {
+        "type": "text",
+        "id": "hero_cta_text",
+        "default": "View Collection",
+        "label": "CTA Button Text"
+      },
+      {
+        "type": "url",
+        "id": "hero_cta_link",
+        "default": "/collections",
+        "label": "CTA Link"
+      }
+    ]
+  },
+  {
+    "name": "Showroom",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Showroom Section"
+      },
+      {
+        "type": "image_picker",
+        "id": "showroom_image",
+        "label": "Showroom Image"
+      },
+      {
+        "type": "text",
+        "id": "showroom_title",
+        "default": "Beautiful Decor for Every Home.",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "showroom_content",
+        "default": "<p>At KGS Home Decors, Virudhachalam, explore a wide range of stylish decor items. Visit our showroom and choose what fits your home perfectly.</p>",
+        "label": "Content"
+      },
+      {
+        "type": "text",
+        "id": "showroom_address",
+        "default": "Junction Road, near EB Office, Virudhachalam, Tamil Nadu",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "showroom_phone",
+        "default": "+91 97891 82921",
+        "label": "Phone"
+      }
+    ]
+  },
+  {
+    "name": "Contact",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Contact Section"
+      },
+      {
+        "type": "text",
+        "id": "contact_heading",
+        "default": "Let's Make Your Home Beautiful.",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "contact_phone",
+        "default": "+91 97891 82921",
+        "label": "Phone Number"
+      },
+      {
+        "type": "text",
+        "id": "contact_whatsapp",
+        "default": "919789182921",
+        "label": "WhatsApp Number (without +)"
+      }
+    ]
+  },
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Footer"
+      },
+      {
+        "type": "text",
+        "id": "footer_copyright",
+        "default": "© 2024 KGS Home Decors",
+        "label": "Copyright Text"
+      },
+      {
+        "type": "text",
+        "id": "footer_address",
+        "default": "Junction Road, near EB Office, Virudhachalam, Tamil Nadu",
+        "label": "Address"
+      }
+    ]
+  }
+]

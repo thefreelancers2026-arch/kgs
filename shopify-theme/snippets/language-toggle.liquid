@@ -1,0 +1,47 @@
+{% comment %}
+  Snippet: Language Toggle
+  KGS Home Decors - Premium Dark Luxury Theme
+  Supports English and Tamil
+{% endcomment %}
+
+{% comment %} Usage: {% render 'language-toggle' %} {% endcomment %}
+
+<div class="language-toggle relative inline-flex">
+  <button id="langToggleBtn" class="flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase text-sand-300 hover:text-gold-400 transition-colors duration-500 min-h-[44px] px-3">
+    <span class="material-symbols-outlined text-sm">translate</span>
+    <span id="currentLang">{{ request.locale.iso_code | upcase }}</span>
+    <span class="material-symbols-outlined text-xs">expand_more</span>
+  </button>
+  
+  <div id="langDropdown" class="absolute top-full right-0 mt-2 bg-onyx-800 border border-onyx-600/50 rounded-lg shadow-xl opacity-0 invisible transition-all duration-300 z-50 min-w-[140px]">
+    <ul class="py-2">
+      {% for locale in shop.available_languages %}
+        <li>
+          <a href="{{ locale.root_url }}" 
+             class="block px-4 py-2 text-[11px] tracking-[0.1em] uppercase text-sand-200 hover:text-gold-400 hover:bg-onyx-700/50 transition-colors duration-300 {% if request.locale.iso_code == locale.iso_code %}text-gold-400{% endif %}">
+            {{ locale.name | capitalize }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const langBtn = document.getElementById('langToggleBtn');
+    const langDropdown = document.getElementById('langDropdown');
+    const currentLang = document.getElementById('currentLang');
+    
+    langBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      langDropdown.classList.toggle('opacity-100');
+      langDropdown.classList.toggle('invisible');
+    });
+    
+    document.addEventListener('click', function() {
+      langDropdown.classList.remove('opacity-100');
+      langDropdown.classList.add('invisible');
+    });
+  });
+</script>

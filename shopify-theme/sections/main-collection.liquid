@@ -1,0 +1,83 @@
+{% comment %}
+  Section: Main Collection Page
+  KGS Home Decors - Premium Dark Luxury Theme
+{% endcomment %}
+
+{% style %}
+  .collection-header {
+    background: var(--color-onyx-900);
+    padding: 8rem 0 4rem;
+    text-align: center;
+  }
+  .collection-title {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--color-sand-50);
+    margin-bottom: 1rem;
+  }
+  .collection-description {
+    color: var(--color-sand-200);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+{% endstyle %}
+
+<div class="collection-header">
+  <div class="max-w-[1400px] mx-auto px-4">
+    <h1 class="collection-title">{{ collection.title }}</h1>
+    {% if collection.description != blank %}
+      <p class="collection-description">{{ collection.description }}</p>
+    {% endif %}
+    <p class="text-sand-300 mt-4 text-sm">{{ collection.products.count }} Products</p>
+  </div>
+</div>
+
+<div class="collection-products py-12 bg-onyx-900">
+  <div class="max-w-[1400px] mx-auto px-4">
+    {% if collection.products.size > 0 %}
+      <div class="product-grid grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-5 lg:gap-6">
+        {% for product in collection.products %}
+          <div class="md:col-span-4 group relative product-card bg-onyx-800 rounded-sm fade-in-scale">
+            <a href="{{ product.url }}">
+              <img src="{{ product.featured_image | image_url: width: 600 }}" loading="lazy" 
+                   class="w-full h-[320px] sm:h-[420px] lg:h-[460px] object-cover opacity-60 group-hover:opacity-85" 
+                   alt="{{ product.title }}">
+              <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-80 group-hover:opacity-55 transition-opacity duration-1000"></div>
+            </a>
+            
+            <button class="wishlist-btn absolute top-4 left-4 z-20 p-2.5 transition-all duration-500 group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/50 min-h-[44px] min-w-[44px]" aria-label="Add to Wishlist" data-product="{{ product.title }}" data-variant-id="{{ product.variants.first.id }}">
+              <span class="material-symbols-outlined text-white/40 group-hover/wish:text-gold-500 text-[24px] transition-all duration-500">favorite</span>
+            </button>
+            
+            <div class="absolute bottom-6 sm:bottom-8 left-6 sm:left-8">
+              <h3 class="text-xl sm:text-2xl font-display font-medium text-white mb-1">{{ product.title }}</h3>
+              <p class="text-gold-400 text-[10px] tracking-[0.15em] uppercase font-sans">{{ product.price | money }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="text-center py-16">
+        <span class="material-symbols-outlined text-6xl text-sand-300/30 mb-4">inventory_2</span>
+        <p class="text-sand-200 text-lg">No products in this collection yet.</p>
+        <a href="{{ routes.all_products_url }}" class="btn-primary inline-block mt-6 bg-gold-500 text-onyx-900 px-8 py-3 uppercase tracking-[0.2em] font-semibold">
+          Browse All Products
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection Page",
+  "tag": "section",
+  "class": "section-collection-main",
+  "presets": [
+    {
+      "name": "Collection Page"
+    }
+  ]
+}
+{% endschema %}

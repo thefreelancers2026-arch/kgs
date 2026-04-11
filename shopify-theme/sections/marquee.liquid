@@ -1,0 +1,50 @@
+{% comment %}
+  Section: Marquee / Scrolling Banner
+  KGS Home Decors - Premium Dark Luxury Theme
+{% endcomment %}
+
+{% style %}
+  .stroke-text { 
+    -webkit-text-stroke: 1px rgba(213, 206, 196, 0.5); 
+    -webkit-text-fill-color: transparent; 
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+{% endstyle %}
+
+<div class="w-full bg-onyx-900 py-5 sm:py-6 overflow-hidden relative flex items-center border-y border-onyx-700/30">
+  <div class="whitespace-nowrap flex opacity-30" style="animation: marquee 50s linear infinite;">
+    <span class="text-xl sm:text-3xl lg:text-5xl font-display text-transparent stroke-text uppercase tracking-widest px-4 sm:px-8">Home Decor Virudhachalam</span>
+    <span class="text-gold-500/50 text-lg sm:text-xl mx-2 sm:mx-4">✦</span>
+    <span class="text-xl sm:text-3xl lg:text-5xl font-display text-transparent stroke-text uppercase tracking-widest px-4 sm:px-8">Artificial Plants</span>
+    <span class="text-gold-500/50 text-lg sm:text-xl mx-2 sm:mx-4">✦</span>
+    <span class="text-xl sm:text-3xl lg:text-5xl font-display text-transparent stroke-text uppercase tracking-widest px-4 sm:px-8">Furniture Shop</span>
+    <span class="text-gold-500/50 text-lg sm:text-xl mx-2 sm:mx-4">✦</span>
+    <span class="text-xl sm:text-3xl lg:text-5xl font-display text-transparent stroke-text uppercase tracking-widest px-4 sm:px-8">Water Fountains</span>
+    <span class="text-gold-500/50 text-lg sm:text-xl mx-2 sm:mx-4">✦</span>
+    <span class="text-xl sm:text-3xl lg:text-5xl font-display text-transparent stroke-text uppercase tracking-widest px-4 sm:px-8">Wall Clocks</span>
+    <span class="text-gold-500/50 text-lg sm:text-xl mx-2 sm:mx-4">✦</span>
+    <span class="text-xl sm:text-3xl lg:text-5xl font-display text-transparent stroke-text uppercase tracking-widest px-4 sm:px-8">Premium Decor</span>
+    <span class="text-gold-500/50 text-lg sm:text-xl mx-2 sm:mx-4">✦</span>
+    <span class="text-xl sm:text-3xl lg:text-5xl font-display text-transparent stroke-text uppercase tracking-widest px-4 sm:px-8">Home Decor Virudhachalam</span>
+    <span class="text-gold-500/50 text-lg sm:text-xl mx-2 sm:mx-4">✦</span>
+    <span class="text-xl sm:text-3xl lg:text-5xl font-display text-transparent stroke-text uppercase tracking-widest px-4 sm:px-8">Artificial Plants</span>
+    <span class="text-gold-500/50 text-lg sm:text-xl mx-2 sm:mx-4">✦</span>
+    <span class="text-xl sm:text-3xl lg:text-5xl font-display text-transparent stroke-text uppercase tracking-widest px-4 sm:px-8">Furniture Shop</span>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Marquee Banner",
+  "tag": "section",
+  "class": "section-marquee",
+  "presets": [
+    {
+      "name": "Marquee Banner"
+    }
+  ]
+}
+{% endschema %}

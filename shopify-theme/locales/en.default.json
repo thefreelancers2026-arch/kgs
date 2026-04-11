@@ -1,0 +1,31 @@
+{
+  "general": {
+    "continue_shopping": "Continue Shopping",
+    "view_cart": "View Cart",
+    "checkout": "Checkout"
+  },
+  "product": {
+    "add_to_cart": "Add to Cart",
+    "buy_now": "Buy Now",
+    "out_of_stock": "Out of Stock",
+    "in_stock": "In Stock"
+  },
+  "cart": {
+    "your_cart": "Your Cart",
+    "empty_cart": "Your cart is empty",
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "proceed_to_checkout": "Proceed to Checkout"
+  },
+  "wishlist": {
+    "your_wishlist": "Your Wishlist",
+    "add_to_wishlist": "Add to Wishlist",
+    "remove_from_wishlist": "Remove from Wishlist"
+  },
+  "contact": {
+    "get_in_touch": "Get In Touch",
+    "send_message": "Send Message",
+    "call_us": "Call Us",
+    "whatsapp": "WhatsApp"
+  }
+}

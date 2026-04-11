@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ page_description | default: 'Buy artificial plants, fountains, furniture and home decor items in Virudhachalam. Visit KGS Home Decors showroom. Best home decor shop in Virudhachalam, Tamil Nadu.' }}">
+  
+  <title>{{ page_title | default: 'KGS Home Decors | Home Decor Shop in Virudhachalam' }}</title>
+  
+  {% comment %} Fonts {% endcomment %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  
+  {% comment %} Shopify CSS {% endcomment %}
+  {{ 'application.css' | asset_url | stylesheet_tag }}
+  {{ 'styles.css' | asset_url | stylesheet_tag }}
+  
+  {% comment %} Shopify Header Hooks {% endcomment %}
+  {{ content_for_header }}
+  
+  <style>
+    :root {
+      --color-onyx-900: {{ settings.color_onyx_900 | default: '#0A0A0A' }};
+      --color-onyx-800: {{ settings.color_onyx_800 | default: '#111111' }};
+      --color-onyx-700: {{ settings.color_onyx_700 | default: '#1A1A1A' }};
+      --color-onyx-600: {{ settings.color_onyx_600 | default: '#252525' }};
+      --color-gold-500: {{ settings.color_gold_500 | default: '#D4AF37' }};
+      --color-gold-400: {{ settings.color_gold_400 | default: '#E5C76B' }};
+      --color-gold-300: {{ settings.color_gold_300 | default: '#F2DCA5' }};
+      --color-gold-200: {{ settings.color_gold_200 | default: '#F5E6B8' }};
+      --color-sand-50: {{ settings.color_sand_50 | default: '#FAFAF8' }};
+      --color-sand-200: {{ settings.color_sand_200 | default: '#D5CEC4' }};
+      --color-sand-300: {{ settings.color_sand_300 | default: '#B8AFA3' }};
+      
+      --font-display: {{ settings.font_heading | default: 'Cormorant Garamond, serif' }};
+      --font-body: {{ settings.font_body | default: 'Montserrat, sans-serif' }};
+    }
+    
+    *, *::before, *::after { box-sizing: border-box; }
+    body { 
+      background-color: var(--color-onyx-900); 
+      color: var(--color-sand-50); 
+      font-family: var(--font-body);
+      overflow-x: hidden;
+    }
+    .material-symbols-outlined { 
+      font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24; 
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased selection:bg-gold-500 selection:text-onyx-900 leading-[1.8]">
+  
+  {% comment %} Main Content {% endcomment %}
+  <main class="main-content">
+    {{ content_for_layout }}
+  </main>
+  
+  {% comment %} Shopify JS {% endcomment %}
+  {{ 'application.js' | asset_url | script_tag }}
+  {{ 'script.js' | asset_url | script_tag }}
+  
+</body>
+</html>

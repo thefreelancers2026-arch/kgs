@@ -1,0 +1,46 @@
+{
+  "sections": {
+    "announcement": {
+      "type": "header",
+      "settings": {}
+    },
+    "hero": {
+      "type": "hero",
+      "settings": {}
+    },
+    "product-grid": {
+      "type": "product-grid",
+      "settings": {}
+    },
+    "showroom": {
+      "type": "showroom",
+      "settings": {}
+    },
+    "marquee": {
+      "type": "marquee",
+      "settings": {}
+    },
+    "contact": {
+      "type": "contact-form",
+      "settings": {}
+    },
+    "fab-buttons": {
+      "type": "fab-buttons",
+      "settings": {}
+    },
+    "footer": {
+      "type": "footer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "announcement",
+    "hero",
+    "product-grid",
+    "showroom",
+    "marquee",
+    "contact",
+    "fab-buttons",
+    "footer"
+  ]
+}

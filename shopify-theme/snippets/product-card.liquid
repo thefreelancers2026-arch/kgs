@@ -1,0 +1,78 @@
+{% comment %}
+  Snippet: Product Card
+  KGS Home Decors - Premium Dark Luxury Theme
+{% endcomment %}
+
+{% comment %} Usage: {% render 'product-card', product: product, loop: forloop.index %} {% endcomment %}
+
+{% assign product_image = product.featured_image | default: false %}
+{% assign product_title = product.title | default: 'Product Name' %}
+{% assign product_price = product.price | default: 0 %}
+{% assign product_url = product.url | default: '#' %}
+{% assign product_handle = product.handle | default: '' %}
+
+<div class="{{ loop_class | default: 'md:col-span-4' }} group relative product-card bg-onyx-800 rounded-sm fade-in-scale" style="{{ style_attr | default: '' }}">
+  <a href="{{ product_url }}">
+    {% if product_image %}
+      <img src="{{ product_image | image_url: width: 600 }}" loading="lazy" 
+           class="w-full h-[320px] sm:h-[420px] lg:h-[460px] object-cover opacity-60 group-hover:opacity-85" 
+           alt="{{ product_title }}">
+    {% else %}
+      <img src="{{ placeholder_image | default: 'sofa_img.png' | asset_url }}" loading="lazy" 
+           class="w-full h-[320px] sm:h-[420px] lg:h-[460px] object-cover opacity-60 group-hover:opacity-85" 
+           alt="{{ product_title }}">
+    {% endif %}
+    <div class="absolute inset-0 bg-gradient-to-t from-onyx-900 via-transparent to-transparent opacity-80 group-hover:opacity-55 transition-opacity duration-1000"></div>
+  </a>
+  
+  {% comment %} Wishlist Button {% endcomment %}
+  <button class="wishlist-btn absolute top-4 left-4 z-20 p-2.5 transition-all duration-500 group/wish flex items-center justify-center rounded-full hover:bg-onyx-900/50 min-h-[44px] min-w-[44px]" 
+          aria-label="Add to Wishlist" 
+          data-product="{{ product_title }}" 
+          data-variant-id="{{ product.variants.first.id }}"
+          data-handle="{{ product_handle }}">
+    <span class="material-symbols-outlined text-white/40 group-hover/wish:text-gold-500 text-[24px] transition-all duration-500">favorite</span>
+  </button>
+  
+  {% comment %} Quick Add to Cart (for available variants) {% endcomment %}
+  {% if product.available %}
+  <button class="quick-add-btn absolute top-[64px] left-4 z-20 p-2.5 transition-all duration-500 group/cart flex items-center justify-center rounded-full hover:bg-onyx-900/50 min-h-[44px] min-w-[44px]"
+          aria-label="Quick Add to Cart"
+          data-product-id="{{ product.id }}"
+          data-variant-id="{{ product.variants.first.id }}"
+          data-quantity="1">
+    <span class="material-symbols-outlined text-white/40 group-hover/cart:text-gold-500 text-[22px] transition-all duration-500 cart-icon">shopping_cart</span>
+  </button>
+  {% endif %}
+  
+  {% comment %} Product Info {% endcomment %}
+  <div class="absolute bottom-6 sm:bottom-8 left-6 sm:left-8">
+    <h3 class="text-xl sm:text-2xl font-display font-medium text-white mb-1">{{ product_title }}</h3>
+    <p class="text-gold-400 text-[10px] tracking-[0.15em] uppercase font-sans">
+      {% if product_price > 0 %}
+        {{ product_price | money }}
+      {% else %}
+        {{ product_price_format | default: '₹0' }}
+      {% endif %}
+    </p>
+  </div>
+  
+  {% comment %} Sale/Badge tags {% endcomment %}
+  {% if product.compare_at_price > product.price %}
+    <div class="absolute top-5 right-5">
+      <span class="text-[9px] tracking-[0.2em] uppercase bg-gold-500/10 border border-gold-500/25 text-gold-300 px-3 py-1 font-sans font-medium">Sale</span>
+    </div>
+  {% endif %}
+  
+  {% if product.tags contains 'Best Seller' %}
+    <div class="absolute top-5 right-5">
+      <span class="text-[9px] tracking-[0.2em] uppercase bg-gold-500/10 border border-gold-500/25 text-gold-300 px-3 py-1 font-sans font-medium">Best Seller</span>
+    </div>
+  {% endif %}
+  
+  {% if product.tags contains 'New' %}
+    <div class="absolute top-5 right-5">
+      <span class="text-[9px] tracking-[0.2em] uppercase bg-gold-500/10 border border-gold-500/25 text-gold-300 px-3 py-1 font-sans font-medium">New</span>
+    </div>
+  {% endif %}
+</div>

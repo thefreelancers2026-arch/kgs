@@ -1,0 +1,211 @@
+{% comment %}
+  Section: Main Cart Page
+  KGS Home Decors - Premium Dark Luxury Theme
+{% endcomment %}
+
+{% style %}
+  .cart-page {
+    background: var(--color-onyx-900);
+    min-height: 100vh;
+    padding-top: 100px;
+  }
+  .cart-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .cart-table th {
+    text-align: left;
+    padding: 1rem;
+    color: var(--color-sand-300);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid var(--color-onyx-700);
+  }
+  .cart-table td {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid var(--color-onyx-700);
+  }
+  .cart-product-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  .cart-product-title {
+    color: var(--color-sand-50);
+    font-weight: 500;
+  }
+  .cart-product-variant {
+    color: var(--color-sand-300);
+    font-size: 0.875rem;
+  }
+  .quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .quantity-btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--color-onyx-600);
+    background: transparent;
+    color: var(--color-sand-50);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  .quantity-btn:hover {
+    border-color: var(--color-gold-500);
+  }
+  .quantity-input {
+    width: 50px;
+    text-align: center;
+    background: transparent;
+    border: 1px solid var(--color-onyx-600);
+    color: var(--color-sand-50);
+    padding: 0.5rem;
+    border-radius: 4px;
+  }
+  .cart-summary {
+    background: var(--color-onyx-800);
+    padding: 2rem;
+    border-radius: 8px;
+  }
+  .cart-total {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-gold-500);
+  }
+{% endstyle %}
+
+<section class="cart-page py-12">
+  <div class="max-w-[1400px] mx-auto px-4">
+    <h1 class="text-3xl font-display text-white mb-8">Your Shopping Cart</h1>
+    
+    {% if cart.item_count > 0 %}
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2">
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in cart.items %}
+                <tr>
+                  <td>
+                    <div class="flex items-center gap-4">
+                      <img src="{{ item.image | image_url: width: 200 }}" alt="{{ item.title }}" class="cart-product-image">
+                      <div>
+                        <a href="{{ item.url }}" class="cart-product-title">{{ item.title }}</a>
+                        {% if item.variant_title != 'Default Title' %}
+                          <p class="cart-product-variant">{{ item.variant_title }}</p>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </td>
+                  <td class="text-gold-400">{{ item.price | money }}</td>
+                  <td>
+                    <div class="quantity-selector">
+                      <button class="quantity-btn" onclick="location.href='{{ item.url | append: '?quantity=' | append: item.quantity | minus: 1 }}'">-</button>
+                      <span class="quantity-input">{{ item.quantity }}</span>
+                      <button class="quantity-btn" onclick="location.href='{{ item.url | append: '?quantity=' | append: item.quantity | plus: 1 }}'">+</button>
+                    </div>
+                  </td>
+                  <td class="text-gold-400">{{ item.line_price | money }}</td>
+                  <td>
+                    <a href="{{ item.url }}" class="text-sand-300 hover:text-red-400" onclick="document.getElementById('cart-remove-{{ item.id }}').submit()">
+                      <span class="material-symbols-outlined">delete</span>
+                    </a>
+                    <form id="cart-remove-{{ item.id }}" action="{{ routes.cart_change_url }}" method="post">
+                      <input type="hidden" name="quantity" value="0">
+                      <input type="hidden" name="id" value="{{ item.id }}">
+                    </form>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="cart-summary">
+          <h2 class="text-xl font-display text-white mb-6">Order Summary</h2>
+          
+          <div class="flex justify-between mb-4">
+            <span class="text-sand-300">Subtotal</span>
+            <span class="text-sand-50">{{ cart.total_price | money }}</span>
+          </div>
+          
+          <div class="flex justify-between mb-4">
+            <span class="text-sand-300">Shipping</span>
+            <span class="text-sand-50">Calculated at checkout</span>
+          </div>
+          
+          <div class="border-t border-onyx-600 pt-4 mb-6">
+            <div class="flex justify-between">
+              <span class="text-white font-medium">Total</span>
+              <span class="cart-total">{{ cart.total_price | money }}</span>
+            </div>
+          </div>
+          
+          {% form 'cart', class: 'cart-form' %}
+            <div class="mb-6">
+              <label class="text-sand-300 text-sm uppercase tracking-wider mb-2 block">Gift card or discount code</label>
+              <div class="flex gap-2">
+                <input type="text" name="discount" placeholder="Enter code" 
+                       class="flex-1 bg-onyx-700 border border-onyx-600 text-white px-4 py-3 rounded">
+                <button type="submit" name="apply" class="bg-gold-500 text-onyx-900 px-6 py-3 font-semibold uppercase text-xs tracking-wider">
+                  Apply
+                </button>
+              </div>
+            </div>
+          {% endform %}
+          
+          <a href="{{ routes.checkout_url }}" class="btn-primary block w-full bg-gold-500 text-onyx-900 py-4 text-center uppercase tracking-[0.2em] font-semibold">
+            Proceed to Checkout
+          </a>
+          
+          <a href="https://wa.me/{{ settings.contact_whatsapp | default: '919789182921' }}?text=I'd like to order from my cart" 
+             target="_blank"
+             class="mt-4 w-full bg-[#25D366] text-white py-4 text-center uppercase tracking-[0.2em] font-semibold flex items-center justify-center gap-2 rounded">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51h-.57c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Order via WhatsApp
+          </a>
+          
+          <p class="text-sand-300 text-xs mt-4 text-center">Secure checkout powered by Razorpay</p>
+        </div>
+      </div>
+    {% else %}
+      <div class="text-center py-16">
+        <span class="material-symbols-outlined text-6xl text-sand-300/30 mb-4">shopping_cart</span>
+        <p class="text-sand-200 text-lg mb-6">Your cart is empty</p>
+        <a href="{{ routes.collections_url }}" class="btn-primary inline-block bg-gold-500 text-onyx-900 px-8 py-3 uppercase tracking-[0.2em] font-semibold">
+          Continue Shopping
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cart Page",
+  "tag": "section",
+  "class": "section-cart-main",
+  "presets": [
+    {
+      "name": "Cart Page"
+    }
+  ]
+}
+{% endschema %}

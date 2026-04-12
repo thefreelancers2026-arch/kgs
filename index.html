@@ -590,18 +590,24 @@
         
         /* Search Results Dropdown */
         .search-results {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: #111111;
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            border-radius: 12px;
-            margin-top: 8px;
-            max-height: 300px;
-            overflow-y: auto;
-            z-index: 60;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            position: absolute !important;
+            top: 100% !important;
+            left: 0 !important;
+            right: 0 !important;
+            width: 100% !important;
+            background: #111111 !important;
+            border: 1px solid rgba(212, 175, 55, 0.15) !important;
+            border-radius: 12px !important;
+            margin-top: 8px !important;
+            max-height: 300px !important;
+            overflow-y: auto !important;
+            z-index: 9999 !important;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6) !important;
+            display: none;
+            padding: 8px;
+        }
+        .search-results.show {
+            display: block !important;
         }
         .search-result-item {
             display: flex;
@@ -1744,12 +1750,12 @@
                             renderProducts(prod.category);
                             document.getElementById('collections').scrollIntoView({ behavior: 'smooth' });
                         }
-                        targetElement.style.display = 'none';
+                        targetElement.classList.remove('show');
                     });
                     targetElement.appendChild(item);
                 });
             }
-            targetElement.style.display = 'block';
+            targetElement.classList.add('show');
         }
         
         if (searchInput) {
@@ -1780,7 +1786,7 @@
             searchInput.addEventListener('blur', () => {
                 setTimeout(() => {
                     const results = searchInput.parentElement.querySelector('.search-results');
-                    if (results) results.style.display = 'none';
+                    if (results) results.classList.remove('show');
                 }, 200);
             });
         }
@@ -1812,7 +1818,7 @@
             searchClose.addEventListener('click', () => {
                 searchInput.value = '';
                 const results = searchInput.parentElement.querySelector('.search-results');
-                if (results) results.style.display = 'none';
+                if (results) results.classList.remove('show');
                 searchClose.classList.add('hidden');
                 if (searchIcon) searchIcon.classList.remove('search-icon-active');
                 searchInput.focus();

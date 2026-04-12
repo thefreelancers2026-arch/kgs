@@ -704,7 +704,7 @@
             
             <!-- Search Bar -->
             <div class="hidden md:flex flex-1 max-w-md mx-4">
-                <div class="relative w-full">
+                <div class="relative w-full" style="position: relative;">
                     <input type="text" id="searchInput" placeholder="Search products..." 
                            class="w-full bg-onyx-800/50 border border-onyx-600/30 rounded-full py-2 pl-10 pr-4 text-sm text-white placeholder-sand-300/50 focus:outline-none focus:border-gold-500/50 focus:bg-onyx-800/80 transition-all">
                     <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-sand-300/50 text-lg">search</span>
@@ -1760,6 +1760,12 @@
                 if (!resultsDiv) {
                     resultsDiv = document.createElement('div');
                     resultsDiv.className = 'search-results';
+                    resultsDiv.style.position = 'absolute';
+                    resultsDiv.style.top = '100%';
+                    resultsDiv.style.left = '0';
+                    resultsDiv.style.right = '0';
+                    resultsDiv.style.zIndex = '100';
+                    container.style.position = 'relative';
                     container.appendChild(resultsDiv);
                 }
                 if (e.target.value.length > 0 && searchIcon) {
@@ -1795,6 +1801,7 @@
                     resultsDiv.className = 'search-results';
                     resultsDiv.style.position = 'relative';
                     resultsDiv.style.marginTop = '8px';
+                    resultsDiv.style.zIndex = '100';
                     container.appendChild(resultsDiv);
                 }
                 performSearch(e.target.value, resultsDiv);

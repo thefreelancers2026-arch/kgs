@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Montserrat', sans-serif, sans-serif; }
         .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
@@ -26,53 +26,53 @@
         theme: {
           extend: {
             "colors": {
-                    "outline-variant": "#d1c5b4",
-                    "primary-fixed-dim": "#e9c07b",
+                    "outline-variant": "#252525",
+                    "primary-fixed-dim": "#D4AF37",
                     "tertiary-container": "#a69682",
                     "surface-dim": "#dbdad6",
                     "secondary-fixed-dim": "#d8c3b3",
                     "on-tertiary-fixed-variant": "#514535",
                     "on-tertiary-fixed": "#231a0d",
                     "primary-fixed": "#ffdea9",
-                    "surface-container": "#efeeea",
-                    "outline": "#807667",
-                    "on-error": "#ffffff",
-                    "inverse-primary": "#e9c07b",
-                    "background": "#fbf9f5",
-                    "surface-variant": "#e4e2de",
+                    "surface-container": "#111111",
+                    "outline": "#333333",
+                    "on-error": "#0A0A0A",
+                    "inverse-primary": "#D4AF37",
+                    "background": "#0A0A0A",
+                    "surface-variant": "#252525",
                     "on-secondary-fixed": "#25190f",
-                    "on-primary-container": "#432d00",
+                    "on-primary-container": "#111111",
                     "secondary-fixed": "#f5dece",
-                    "inverse-on-surface": "#f2f0ed",
+                    "inverse-on-surface": "#1A1A1A",
                     "tertiary-fixed": "#f3e0ca",
                     "tertiary-fixed-dim": "#d6c4af",
                     "secondary-container": "#f2dccb",
                     "error-container": "#ffdad6",
-                    "surface-container-highest": "#e4e2de",
-                    "surface-bright": "#fbf9f5",
-                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#252525",
+                    "surface-bright": "#0A0A0A",
+                    "on-secondary": "#0A0A0A",
                     "on-primary-fixed": "#271900",
-                    "surface-container-lowest": "#ffffff",
+                    "surface-container-lowest": "#0A0A0A",
                     "secondary": "#6c5b4e",
                     "on-error-container": "#93000a",
                     "error": "#ba1a1a",
                     "on-primary-fixed-variant": "#5e4206",
                     "tertiary": "#6a5c4b",
-                    "on-background": "#1b1c1a",
+                    "on-background": "#FAFAF8",
                     "on-tertiary-container": "#3a2f20",
-                    "surface-container-low": "#f5f3ef",
-                    "on-primary": "#ffffff",
-                    "surface": "#fbf9f5",
-                    "primary-container": "#b89352",
-                    "primary": "#78591e",
-                    "on-secondary-container": "#706052",
-                    "inverse-surface": "#30312e",
-                    "surface-container-high": "#eae8e4",
-                    "on-tertiary": "#ffffff",
-                    "on-surface-variant": "#4e4639",
-                    "on-surface": "#1b1c1a",
+                    "surface-container-low": "#0A0A0A",
+                    "on-primary": "#0A0A0A",
+                    "surface": "#0A0A0A",
+                    "primary-container": "#E5C76B",
+                    "primary": "#D4AF37",
+                    "on-secondary-container": "#D5CEC4",
+                    "inverse-surface": "#FAFAF8",
+                    "surface-container-high": "#1A1A1A",
+                    "on-tertiary": "#0A0A0A",
+                    "on-surface-variant": "#D5CEC4",
+                    "on-surface": "#FAFAF8",
                     "on-secondary-fixed-variant": "#534438",
-                    "surface-tint": "#78591e"
+                    "surface-tint": "#D4AF37"
             },
             "borderRadius": {
                     "DEFAULT": "0.125rem",
@@ -81,9 +81,9 @@
                     "full": "0.75rem"
             },
             "fontFamily": {
-                    "headline": ["Plus Jakarta Sans"],
-                    "body": ["Inter"],
-                    "label": ["Inter"]
+                    "headline": ["Cormorant Garamond", serif],
+                    "body": ["Montserrat", sans-serif],
+                    "label": ["Montserrat", sans-serif]
             }
           },
         },
@@ -92,19 +92,19 @@
 </head>
 <body class="bg-background text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
 <!-- Top Navigation Bar -->
-<nav class="fixed top-0 w-full z-50 bg-[#fbf9f5]/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(27,28,26,0.05)]">
-<div class="flex justify-between items-center w-full px-12 py-6 max-w-[1440px] mx-auto font-['Plus_Jakarta_Sans'] tracking-tight font-light">
-<div class="text-2xl font-bold tracking-[-0.02em] text-[#1b1c1a] cursor-pointer active:scale-95 transition-transform">
+<nav class="fixed top-0 w-full z-50 bg-[#0A0A0A]/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(27,28,26,0.05)]">
+<div class="flex justify-between items-center w-full px-12 py-6 max-w-[1440px] mx-auto font-['Cormorant Garamond', serif] tracking-tight font-light">
+<div class="text-2xl font-bold tracking-[-0.02em] text-[#FAFAF8] cursor-pointer active:scale-95 transition-transform">
                 KGS Home Decors
             </div>
 <div class="hidden md:flex items-center gap-10">
-<a class="text-[#78591e] border-b border-[#78591e] pb-0.5 transition-all duration-300" href="#">Collections</a>
-<a class="text-[#1b1c1a] opacity-70 hover:opacity-100 hover:text-[#78591e] transition-all duration-300" href="#">Furniture</a>
-<a class="text-[#1b1c1a] opacity-70 hover:opacity-100 hover:text-[#78591e] transition-all duration-300" href="#">Lighting</a>
-<a class="text-[#1b1c1a] opacity-70 hover:opacity-100 hover:text-[#78591e] transition-all duration-300" href="#">Art</a>
-<a class="text-[#1b1c1a] opacity-70 hover:opacity-100 hover:text-[#78591e] transition-all duration-300" href="#">Journal</a>
+<a class="text-[#D4AF37] border-b border-[#D4AF37] pb-0.5 transition-all duration-300" href="#">Collections</a>
+<a class="text-[#FAFAF8] opacity-70 hover:opacity-100 hover:text-[#D4AF37] transition-all duration-300" href="#">Furniture</a>
+<a class="text-[#FAFAF8] opacity-70 hover:opacity-100 hover:text-[#D4AF37] transition-all duration-300" href="#">Lighting</a>
+<a class="text-[#FAFAF8] opacity-70 hover:opacity-100 hover:text-[#D4AF37] transition-all duration-300" href="#">Art</a>
+<a class="text-[#FAFAF8] opacity-70 hover:opacity-100 hover:text-[#D4AF37] transition-all duration-300" href="#">Journal</a>
 </div>
-<div class="flex items-center gap-6 text-[#78591e]">
+<div class="flex items-center gap-6 text-[#D4AF37]">
 <span class="material-symbols-outlined cursor-pointer active:scale-95 transition-transform">search</span>
 <span class="material-symbols-outlined cursor-pointer active:scale-95 transition-transform">person</span>
 <span class="material-symbols-outlined cursor-pointer active:scale-95 transition-transform">shopping_bag</span>
@@ -291,36 +291,36 @@
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-[#f5f3ef] dark:bg-[#121211] w-full py-20 px-12">
-<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 font-['Inter'] text-sm leading-relaxed font-light">
+<footer class="bg-[#0A0A0A] dark:bg-[#050505] w-full py-20 px-12">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 font-['Montserrat', sans-serif] text-sm leading-relaxed font-light">
 <div class="flex flex-col gap-6">
-<div class="text-xl font-bold text-[#1b1c1a] dark:text-[#fbf9f5]">KGS Home Decors</div>
-<p class="text-[#1b1c1a]/60 dark:text-[#e4e2de]/60">Elevating domestic spaces through curated, soulful design since 2012.</p>
+<div class="text-xl font-bold text-[#FAFAF8] dark:text-[#0A0A0A]">KGS Home Decors</div>
+<p class="text-[#FAFAF8]/60 dark:text-[#252525]/60">Elevating domestic spaces through curated, soulful design since 2012.</p>
 </div>
 <div class="flex flex-col gap-4">
-<h4 class="font-bold text-[#1b1c1a] dark:text-[#fbf9f5] mb-2 uppercase tracking-widest text-xs">Curations</h4>
-<a class="text-[#1b1c1a]/60 dark:text-[#e4e2de]/60 hover:text-[#78591e] underline-offset-4 hover:underline transition-all" href="#">Collections</a>
-<a class="text-[#1b1c1a]/60 dark:text-[#e4e2de]/60 hover:text-[#78591e] underline-offset-4 hover:underline transition-all" href="#">Furniture</a>
-<a class="text-[#1b1c1a]/60 dark:text-[#e4e2de]/60 hover:text-[#78591e] underline-offset-4 hover:underline transition-all" href="#">Sustainability</a>
+<h4 class="font-bold text-[#FAFAF8] dark:text-[#0A0A0A] mb-2 uppercase tracking-widest text-xs">Curations</h4>
+<a class="text-[#FAFAF8]/60 dark:text-[#252525]/60 hover:text-[#D4AF37] underline-offset-4 hover:underline transition-all" href="#">Collections</a>
+<a class="text-[#FAFAF8]/60 dark:text-[#252525]/60 hover:text-[#D4AF37] underline-offset-4 hover:underline transition-all" href="#">Furniture</a>
+<a class="text-[#FAFAF8]/60 dark:text-[#252525]/60 hover:text-[#D4AF37] underline-offset-4 hover:underline transition-all" href="#">Sustainability</a>
 </div>
 <div class="flex flex-col gap-4">
-<h4 class="font-bold text-[#1b1c1a] dark:text-[#fbf9f5] mb-2 uppercase tracking-widest text-xs">Support</h4>
-<a class="text-[#1b1c1a]/60 dark:text-[#e4e2de]/60 hover:text-[#78591e] underline-offset-4 hover:underline transition-all" href="#">Shipping Info</a>
-<a class="text-[#1b1c1a]/60 dark:text-[#e4e2de]/60 hover:text-[#78591e] underline-offset-4 hover:underline transition-all" href="#">Contact Details</a>
-<a class="text-[#1b1c1a]/60 dark:text-[#e4e2de]/60 hover:text-[#78591e] underline-offset-4 hover:underline transition-all" href="#">Stockists</a>
+<h4 class="font-bold text-[#FAFAF8] dark:text-[#0A0A0A] mb-2 uppercase tracking-widest text-xs">Support</h4>
+<a class="text-[#FAFAF8]/60 dark:text-[#252525]/60 hover:text-[#D4AF37] underline-offset-4 hover:underline transition-all" href="#">Shipping Info</a>
+<a class="text-[#FAFAF8]/60 dark:text-[#252525]/60 hover:text-[#D4AF37] underline-offset-4 hover:underline transition-all" href="#">Contact Details</a>
+<a class="text-[#FAFAF8]/60 dark:text-[#252525]/60 hover:text-[#D4AF37] underline-offset-4 hover:underline transition-all" href="#">Stockists</a>
 </div>
 <div class="flex flex-col gap-6">
-<h4 class="font-bold text-[#1b1c1a] dark:text-[#fbf9f5] mb-2 uppercase tracking-widest text-xs">The Ledger</h4>
-<p class="text-xs text-[#1b1c1a]/60">Join our newsletter for exclusive previews of new collections.</p>
-<div class="flex border-b border-[#1b1c1a]/20 pb-2">
+<h4 class="font-bold text-[#FAFAF8] dark:text-[#0A0A0A] mb-2 uppercase tracking-widest text-xs">The Ledger</h4>
+<p class="text-xs text-[#FAFAF8]/60">Join our newsletter for exclusive previews of new collections.</p>
+<div class="flex border-b border-[#FAFAF8]/20 pb-2">
 <input class="bg-transparent border-none text-sm w-full focus:ring-0 px-0" placeholder="Email Address" type="email"/>
-<button class="material-symbols-outlined text-[#78591e]">arrow_forward</button>
+<button class="material-symbols-outlined text-[#D4AF37]">arrow_forward</button>
 </div>
 </div>
 </div>
 <div class="max-w-[1440px] mx-auto mt-20 pt-8 border-t border-on-surface/5 flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-[10px] uppercase tracking-[0.2em] text-[#1b1c1a]/40">© 2024 KGS Home Decors. Designed for the Digital Curator.</p>
-<div class="flex gap-8 text-[10px] uppercase tracking-[0.2em] text-[#1b1c1a]/40">
+<p class="text-[10px] uppercase tracking-[0.2em] text-[#FAFAF8]/40">© 2024 KGS Home Decors. Designed for the Digital Curator.</p>
+<div class="flex gap-8 text-[10px] uppercase tracking-[0.2em] text-[#FAFAF8]/40">
 <a href="#">Privacy</a>
 <a href="#">Terms</a>
 <a href="#">Accessibility</a>

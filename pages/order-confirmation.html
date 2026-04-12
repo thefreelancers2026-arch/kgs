@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Montserrat:wght@200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
@@ -13,53 +13,53 @@
         theme: {
           extend: {
             "colors": {
-                    "surface-container-lowest": "#ffffff",
+                    "surface-container-lowest": "#0A0A0A",
                     "tertiary-container": "#a69682",
-                    "primary-container": "#b89352",
-                    "surface-variant": "#e4e2de",
+                    "primary-container": "#E5C76B",
+                    "surface-variant": "#252525",
                     "primary-fixed": "#ffdea9",
-                    "background": "#fbf9f5",
-                    "surface-container": "#efeeea",
-                    "on-surface-variant": "#4e4639",
-                    "outline-variant": "#d1c5b4",
+                    "background": "#0A0A0A",
+                    "surface-container": "#111111",
+                    "on-surface-variant": "#D5CEC4",
+                    "outline-variant": "#252525",
                     "on-tertiary-fixed": "#231a0d",
                     "on-tertiary-container": "#3a2f20",
                     "secondary-fixed": "#f5dece",
-                    "inverse-on-surface": "#f2f0ed",
-                    "surface-tint": "#78591e",
+                    "inverse-on-surface": "#1A1A1A",
+                    "surface-tint": "#D4AF37",
                     "on-secondary-fixed-variant": "#534438",
-                    "on-primary": "#ffffff",
-                    "inverse-surface": "#30312e",
+                    "on-primary": "#0A0A0A",
+                    "inverse-surface": "#FAFAF8",
                     "on-primary-fixed": "#271900",
                     "error-container": "#ffdad6",
                     "secondary-container": "#f2dccb",
-                    "primary": "#78591e",
-                    "surface": "#fbf9f5",
-                    "primary-fixed-dim": "#e9c07b",
+                    "primary": "#D4AF37",
+                    "surface": "#0A0A0A",
+                    "primary-fixed-dim": "#D4AF37",
                     "on-secondary-fixed": "#25190f",
-                    "on-secondary-container": "#706052",
-                    "on-background": "#1b1c1a",
+                    "on-secondary-container": "#D5CEC4",
+                    "on-background": "#FAFAF8",
                     "tertiary-fixed": "#f3e0ca",
                     "on-primary-fixed-variant": "#5e4206",
-                    "on-primary-container": "#432d00",
+                    "on-primary-container": "#111111",
                     "secondary": "#6c5b4e",
                     "error": "#ba1a1a",
                     "secondary-fixed-dim": "#d8c3b3",
-                    "surface-container-low": "#f5f3ef",
-                    "inverse-primary": "#e9c07b",
-                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#0A0A0A",
+                    "inverse-primary": "#D4AF37",
+                    "on-tertiary": "#0A0A0A",
                     "on-tertiary-fixed-variant": "#514535",
                     "tertiary-fixed-dim": "#d6c4af",
-                    "on-surface": "#1b1c1a",
-                    "on-secondary": "#ffffff",
+                    "on-surface": "#FAFAF8",
+                    "on-secondary": "#0A0A0A",
                     "tertiary": "#6a5c4b",
                     "surface-dim": "#dbdad6",
-                    "on-error": "#ffffff",
-                    "surface-bright": "#fbf9f5",
-                    "outline": "#807667",
-                    "surface-container-high": "#eae8e4",
+                    "on-error": "#0A0A0A",
+                    "surface-bright": "#0A0A0A",
+                    "outline": "#333333",
+                    "surface-container-high": "#1A1A1A",
                     "on-error-container": "#93000a",
-                    "surface-container-highest": "#e4e2de"
+                    "surface-container-highest": "#252525"
             },
             "borderRadius": {
                     "DEFAULT": "0.125rem",
@@ -68,9 +68,9 @@
                     "full": "0.75rem"
             },
             "fontFamily": {
-                    "headline": ["Plus Jakarta Sans"],
-                    "body": ["Inter"],
-                    "label": ["Inter"]
+                    "headline": ["Cormorant Garamond", serif],
+                    "body": ["Montserrat", sans-serif],
+                    "label": ["Montserrat", sans-serif]
             }
           },
         },
@@ -80,20 +80,20 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
-        .step-active .step-line { background-color: #78591e; }
-        .step-inactive .step-line { background-color: #e4e2de; }
+        .step-active .step-line { background-color: #D4AF37; }
+        .step-inactive .step-line { background-color: #252525; }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
 <!-- Header Navigation -->
-<nav class="fixed top-0 w-full z-50 bg-[#fbf9f5]/80 backdrop-blur-xl shadow-[0_20px_40px_0_rgba(27,28,26,0.05)]">
+<nav class="fixed top-0 w-full z-50 bg-[#0A0A0A]/80 backdrop-blur-xl shadow-[0_20px_40px_0_rgba(27,28,26,0.05)]">
 <div class="flex justify-between items-center px-12 py-6 w-full max-w-[1920px] mx-auto">
-<div class="text-2xl font-bold tracking-tighter text-[#1b1c1a] font-headline">The Curated Atelier</div>
+<div class="text-2xl font-bold tracking-tighter text-[#FAFAF8] font-headline">The Curated Atelier</div>
 <div class="hidden md:flex gap-12 items-center font-headline tracking-tight font-light">
-<a class="text-[#1b1c1a] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Showroom</a>
-<a class="text-[#1b1c1a] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Collections</a>
-<a class="text-[#1b1c1a] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Artisans</a>
-<a class="text-[#1b1c1a] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Journal</a>
+<a class="text-[#FAFAF8] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Showroom</a>
+<a class="text-[#FAFAF8] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Collections</a>
+<a class="text-[#FAFAF8] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Artisans</a>
+<a class="text-[#FAFAF8] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Journal</a>
 </div>
 <div class="flex gap-6 items-center">
 <span class="material-symbols-outlined text-on-surface cursor-pointer">shopping_bag</span>
@@ -242,36 +242,36 @@
 </div>
 </main>
 <!-- Footer -->
-<footer class="w-full mt-24 bg-[#f5f3ef]">
+<footer class="w-full mt-24 bg-[#0A0A0A]">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-20 py-16 w-full mx-auto">
 <div class="space-y-6">
-<div class="text-lg font-bold text-[#1b1c1a] font-headline">The Curated Atelier</div>
-<p class="font-['Inter'] font-light text-sm tracking-wide text-[#1b1c1a]/60">Elevating home spaces through artisanal craftsmanship and timeless design language.</p>
+<div class="text-lg font-bold text-[#FAFAF8] font-headline">The Curated Atelier</div>
+<p class="font-['Montserrat', sans-serif] font-light text-sm tracking-wide text-[#FAFAF8]/60">Elevating home spaces through artisanal craftsmanship and timeless design language.</p>
 </div>
 <div class="space-y-4">
-<h4 class="font-headline font-bold text-sm uppercase tracking-widest text-[#78591e]">Explore</h4>
-<ul class="font-['Inter'] font-light text-sm space-y-2 text-[#1b1c1a]/60">
-<li><a class="hover:text-[#78591e] transition-colors duration-300" href="#">New Arrivals</a></li>
-<li><a class="hover:text-[#78591e] transition-colors duration-300" href="#">Collections</a></li>
-<li><a class="hover:text-[#78591e] transition-colors duration-300" href="#">Journal</a></li>
+<h4 class="font-headline font-bold text-sm uppercase tracking-widest text-[#D4AF37]">Explore</h4>
+<ul class="font-['Montserrat', sans-serif] font-light text-sm space-y-2 text-[#FAFAF8]/60">
+<li><a class="hover:text-[#D4AF37] transition-colors duration-300" href="#">New Arrivals</a></li>
+<li><a class="hover:text-[#D4AF37] transition-colors duration-300" href="#">Collections</a></li>
+<li><a class="hover:text-[#D4AF37] transition-colors duration-300" href="#">Journal</a></li>
 </ul>
 </div>
 <div class="space-y-4">
-<h4 class="font-headline font-bold text-sm uppercase tracking-widest text-[#78591e]">Customer Care</h4>
-<ul class="font-['Inter'] font-light text-sm space-y-2 text-[#1b1c1a]/60">
-<li><a class="hover:text-[#78591e] transition-colors duration-300" href="#">Privacy Policy</a></li>
-<li><a class="hover:text-[#78591e] transition-colors duration-300" href="#">Shipping &amp; Returns</a></li>
-<li><a class="hover:text-[#78591e] transition-colors duration-300" href="#">Contact Us</a></li>
-<li><a class="hover:text-[#78591e] transition-colors duration-300" href="#">Sustainability</a></li>
+<h4 class="font-headline font-bold text-sm uppercase tracking-widest text-[#D4AF37]">Customer Care</h4>
+<ul class="font-['Montserrat', sans-serif] font-light text-sm space-y-2 text-[#FAFAF8]/60">
+<li><a class="hover:text-[#D4AF37] transition-colors duration-300" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-[#D4AF37] transition-colors duration-300" href="#">Shipping &amp; Returns</a></li>
+<li><a class="hover:text-[#D4AF37] transition-colors duration-300" href="#">Contact Us</a></li>
+<li><a class="hover:text-[#D4AF37] transition-colors duration-300" href="#">Sustainability</a></li>
 </ul>
 </div>
 <div class="space-y-4">
-<h4 class="font-headline font-bold text-sm uppercase tracking-widest text-[#78591e]">Connect</h4>
+<h4 class="font-headline font-bold text-sm uppercase tracking-widest text-[#D4AF37]">Connect</h4>
 <div class="flex gap-4">
-<span class="material-symbols-outlined text-[#1b1c1a]/60 cursor-pointer hover:text-[#78591e]">public</span>
-<span class="material-symbols-outlined text-[#1b1c1a]/60 cursor-pointer hover:text-[#78591e]">share</span>
+<span class="material-symbols-outlined text-[#FAFAF8]/60 cursor-pointer hover:text-[#D4AF37]">public</span>
+<span class="material-symbols-outlined text-[#FAFAF8]/60 cursor-pointer hover:text-[#D4AF37]">share</span>
 </div>
-<p class="text-[#1b1c1a]/60 text-xs mt-8">© 2024 The Curated Atelier. All rights reserved.</p>
+<p class="text-[#FAFAF8]/60 text-xs mt-8">© 2024 The Curated Atelier. All rights reserved.</p>
 </div>
 </div>
 </footer>

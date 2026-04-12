@@ -14,51 +14,51 @@
         theme: {
           extend: {
             "colors": {
-                    "surface-tint": "#78591e",
-                    "surface-container-low": "#f5f3ef",
+                    "surface-tint": "#D4AF37",
+                    "surface-container-low": "#0A0A0A",
                     "tertiary": "#6a5c4b",
                     "on-secondary-fixed": "#25190f",
-                    "on-primary": "#ffffff",
+                    "on-primary": "#0A0A0A",
                     "secondary": "#6c5b4e",
                     "primary-fixed": "#ffdea9",
                     "secondary-fixed": "#f5dece",
-                    "inverse-primary": "#e9c07b",
+                    "inverse-primary": "#D4AF37",
                     "error": "#ba1a1a",
-                    "outline": "#807667",
-                    "surface-container-highest": "#e4e2de",
+                    "outline": "#333333",
+                    "surface-container-highest": "#252525",
                     "error-container": "#ffdad6",
-                    "surface": "#fbf9f5",
+                    "surface": "#0A0A0A",
                     "on-error-container": "#93000a",
-                    "surface-container-high": "#eae8e4",
-                    "surface-bright": "#fbf9f5",
+                    "surface-container-high": "#1A1A1A",
+                    "surface-bright": "#0A0A0A",
                     "tertiary-container": "#a69682",
-                    "primary": "#78591e",
+                    "primary": "#D4AF37",
                     "on-secondary-fixed-variant": "#534438",
-                    "inverse-on-surface": "#f2f0ed",
-                    "on-background": "#1b1c1a",
-                    "surface-container": "#efeeea",
+                    "inverse-on-surface": "#1A1A1A",
+                    "on-background": "#FAFAF8",
+                    "surface-container": "#111111",
                     "on-primary-fixed-variant": "#5e4206",
-                    "on-primary-container": "#432d00",
-                    "on-tertiary": "#ffffff",
-                    "outline-variant": "#d1c5b4",
+                    "on-primary-container": "#111111",
+                    "on-tertiary": "#0A0A0A",
+                    "outline-variant": "#252525",
                     "on-tertiary-container": "#3a2f20",
-                    "background": "#fbf9f5",
+                    "background": "#0A0A0A",
                     "tertiary-fixed": "#f3e0ca",
-                    "on-surface": "#1b1c1a",
+                    "on-surface": "#FAFAF8",
                     "secondary-container": "#f2dccb",
                     "on-tertiary-fixed": "#231a0d",
                     "on-tertiary-fixed-variant": "#514535",
-                    "inverse-surface": "#30312e",
-                    "primary-container": "#b89352",
-                    "on-secondary-container": "#706052",
-                    "primary-fixed-dim": "#e9c07b",
-                    "on-surface-variant": "#4e4639",
-                    "surface-container-lowest": "#ffffff",
-                    "on-secondary": "#ffffff",
-                    "on-error": "#ffffff",
+                    "inverse-surface": "#FAFAF8",
+                    "primary-container": "#E5C76B",
+                    "on-secondary-container": "#D5CEC4",
+                    "primary-fixed-dim": "#D4AF37",
+                    "on-surface-variant": "#D5CEC4",
+                    "surface-container-lowest": "#0A0A0A",
+                    "on-secondary": "#0A0A0A",
+                    "on-error": "#0A0A0A",
                     "secondary-fixed-dim": "#d8c3b3",
                     "on-primary-fixed": "#271900",
-                    "surface-variant": "#e4e2de",
+                    "surface-variant": "#252525",
                     "surface-dim": "#dbdad6",
                     "tertiary-fixed-dim": "#d6c4af"
             },
@@ -69,9 +69,9 @@
                     "full": "0.75rem"
             },
             "fontFamily": {
-                    "headline": ["Plus Jakarta Sans"],
-                    "body": ["Inter"],
-                    "label": ["Inter"]
+                    "headline": ["Cormorant Garamond", serif],
+                    "body": ["Montserrat", sans-serif],
+                    "label": ["Montserrat", sans-serif]
             }
           },
         },
@@ -81,14 +81,14 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Montserrat', sans-serif, sans-serif; }
         h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
 </head>
 <body class="bg-surface text-on-surface">
 <!-- Top Navigation Bar (Shared Component) -->
 <nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-sm dark:shadow-none">
-<div class="flex justify-between items-center px-12 py-6 max-w-[1920px] mx-auto w-full font-['Plus_Jakarta_Sans'] tracking-tight font-light">
+<div class="flex justify-between items-center px-12 py-6 max-w-[1920px] mx-auto w-full font-['Cormorant Garamond', serif] tracking-tight font-light">
 <div class="text-2xl font-bold tracking-tighter text-stone-900 dark:text-stone-50">
                 THE CURATED ATELIER
             </div>
@@ -96,7 +96,7 @@
 <a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-all duration-300 ease-out hover:opacity-80" href="#">Shop</a>
 <a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-all duration-300 ease-out hover:opacity-80" href="#">Collections</a>
 <a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-all duration-300 ease-out hover:opacity-80" href="#">About</a>
-<a class="text-[#78591e] border-b border-[#78591e] pb-1 transition-all duration-300 ease-out hover:opacity-80" href="#">Contact</a>
+<a class="text-[#D4AF37] border-b border-[#D4AF37] pb-1 transition-all duration-300 ease-out hover:opacity-80" href="#">Contact</a>
 </div>
 <div class="flex items-center space-x-6">
 <button class="scale-95 active:scale-90 transition-transform"><span class="material-symbols-outlined text-stone-900 dark:text-stone-50">shopping_bag</span></button>
@@ -225,7 +225,7 @@
 </section>
 <!-- Footer (Shared Component) -->
 <footer class="bg-stone-100 dark:bg-stone-900">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-20 py-24 w-full font-['Inter'] font-light tracking-wide">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-20 py-24 w-full font-['Montserrat', sans-serif] font-light tracking-wide">
 <div class="space-y-6">
 <div class="text-xl font-bold text-stone-900 dark:text-stone-50">THE CURATED ATELIER</div>
 <p class="text-stone-500 dark:text-stone-400 max-w-xs">Distinctive home decors for the modern sanctuary. Curated with intention, crafted for longevity.</p>
@@ -233,27 +233,27 @@
 <div>
 <h4 class="text-stone-900 dark:text-stone-50 font-semibold mb-6">Collections</h4>
 <ul class="space-y-4 text-stone-500 dark:text-stone-400">
-<li><a class="hover:text-[#b89352] transition-colors" href="#">Living Room</a></li>
-<li><a class="hover:text-[#b89352] transition-colors" href="#">Artisanal Accents</a></li>
-<li><a class="hover:text-[#b89352] transition-colors" href="#">Textiles</a></li>
-<li><a class="hover:text-[#b89352] transition-colors" href="#">New Arrivals</a></li>
+<li><a class="hover:text-[#E5C76B] transition-colors" href="#">Living Room</a></li>
+<li><a class="hover:text-[#E5C76B] transition-colors" href="#">Artisanal Accents</a></li>
+<li><a class="hover:text-[#E5C76B] transition-colors" href="#">Textiles</a></li>
+<li><a class="hover:text-[#E5C76B] transition-colors" href="#">New Arrivals</a></li>
 </ul>
 </div>
 <div>
 <h4 class="text-stone-900 dark:text-stone-50 font-semibold mb-6">Studio</h4>
 <ul class="space-y-4">
-<li><a class="text-stone-500 dark:text-stone-400 hover:text-[#b89352] transition-colors" href="#">Privacy Policy</a></li>
-<li><a class="text-stone-500 dark:text-stone-400 hover:text-[#b89352] transition-colors" href="#">Shipping &amp; Returns</a></li>
-<li><a class="text-stone-500 dark:text-stone-400 hover:text-[#b89352] transition-colors" href="#">Sustainability</a></li>
-<li><a class="text-stone-500 dark:text-stone-400 hover:text-[#b89352] transition-colors" href="#">Press</a></li>
+<li><a class="text-stone-500 dark:text-stone-400 hover:text-[#E5C76B] transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-stone-500 dark:text-stone-400 hover:text-[#E5C76B] transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-stone-500 dark:text-stone-400 hover:text-[#E5C76B] transition-colors" href="#">Sustainability</a></li>
+<li><a class="text-stone-500 dark:text-stone-400 hover:text-[#E5C76B] transition-colors" href="#">Press</a></li>
 </ul>
 </div>
 <div>
 <h4 class="text-stone-900 dark:text-stone-50 font-semibold mb-6">Newsletter</h4>
 <p class="text-stone-500 dark:text-stone-400 mb-6">Join our list for exclusive releases and design insights.</p>
 <div class="flex">
-<input class="bg-transparent border-0 border-b border-stone-300 dark:border-stone-700 w-full py-2 focus:ring-0 focus:border-[#78591e] transition-colors" placeholder="Email Address" type="email"/>
-<button class="ml-4 text-[#78591e] font-medium hover:opacity-70 transition-opacity">JOIN</button>
+<input class="bg-transparent border-0 border-b border-stone-300 dark:border-stone-700 w-full py-2 focus:ring-0 focus:border-[#D4AF37] transition-colors" placeholder="Email Address" type="email"/>
+<button class="ml-4 text-[#D4AF37] font-medium hover:opacity-70 transition-opacity">JOIN</button>
 </div>
 </div>
 </div>

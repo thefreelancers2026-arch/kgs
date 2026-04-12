@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Collections | KGS Home Decors</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#d1c5b4",
+                        "primary-fixed-dim": "#e9c07b",
+                        "tertiary-container": "#a69682",
+                        "surface-dim": "#dbdad6",
+                        "secondary-fixed-dim": "#d8c3b3",
+                        "on-tertiary-fixed-variant": "#514535",
+                        "on-tertiary-fixed": "#231a0d",
+                        "primary-fixed": "#ffdea9",
+                        "surface-container": "#efeeea",
+                        "outline": "#807667",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#e9c07b",
+                        "background": "#fbf9f5",
+                        "surface-variant": "#e4e2de",
+                        "on-secondary-fixed": "#25190f",
+                        "on-primary-container": "#432d00",
+                        "secondary-fixed": "#f5dece",
+                        "inverse-on-surface": "#f2f0ed",
+                        "tertiary-fixed": "#f3e0ca",
+                        "tertiary-fixed-dim": "#d6c4af",
+                        "secondary-container": "#f2dccb",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e4e2de",
+                        "surface-bright": "#fbf9f5",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#271900",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#6c5b4e",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#5e4206",
+                        "tertiary": "#6a5c4b",
+                        "on-background": "#1b1c1a",
+                        "on-tertiary-container": "#3a2f20",
+                        "surface-container-low": "#f5f3ef",
+                        "on-primary": "#ffffff",
+                        "surface": "#fbf9f5",
+                        "primary-container": "#b89352",
+                        "primary": "#78591e",
+                        "on-secondary-container": "#706052",
+                        "inverse-surface": "#30312e",
+                        "surface-container-high": "#eae8e4",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#4e4639",
+                        "on-surface": "#1b1c1a",
+                        "on-secondary-fixed-variant": "#534438",
+                        "surface-tint": "#78591e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift-on-scroll {
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fbf9f5]/80 backdrop-blur-xl dark:bg-[#1b1c1a]/80 shadow-[0_20px_40px_rgba(27,28,26,0.05)]">
+<div class="flex justify-between items-center w-full px-12 py-6 max-w-[1440px] mx-auto font-['Plus_Jakarta_Sans'] tracking-tight font-light">
+<div class="text-2xl font-bold tracking-[-0.02em] text-[#1b1c1a] dark:text-[#fbf9f5] cursor-pointer active:scale-95 transition-transform">
+                KGS Home Decors
+            </div>
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-[#78591e] border-b border-[#78591e] pb-0.5 transition-all duration-300" href="#">Collections</a>
+<a class="text-[#1b1c1a] dark:text-[#e4e2de] opacity-70 hover:opacity-100 hover:text-[#78591e] transition-all duration-300" href="#">Furniture</a>
+<a class="text-[#1b1c1a] dark:text-[#e4e2de] opacity-70 hover:opacity-100 hover:text-[#78591e] transition-all duration-300" href="#">Lighting</a>
+<a class="text-[#1b1c1a] dark:text-[#e4e2de] opacity-70 hover:opacity-100 hover:text-[#78591e] transition-all duration-300" href="#">Art</a>
+<a class="text-[#1b1c1a] dark:text-[#e4e2de] opacity-70 hover:opacity-100 hover:text-[#78591e] transition-all duration-300" href="#">Journal</a>
+</div>
+<div class="flex items-center space-x-6 text-[#1b1c1a] dark:text-[#e4e2de]">
+<button class="cursor-pointer active:scale-95 transition-transform hover:text-[#78591e]">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="cursor-pointer active:scale-95 transition-transform hover:text-[#78591e]">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button class="cursor-pointer active:scale-95 transition-transform hover:text-[#78591e] relative">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-primary text-[10px] text-white w-4 h-4 flex items-center justify-center rounded-full">2</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Header -->
+<header class="pt-40 pb-20 px-12 max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
+<div>
+<h1 class="text-6xl font-bold font-headline tracking-tighter leading-tight text-on-surface">
+                    Curated <br/>Collections
+                </h1>
+<p class="mt-6 text-on-surface-variant max-w-md font-light leading-relaxed">
+                    A thoughtfully selected ensemble of artisanal pieces, designed to transform your living space into a sanctuary of refined aesthetics.
+                </p>
+</div>
+<div class="flex flex-col md:items-end gap-4">
+<div class="flex items-center space-x-4 text-sm font-medium">
+<span class="text-on-surface-variant opacity-60">Sort by:</span>
+<select class="bg-transparent border-none focus:ring-0 cursor-pointer font-bold text-primary">
+<option>Featured</option>
+<option>Best Selling</option>
+<option>Price Low-High</option>
+<option>Price High-Low</option>
+</select>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-12 pb-32">
+<div class="flex flex-col lg:flex-row gap-16">
+<!-- Sidebar Filter -->
+<aside class="w-full lg:w-64 space-y-12">
+<div class="space-y-6">
+<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Category</h3>
+<ul class="space-y-4">
+<li class="flex items-center justify-between group cursor-pointer">
+<span class="text-on-surface font-light group-hover:text-primary transition-colors">Artificial Plants</span>
+<span class="text-[10px] text-outline-variant">(24)</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer">
+<span class="text-primary font-medium">Fountains</span>
+<span class="text-[10px] text-outline-variant">(12)</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer">
+<span class="text-on-surface font-light group-hover:text-primary transition-colors">Furniture</span>
+<span class="text-[10px] text-outline-variant">(48)</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer">
+<span class="text-on-surface font-light group-hover:text-primary transition-colors">Art &amp; Sculptures</span>
+<span class="text-[10px] text-outline-variant">(18)</span>
+</li>
+</ul>
+</div>
+<div class="space-y-6">
+<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Price Range</h3>
+<div class="space-y-4">
+<input class="w-full accent-primary bg-surface-container h-1 rounded-full appearance-none cursor-pointer" max="5000" min="0" type="range"/>
+<div class="flex justify-between text-xs font-medium text-on-surface-variant">
+<span>$0</span>
+<span>$5,000+</span>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Rating</h3>
+<div class="space-y-3">
+<label class="flex items-center space-x-3 cursor-pointer group">
+<input class="rounded-sm border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
+<div class="flex text-primary">
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75">star</span>
+</div>
+<span class="text-xs text-on-surface-variant font-light">&amp; Up</span>
+</label>
+</div>
+</div>
+<div class="space-y-6">
+<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Availability</h3>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg">
+<span class="text-sm font-medium">In Stock Only</span>
+<div class="w-10 h-5 bg-primary rounded-full relative cursor-pointer">
+<div class="absolute right-0.5 top-0.5 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<section class="flex-1">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-16 gap-x-8">
+<!-- Product 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of a large fiddle leaf fig tree in a minimal clay pot with soft architectural shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzM8MafXxHakyJXOK8wMgejUlnn3LFmCCa3Q0b82s9fXw--IcOgUmcEau6wV8XqoY-GAbiqUvEIcqHa8avqShYaMoFQ--8WElNTmJI8hwDWqAHbU9VC5g6WD0aS1nha9wNnygZrEIiKWyRU09-7vqRM_UKqYTacjwn5aG1wRCsOiIvNL_PDUshPiGJvPEmasKfstfJDr2TJFuFYmxsO7xFvRGKLKw7S5vgnVlyLbDBQtCxpp4j5XT_5VivbXi0sFWzqXdyileOjB3A"/>
+<div class="absolute bottom-6 left-6 right-6 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+<button class="w-full bg-primary text-on-primary py-4 text-xs font-bold tracking-widest uppercase rounded shadow-lg hover:bg-primary-container hover:text-on-primary-container transition-colors">
+                                    Quick Add
+                                </button>
+</div>
+</div>
+<div class="mt-6 space-y-2">
+<div class="flex justify-between items-start">
+<h4 class="text-lg font-headline font-semibold text-on-surface leading-tight">Emerald Fiddle Leaf Fig</h4>
+<span class="text-primary font-medium">$285.00</span>
+</div>
+<p class="text-sm text-on-surface-variant font-light">Artificial Plants</p>
+<div class="flex items-center space-x-1 text-[10px] text-primary">
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="ml-1 text-on-surface-variant opacity-60">(42)</span>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist desktop stone water fountain with dark slate tiers and gentle flowing water under warm spotlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeJ56S5fMxBsj1qG6df4G-lqlrebhi7JmCxBkbkNPuNcO6oOrgrEkdmNPsSoIOfApxnXnKQ56MbbwaPQTaPROjEWTRt66JZyUc40gepshAu3BV9R1iDaqC5RW3sJkARAL9gjV7Jf-fVau9sOOFmDFAZGZXt4_DewKBT03bOlnVYVmIPcMduMElAftG9CvjVeOtlzWTDmvt1zwA1oAsAXgnwqf9x9BsM8WDN9YL8nj1GBU1iNoNBL_RARIpL6BXj2o-A2jGtwWXG2HI"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white/90 backdrop-blur text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 text-on-surface">Limited</span>
+</div>
+<div class="absolute bottom-6 left-6 right-6 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+<button class="w-full bg-primary text-on-primary py-4 text-xs font-bold tracking-widest uppercase rounded shadow-lg">
+                                    Quick Add
+                                </button>
+</div>
+</div>
+<div class="mt-6 space-y-2">
+<div class="flex justify-between items-start">
+<h4 class="text-lg font-headline font-semibold text-on-surface leading-tight">Zen Stone Tier Fountain</h4>
+<span class="text-primary font-medium">$520.00</span>
+</div>
+<p class="text-sm text-on-surface-variant font-light">Fountains</p>
+<div class="flex items-center space-x-1 text-[10px] text-primary">
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm">star</span>
+<span class="ml-1 text-on-surface-variant opacity-60">(18)</span>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern sculptural lounge chair in ivory boucle fabric with curved wooden legs in a bright art gallery setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy_6pwKziZtikiaW1S_mr7Ye_HQjZFLCInyWNQzQ_3Sb-2mSucd6Bvo09lIDK7B8BTt1YYysWnCSHDfPc0OL8BK8WX3ZFnF_8KTY6EAkFKAmb8o2F5m21uvfq-m8QVTA5PU2alYHrhVqffiK_Dblf3eHRfbpqIyN8BdrZWb9eLJg8OjjrMHeBrET4BNqWUk0sdiZaQRc9XMYfRMTAhmmqOnR9dJ3dc7Ocv04UuqUAAMk9x_HW2TzLx0jaPPQ4z2VjhdvPr9nclBcUT"/>
+<div class="absolute bottom-6 left-6 right-6 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+<button class="w-full bg-primary text-on-primary py-4 text-xs font-bold tracking-widest uppercase rounded shadow-lg">
+                                    Quick Add
+                                </button>
+</div>
+</div>
+<div class="mt-6 space-y-2">
+<div class="flex justify-between items-start">
+<h4 class="text-lg font-headline font-semibold text-on-surface leading-tight">Atelier Lounge Chair</h4>
+<span class="text-primary font-medium">$1,240.00</span>
+</div>
+<p class="text-sm text-on-surface-variant font-light">Furniture</p>
+<div class="flex items-center space-x-1 text-[10px] text-primary">
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="ml-1 text-on-surface-variant opacity-60">(124)</span>
+</div>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Contemporary abstract wall sculpture made of white textured plaster panels arranged in a geometric grid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzOeIrkUbBFG-6Y7vvpIn3fIYrMGB8nZEmXvTUkRhW2OtVEXmiYTK1IFzBFNK08OFlyck2eMf5Op4zkAyq0zWHOLgU_Tpv5Xk6X_MsbDd-kTWNMSKBrhZB2atI8ZVtfHw6EoRbCt2wCvRuj_7ftxY6k8QnTtpptY6EEhs1LsV24LLBzfcvDIOwaY6dpmKbAyvSzi6dz3P8CXrTn1DqXoDqB1t5nDvP6ULdaEqij6qvGOu6kH0cE60l2wzLBS0WyuRcOOsg_9lToCoU"/>
+<div class="absolute bottom-6 left-6 right-6 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+<button class="w-full bg-primary text-on-primary py-4 text-xs font-bold tracking-widest uppercase rounded shadow-lg">
+                                    Quick Add
+                                </button>
+</div>
+</div>
+<div class="mt-6 space-y-2">
+<div class="flex justify-between items-start">
+<h4 class="text-lg font-headline font-semibold text-on-surface leading-tight">Relief Abstract Panel</h4>
+<span class="text-primary font-medium">$890.00</span>
+</div>
+<p class="text-sm text-on-surface-variant font-light">Art &amp; Sculptures</p>
+<div class="flex items-center space-x-1 text-[10px] text-primary">
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm">star</span>
+<span class="ml-1 text-on-surface-variant opacity-60">(9)</span>
+</div>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Lush artificial olive tree in a large textured concrete planter next to a sunlit floor-to-ceiling window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDfFvVoPoOh15daKiTw-0wdIrDrOT9eO2f-KGIXRZfsKBCfgKwH0wA1xKiZPOnIhbxipB5zzV52JBYJtbrzsO6jedE9MR1ZiY4fgd46yfE6Q1q_OlFV79gZ4yxj03-xg-QcV-Be4Qv3snwysWCjA7LRbZORBHSh3z9DBMTFbuBou5ZykOVMzvWtPa-aZaoR5884GDZh1RaIPOT5zmXeNDUiNUPCsAeMiraYzbayMtxvhatwQWLU6nqvK-J_4WK2GTLr6AoYzKGxMCw"/>
+<div class="absolute bottom-6 left-6 right-6 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+<button class="w-full bg-primary text-on-primary py-4 text-xs font-bold tracking-widest uppercase rounded shadow-lg">
+                                    Quick Add
+                                </button>
+</div>
+</div>
+<div class="mt-6 space-y-2">
+<div class="flex justify-between items-start">
+<h4 class="text-lg font-headline font-semibold text-on-surface leading-tight">Mediterranean Olive Tree</h4>
+<span class="text-primary font-medium">$340.00</span>
+</div>
+<p class="text-sm text-on-surface-variant font-light">Artificial Plants</p>
+<div class="flex items-center space-x-1 text-[10px] text-primary">
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="ml-1 text-on-surface-variant opacity-60">(67)</span>
+</div>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Elegant travertine coffee table with thick rounded legs in a bright minimalist living room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIXv1lJV11jhZNb79MyjMa-YivL7Qk_p7KFkwZPf3t_DWeYs76LDlOE0q7Siujzf_xogQuiIqFnqQKi1ZNFThmZL1KnJJHLGIHw-3z3r1J_WMlGE57ko-wa9BjfbO-puM3JBuED_okLOcmRbTanrzO9N429OMKUhEsr3t7o8Ub6iEejKgd14S_uoBs5lztgLJeOQSV7NOZbIBheYy5gFGHU46-0g3NKn2i2Dge8ZeG3QwsclHGUK5dhpC7vdIEDqMLq-LHMmW4Xjsj"/>
+<div class="absolute bottom-6 left-6 right-6 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+<button class="w-full bg-primary text-on-primary py-4 text-xs font-bold tracking-widest uppercase rounded shadow-lg">
+                                    Quick Add
+                                </button>
+</div>
+</div>
+<div class="mt-6 space-y-2">
+<div class="flex justify-between items-start">
+<h4 class="text-lg font-headline font-semibold text-on-surface leading-tight">Nova Travertine Table</h4>
+<span class="text-primary font-medium">$1,450.00</span>
+</div>
+<p class="text-sm text-on-surface-variant font-light">Furniture</p>
+<div class="flex items-center space-x-1 text-[10px] text-primary">
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-sm">star</span>
+<span class="ml-1 text-on-surface-variant opacity-60">(31)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-24 flex items-center justify-center space-x-12">
+<button class="flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-outline hover:text-primary transition-colors disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined !text-base">arrow_back</span>
+<span>Previous</span>
+</button>
+<div class="flex items-center space-x-6 text-sm font-medium">
+<span class="text-primary border-b border-primary pb-1">01</span>
+<span class="text-outline-variant hover:text-on-surface transition-colors cursor-pointer">02</span>
+<span class="text-outline-variant hover:text-on-surface transition-colors cursor-pointer">03</span>
+<span class="text-outline-variant hover:text-on-surface transition-colors cursor-pointer">04</span>
+</div>
+<button class="flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-on-surface hover:text-primary transition-colors">
+<span>Next</span>
+<span class="material-symbols-outlined !text-base">arrow_forward</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f5f3ef] dark:bg-[#121211] w-full py-20 px-12 font-['Inter'] text-sm leading-relaxed font-light">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-[1440px] mx-auto">
+<div class="space-y-6">
+<div class="text-xl font-bold text-[#1b1c1a] dark:text-[#fbf9f5]">KGS Home Decors</div>
+<p class="text-[#1b1c1a]/60 dark:text-[#e4e2de]/60 pr-8">
+                    Elevating interiors through the art of curation. From rare fossils to contemporary lighting, we define the modern dwelling.
+                </p>
+</div>
+<div class="space-y-6">
+<h4 class="text-[#78591e] font-medium uppercase text-xs tracking-widest">Shop</h4>
+<ul class="space-y-3">
+<li><a class="text-[#1b1c1a]/60 dark:text-[#e4e2de]/60 hover:text-[#78591e] underline-offset-4 hover:underline transition-all" href="#">Collections</a></li>
+<li><a class="text-[#1b1c1a]/60 dark:text-[#e4e2de]/60 hover:text-[#78591e] underline-offset-4 hover:underline transition-all" href="#">Furniture</a></li>
+<li><a class="text-[#1b1c1a]/60 dark:text-[#e4e2de]/60 hover:text-[#78591e] underline-offset-4 hover:underline transition-all" href="#">Art &amp; Artifacts</a></li>
+<li><a class="text-[#1b1c1a]/60 dark:text-[#e4e2de]/60 hover:text-[#78591e] underline-offset-4 hover:underline transition-all" href="#">New Arrivals</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="text-[#78591e] font-medium uppercase text-xs tracking-widest">Support</h4>
+<ul class="space-y-3">
+<li><a class="text-[#1b1c1a]/60 dark:text-[#e4e2de]/60 hover:text-[#78591e] underline-offset-4 hover:underline transition-all" href="#">Newsletter</a></li>
+<li><a class="text-[#1b1c1a]/60 dark:text-[#e4e2de]/60 hover:text-[#78591e] underline-offset-4 hover:underline transition-all" href="#">Shipping Info</a></li>
+<li><a class="text-[#1b1c1a]/60 dark:text-[#e4e2de]/60 hover:text-[#78591e] underline-offset-4 hover:underline transition-all" href="#">Contact Details</a></li>
+<li><a class="text-[#1b1c1a]/60 dark:text-[#e4e2de]/60 hover:text-[#78591e] underline-offset-4 hover:underline transition-all" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="text-[#78591e] font-medium uppercase text-xs tracking-widest">Connect</h4>
+<p class="text-[#1b1c1a]/60 dark:text-[#e4e2de]/60 mb-4">Join our journal for architectural inspiration.</p>
+<div class="flex border-b border-outline-variant/30 pb-2 focus-within:border-primary transition-colors">
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full font-light" placeholder="Email address" type="email"/>
+<button class="text-[#78591e] font-medium text-xs uppercase tracking-widest">Join</button>
+</div>
+</div>
+</div>
+<div class="mt-24 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-[10px] uppercase tracking-[0.2em] text-[#1b1c1a]/40 dark:text-[#e4e2de]/40">
+<div>© 2024 KGS Home Decors. Designed for the Digital Curator.</div>
+<div class="flex space-x-8">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Instagram</a>
+</div>
+</div>
+</footer>
+</body></html>

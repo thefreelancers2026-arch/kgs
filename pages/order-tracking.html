@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Tracking | KGS Home Decors</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e4e2de",
+                    "outline": "#807667",
+                    "surface-container-high": "#eae8e4",
+                    "on-primary-fixed": "#271900",
+                    "surface-dim": "#dbdad6",
+                    "primary": "#78591e",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#3a2f20",
+                    "primary-container": "#b89352",
+                    "inverse-surface": "#30312e",
+                    "on-surface": "#1b1c1a",
+                    "surface-container-low": "#f5f3ef",
+                    "tertiary-container": "#a69682",
+                    "on-tertiary-fixed": "#231a0d",
+                    "tertiary": "#6a5c4b",
+                    "primary-fixed-dim": "#e9c07b",
+                    "outline-variant": "#d1c5b4",
+                    "secondary-container": "#f2dccb",
+                    "secondary": "#6c5b4e",
+                    "on-primary-container": "#432d00",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#d6c4af",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#534438",
+                    "surface-container": "#efeeea",
+                    "on-primary-fixed-variant": "#5e4206",
+                    "surface-bright": "#fbf9f5",
+                    "secondary-fixed": "#f5dece",
+                    "surface-tint": "#78591e",
+                    "on-secondary-container": "#706052",
+                    "on-secondary-fixed": "#25190f",
+                    "primary-fixed": "#ffdea9",
+                    "on-tertiary-fixed-variant": "#514535",
+                    "on-background": "#1b1c1a",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "background": "#fbf9f5",
+                    "surface": "#fbf9f5",
+                    "secondary-fixed-dim": "#d8c3b3",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#e9c07b",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#f3e0ca",
+                    "surface-container-highest": "#e4e2de",
+                    "on-surface-variant": "#4e4639",
+                    "inverse-on-surface": "#f2f0ed"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fbf9f5]/80 dark:bg-stone-900/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-12 py-6 max-w-[1920px] mx-auto">
+<div class="text-2xl font-bold tracking-[-0.02em] text-[#1b1c1a] dark:text-[#fbf9f5]">KGS Home Decors</div>
+<div class="hidden md:flex items-center gap-10 font-['Plus_Jakarta_Sans'] tracking-tight font-light">
+<a class="text-[#1b1c1a]/70 dark:text-[#fbf9f5]/70 hover:text-[#78591e] transition-colors duration-300" href="#">Furniture</a>
+<a class="text-[#1b1c1a]/70 dark:text-[#fbf9f5]/70 hover:text-[#78591e] transition-colors duration-300" href="#">Lighting</a>
+<a class="text-[#1b1c1a]/70 dark:text-[#fbf9f5]/70 hover:text-[#78591e] transition-colors duration-300" href="#">Textiles</a>
+<a class="text-[#1b1c1a]/70 dark:text-[#fbf9f5]/70 hover:text-[#78591e] transition-colors duration-300" href="#">Art</a>
+<a class="text-[#1b1c1a]/70 dark:text-[#fbf9f5]/70 hover:text-[#78591e] transition-colors duration-300" href="#">Atelier</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-[#78591e]"><span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span></button>
+<button class="text-[#78591e]"><span class="material-symbols-outlined" data-icon="person">person</span></button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-6 md:px-12 max-w-[1440px] mx-auto min-h-screen">
+<!-- Header Section -->
+<header class="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<nav class="flex items-center gap-2 text-xs uppercase tracking-widest text-outline mb-4">
+<a class="hover:text-primary transition-colors" href="#">Account</a>
+<span class="material-symbols-outlined text-[10px]" data-icon="chevron_right">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Orders</a>
+</nav>
+<h1 class="text-4xl md:text-5xl font-extrabold tracking-[-0.03em] text-on-surface mb-2">Order #KGS-20260412-001</h1>
+<p class="text-on-surface-variant font-light text-lg">Your curated selection is on its way to your residence.</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-label text-outline uppercase tracking-[0.2em] mb-1">Estimated Arrival</p>
+<p class="text-2xl font-headline font-bold text-primary">April 19, 2026</p>
+</div>
+</header>
+<!-- Progress Tracker Section -->
+<section class="mb-24 relative">
+<div class="bg-surface-container-lowest p-8 md:p-16 rounded-xl border-none">
+<div class="relative w-full flex justify-between items-start">
+<!-- Progress Line Background -->
+<div class="absolute top-5 left-0 w-full h-[2px] bg-surface-container-high z-0"></div>
+<!-- Progress Line Fill -->
+<div class="absolute top-5 left-0 w-1/2 h-[2px] bg-primary z-0"></div>
+<!-- Steps -->
+<div class="relative z-10 flex flex-col items-center gap-4 text-center group">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-xl" data-icon="check">check</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-headline font-bold text-on-surface">Order Placed</span>
+<span class="text-[10px] text-outline uppercase tracking-wider">April 12, 10:45 AM</span>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-4 text-center">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-xl" data-icon="check">check</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-headline font-bold text-on-surface">Processing</span>
+<span class="text-[10px] text-outline uppercase tracking-wider">April 12, 02:15 PM</span>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-4 text-center">
+<div class="w-10 h-10 rounded-full bg-primary border-[3px] border-surface-container-lowest ring-4 ring-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-xl" data-icon="local_shipping" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-headline font-bold text-primary">Shipped</span>
+<span class="text-[10px] text-outline-variant uppercase tracking-wider">April 14, 09:30 AM</span>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-4 text-center">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-xl" data-icon="inventory_2">inventory_2</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-headline font-light text-on-surface/50">Out for Delivery</span>
+<span class="text-[10px] text-transparent uppercase tracking-wider">Pending</span>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-4 text-center">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-xl" data-icon="home">home</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-headline font-light text-on-surface/50">Delivered</span>
+<span class="text-[10px] text-transparent uppercase tracking-wider">Pending</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+<!-- Items and Logistics Column -->
+<div class="lg:col-span-8 space-y-20">
+<!-- Order Items Section -->
+<section>
+<h2 class="text-xl font-headline font-bold mb-8 tracking-tight">Curated Selection</h2>
+<div class="space-y-12">
+<!-- Item 1 -->
+<div class="flex flex-col md:flex-row gap-8 items-center md:items-start group">
+<div class="w-48 h-64 bg-surface-container-high overflow-hidden rounded-lg flex-shrink-0">
+<img alt="Serene Stone Fountain" class="w-full h-full object-cover grayscale-[0.3] group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" data-alt="luxury minimalist indoor stone water fountain with clean architectural lines and soft ambient lighting in a serene gallery setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcygNeT23cofmg74nDeKwZ2mIRWDtWa4yXwjWUaCCZ4C44RL-QF0ydWsFb8qwq28G5baaQU-sO1ttwdp096wBgyPQl4tKVU8cwzGTjz6vMHAR5t02QCPsYg0yE-c5yRoHGjvp2ggEK0wAXU_MKASZrgUf_TgFiAzfzgJZwnoRlAVIn7r0gaHat7pjQzigIZl7KZJcDN1uJw6dO-nbCoBsRlp9zkOrVXUTbzMRN2Wn1lQKdieZatSVLJmM0eYJIGvc--JyHzvnMLQF9"/>
+</div>
+<div class="flex-grow flex flex-col justify-center py-2 text-center md:text-left">
+<span class="text-[10px] text-outline uppercase tracking-[0.2em] mb-2">Category: Sculptures</span>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-2">Serene Stone Fountain</h3>
+<p class="text-on-surface-variant font-light mb-6 max-w-md">Hand-carved basalt stone basin with a continuous, silent water cycle. A masterpiece of tranquil living.</p>
+<div class="flex items-center justify-center md:justify-start gap-8">
+<div>
+<p class="text-[10px] text-outline uppercase tracking-wider mb-1">Quantity</p>
+<p class="text-sm font-headline font-semibold">1</p>
+</div>
+<div>
+<p class="text-[10px] text-outline uppercase tracking-wider mb-1">Price</p>
+<p class="text-sm font-headline font-semibold">₹42,500</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col md:flex-row gap-8 items-center md:items-start group">
+<div class="w-48 h-64 bg-surface-container-high overflow-hidden rounded-lg flex-shrink-0">
+<img alt="Artisan Ceramic Vessel" class="w-full h-full object-cover grayscale-[0.3] group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" data-alt="large minimal ceramic floor vase with raw textured finish in warm earthy tones on a white gallery pedestal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAixfIXHQ1RUZEdYxYyK2BA8-0w-JBHqWiIWhAs-d5Hjr3AnZKYHwWd2_Jl2Fdt-mg5oDPR8jyc5UqNpW1bJgG6KiS68s8mtHcvwHD6NY3SV5Ixu6PMHXS1nmW5qRnOKK15eFx8xXbgSVn6Hk_uY4Mx8Kax0lpnHwkMHyfUfKUbMvDAVF3DyCNV6oNhmj6OVJ18nLbttDbwuNW7S49sFlt9Eb0i-ppqeYm3jxcx7dSYIb0MweBJHmTapX52ekWsJH1oe_bol6GI7Ezs"/>
+</div>
+<div class="flex-grow flex flex-col justify-center py-2 text-center md:text-left">
+<span class="text-[10px] text-outline uppercase tracking-[0.2em] mb-2">Category: Ceramics</span>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-2">Artisan Ceramic Vessel</h3>
+<p class="text-on-surface-variant font-light mb-6 max-w-md">Tall floor vase featuring a textured slip glaze and kiln-fired organic markings. Limited edition.</p>
+<div class="flex items-center justify-center md:justify-start gap-8">
+<div>
+<p class="text-[10px] text-outline uppercase tracking-wider mb-1">Quantity</p>
+<p class="text-sm font-headline font-semibold">1</p>
+</div>
+<div>
+<p class="text-[10px] text-outline uppercase tracking-wider mb-1">Price</p>
+<p class="text-sm font-headline font-semibold">₹18,200</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Shipping Info Details -->
+<section class="bg-surface-container-low p-12 rounded-xl">
+<h2 class="text-xl font-headline font-bold mb-10 tracking-tight">Logistics Details</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<p class="text-[10px] text-outline uppercase tracking-[0.2em] mb-4">Delivery Destination</p>
+<p class="text-on-surface font-light leading-relaxed">
+<span class="font-bold block mb-1">Residence</span>
+                                A-402, Lotus Grand Residences,<br/>
+                                Virudhachalam, Tamil Nadu,<br/>
+                                606001
+                            </p>
+</div>
+<div>
+<p class="text-[10px] text-outline uppercase tracking-[0.2em] mb-4">Handling Partner</p>
+<div class="flex items-center gap-4 mb-2">
+<div class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="shield">shield</span>
+</div>
+<p class="font-headline font-bold">Blue Dart Luxury Logistics</p>
+</div>
+<p class="text-on-surface-variant text-sm font-light">Dedicated white-glove handling and insurance covering artisanal fragility.</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Summary and Support Column -->
+<div class="lg:col-span-4 space-y-12">
+<!-- Order Summary Card -->
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-sm border border-outline-variant/10">
+<h2 class="text-lg font-headline font-bold mb-8">Financial Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between items-center text-sm">
+<span class="text-outline">Subtotal</span>
+<span class="font-medium">₹60,700</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-outline">Shipping &amp; Handling</span>
+<span class="text-primary font-medium">Complimentary</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-outline">Taxes</span>
+<span class="font-medium">Inclusive</span>
+</div>
+</div>
+<div class="pt-6 border-t border-surface-container-high flex justify-between items-center mb-8">
+<span class="text-lg font-headline font-bold">Total Amount</span>
+<span class="text-2xl font-headline font-extrabold text-primary">₹60,700</span>
+</div>
+<p class="text-[10px] text-outline text-center leading-relaxed">Payments processed via secure luxury gateway. Invoice sent to registered email.</p>
+</div>
+<!-- Support Section -->
+<div class="bg-surface p-10 rounded-xl">
+<h2 class="text-lg font-headline font-bold mb-4">Concierge Support</h2>
+<p class="text-sm font-light text-on-surface-variant mb-8 leading-relaxed">Should you require any adjustments to your delivery or specific handling instructions, our artisans are available.</p>
+<button class="w-full bg-primary text-on-primary py-4 px-8 rounded-lg flex items-center justify-center gap-3 hover:bg-primary-container transition-colors font-headline font-bold tracking-wide">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+                        WhatsApp Concierge
+                    </button>
+<div class="mt-12 text-center">
+<a class="text-xs font-headline font-light text-outline hover:text-error hover:underline transition-all duration-300" href="#">
+                            Cancel Order Order
+                        </a>
+<p class="text-[10px] text-outline/50 mt-2 italic">Standard cancellation policy applies after shipment.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-12 mt-40 bg-[#f5f3ef] dark:bg-stone-950">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-[1440px] mx-auto">
+<div class="md:col-span-1">
+<div class="text-lg font-bold text-[#1b1c1a] dark:text-[#fbf9f5] mb-6">KGS Home Decors</div>
+<p class="text-[#1b1c1a]/60 dark:text-[#fbf9f5]/60 text-sm font-light leading-relaxed">Curating timeless pieces for modern sanctuaries. Designed with soul, delivered with care.</p>
+</div>
+<div>
+<h4 class="text-[10px] font-bold text-[#78591e] uppercase tracking-[0.2em] mb-6">Explore</h4>
+<ul class="space-y-3">
+<li><a class="text-[#1b1c1a]/60 dark:text-[#fbf9f5]/60 hover:text-[#78591e] underline transition-all text-sm font-light" href="#">Sustainability</a></li>
+<li><a class="text-[#1b1c1a]/60 dark:text-[#fbf9f5]/60 hover:text-[#78591e] underline transition-all text-sm font-light" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-[#1b1c1a]/60 dark:text-[#fbf9f5]/60 hover:text-[#78591e] underline transition-all text-sm font-light" href="#">Store Locator</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[10px] font-bold text-[#78591e] uppercase tracking-[0.2em] mb-6">Legal</h4>
+<ul class="space-y-3">
+<li><a class="text-[#1b1c1a]/60 dark:text-[#fbf9f5]/60 hover:text-[#78591e] underline transition-all text-sm font-light" href="#">Privacy Policy</a></li>
+<li><a class="text-[#1b1c1a]/60 dark:text-[#fbf9f5]/60 hover:text-[#78591e] underline transition-all text-sm font-light" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[10px] font-bold text-[#78591e] uppercase tracking-[0.2em] mb-6">Digital Curator</h4>
+<p class="text-[#1b1c1a]/60 dark:text-[#fbf9f5]/60 text-xs font-light leading-loose">
+                    © 2024 KGS Home Decors. The Digital Curator.<br/>
+                    Crafted in Virudhachalam.
+                </p>
+</div>
+</div>
+</footer>
+</body></html>

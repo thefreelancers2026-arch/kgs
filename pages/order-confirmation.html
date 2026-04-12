@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#a69682",
+                    "primary-container": "#b89352",
+                    "surface-variant": "#e4e2de",
+                    "primary-fixed": "#ffdea9",
+                    "background": "#fbf9f5",
+                    "surface-container": "#efeeea",
+                    "on-surface-variant": "#4e4639",
+                    "outline-variant": "#d1c5b4",
+                    "on-tertiary-fixed": "#231a0d",
+                    "on-tertiary-container": "#3a2f20",
+                    "secondary-fixed": "#f5dece",
+                    "inverse-on-surface": "#f2f0ed",
+                    "surface-tint": "#78591e",
+                    "on-secondary-fixed-variant": "#534438",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#30312e",
+                    "on-primary-fixed": "#271900",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#f2dccb",
+                    "primary": "#78591e",
+                    "surface": "#fbf9f5",
+                    "primary-fixed-dim": "#e9c07b",
+                    "on-secondary-fixed": "#25190f",
+                    "on-secondary-container": "#706052",
+                    "on-background": "#1b1c1a",
+                    "tertiary-fixed": "#f3e0ca",
+                    "on-primary-fixed-variant": "#5e4206",
+                    "on-primary-container": "#432d00",
+                    "secondary": "#6c5b4e",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#d8c3b3",
+                    "surface-container-low": "#f5f3ef",
+                    "inverse-primary": "#e9c07b",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#514535",
+                    "tertiary-fixed-dim": "#d6c4af",
+                    "on-surface": "#1b1c1a",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#6a5c4b",
+                    "surface-dim": "#dbdad6",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#fbf9f5",
+                    "outline": "#807667",
+                    "surface-container-high": "#eae8e4",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#e4e2de"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-active .step-line { background-color: #78591e; }
+        .step-inactive .step-line { background-color: #e4e2de; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- Header Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-[#fbf9f5]/80 backdrop-blur-xl shadow-[0_20px_40px_0_rgba(27,28,26,0.05)]">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-[1920px] mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-[#1b1c1a] font-headline">The Curated Atelier</div>
+<div class="hidden md:flex gap-12 items-center font-headline tracking-tight font-light">
+<a class="text-[#1b1c1a] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Showroom</a>
+<a class="text-[#1b1c1a] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Collections</a>
+<a class="text-[#1b1c1a] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Artisans</a>
+<a class="text-[#1b1c1a] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Journal</a>
+</div>
+<div class="flex gap-6 items-center">
+<span class="material-symbols-outlined text-on-surface cursor-pointer">shopping_bag</span>
+<span class="material-symbols-outlined text-on-surface cursor-pointer">person</span>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-20 max-w-[1440px] mx-auto">
+<!-- Success Hero -->
+<section class="flex flex-col items-center text-center mb-20">
+<div class="mb-8 p-6 bg-surface-container-low rounded-full">
+<span class="material-symbols-outlined text-6xl text-emerald-600" style="font-variation-settings: 'wght' 300;">check_circle</span>
+</div>
+<h1 class="text-5xl md:text-6xl font-headline font-bold tracking-tighter text-on-surface mb-4">Thank You for Your Order!</h1>
+<p class="text-on-surface-variant text-lg tracking-wide font-light max-w-2xl">
+                Order ID: <span class="font-medium text-primary">#KGS-20260412-001</span>. 
+                You will receive a confirmation email and WhatsApp message shortly.
+            </p>
+</section>
+<!-- Order Tracker -->
+<section class="mb-24 px-4 md:px-32">
+<div class="relative flex justify-between">
+<!-- Progress Line Background -->
+<div class="absolute top-5 left-0 w-full h-[1px] bg-surface-variant -z-10"></div>
+<!-- Active Progress Line -->
+<div class="absolute top-5 left-0 w-1/4 h-[1px] bg-primary -z-10"></div>
+<!-- Steps -->
+<div class="flex flex-col items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="text-sm font-headline font-medium text-on-surface">Order Placed</span>
+</div>
+<div class="flex flex-col items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">sync</span>
+</div>
+<span class="text-sm font-headline font-light text-on-surface-variant">Processing</span>
+</div>
+<div class="flex flex-col items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">local_shipping</span>
+</div>
+<span class="text-sm font-headline font-light text-on-surface-variant">Shipped</span>
+</div>
+<div class="flex flex-col items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">home</span>
+</div>
+<span class="text-sm font-headline font-light text-on-surface-variant">Delivered</span>
+</div>
+</div>
+</section>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Order Details (Left Column) -->
+<div class="lg:col-span-7 space-y-12">
+<div class="space-y-6">
+<h2 class="text-2xl font-headline font-bold tracking-tight pb-4 border-b border-outline-variant/20">Order Summary</h2>
+<div class="space-y-8">
+<!-- Item 1 -->
+<div class="flex gap-6 items-center">
+<div class="w-24 h-32 bg-surface-container-high rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Artisan Ceramic Vessel" class="w-full h-full object-cover" data-alt="Minimalist handcrafted ceramic vase with organic texture and subtle earth tones on a soft lit wooden pedestal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiX6_3JIRapGFTcwWRGpeEXI131cGNRKH4IUOCdiIxCRXA81eyhnN1JQVEXDeV6n1KnOZmRSmmwNEqJe4lqQoH_q9qs809pIXSWOTe1W8JH--yvHi6yRtadxIjPDQV0DhIW23bxjCQlYv_Il8ME9h-_OYkvPIFsXTSjC-wt_u3QuI4RvXAqtSS14l4kLO_uazwXgXqmeohY4-z9kgBnyUyR1fjyxzfHLEY62eTmIgAVGwKoPhacv1HPLVjgPb60nunVtoRffKy1VTf"/>
+</div>
+<div class="flex-grow flex justify-between items-start">
+<div>
+<h3 class="font-headline font-medium text-lg">Artisan Ceramic Vessel</h3>
+<p class="text-on-surface-variant font-light text-sm">Terra Cotta Finish | Medium</p>
+<p class="mt-2 text-on-surface-variant font-light">Qty: 1</p>
+</div>
+<p class="font-headline font-medium">₹4,500.00</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-6 items-center">
+<div class="w-24 h-32 bg-surface-container-high rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Serene Stone Fountain" class="w-full h-full object-cover" data-alt="Small desktop water fountain carved from slate stone with soft flowing water and warm ambient spotlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb1ppbd_ErbietRPYrGd2-pmapTG5ZGoRaLgCJWqjpvp5hfYsbxcxQEyGy91_Rh5kVb2hBKHg9SEP658m3gEwb9FLVRB-HKAoP7Iy8eSgV1D-VI4Ou7nPwkuRWSJarKlNLekigD0puvbgNTWjAK4d0yYC4guv_TqENTLkwFusN6bKpV151ITJI0pfOhTnjZIA9Am25Dda901BSn3I0XekYthTf1p_rZnpd5HGbkBk19h_kfnH7YgxtA6FA9f7LqRtVp95SHzDmPJQS"/>
+</div>
+<div class="flex-grow flex justify-between items-start">
+<div>
+<h3 class="font-headline font-medium text-lg">Serene Stone Fountain</h3>
+<p class="text-on-surface-variant font-light text-sm">Natural Slate | Silent Pump</p>
+<p class="mt-2 text-on-surface-variant font-light">Qty: 1</p>
+</div>
+<p class="font-headline font-medium">₹12,800.00</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Information Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-outline-variant/20">
+<div class="space-y-4">
+<p class="text-xs font-headline font-bold uppercase tracking-widest text-primary">Delivery Address</p>
+<address class="not-italic text-on-surface-variant font-light leading-relaxed">
+                            A-402, Lotus Grand Residences<br/>
+                            Old Mahabalipuram Road<br/>
+                            Chennai, Tamil Nadu - 600119<br/>
+                            India
+                        </address>
+</div>
+<div class="space-y-4">
+<p class="text-xs font-headline font-bold uppercase tracking-widest text-primary">Payment Method</p>
+<p class="text-on-surface-variant font-light">Razorpay (Credit Card)</p>
+<p class="text-on-surface-variant font-light">**** **** **** 4012</p>
+</div>
+<div class="space-y-4">
+<p class="text-xs font-headline font-bold uppercase tracking-widest text-primary">Timeline</p>
+<p class="text-on-surface-variant font-light">Estimated delivery: 3-7 business days</p>
+<p class="text-on-surface-variant font-light">Arriving by April 19th</p>
+</div>
+</div>
+</div>
+<!-- Totals (Right Column) -->
+<div class="lg:col-span-5">
+<div class="bg-surface-container-low p-10 sticky top-32">
+<h2 class="text-xl font-headline font-bold mb-8">Payment Details</h2>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between text-on-surface-variant font-light">
+<span>Subtotal</span>
+<span>₹17,300.00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant font-light">
+<span>Shipping</span>
+<span class="text-emerald-600 font-medium tracking-tight">FREE</span>
+</div>
+<div class="flex justify-between text-on-surface-variant font-light">
+<span>GST (18%)</span>
+<span>₹3,114.00</span>
+</div>
+<div class="pt-6 border-t border-outline-variant/20 flex justify-between items-baseline">
+<span class="text-lg font-headline font-medium">Grand Total</span>
+<span class="text-3xl font-headline font-bold text-primary">₹20,414.00</span>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<button class="w-full py-4 bg-primary text-on-primary font-headline font-bold uppercase tracking-widest transition-transform active:scale-95 duration-200">
+                            Track Order
+                        </button>
+<button class="w-full py-4 border border-primary text-primary font-headline font-bold uppercase tracking-widest hover:bg-primary/5 transition-all duration-300">
+                            Continue Shopping
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-24 bg-[#f5f3ef]">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-20 py-16 w-full mx-auto">
+<div class="space-y-6">
+<div class="text-lg font-bold text-[#1b1c1a] font-headline">The Curated Atelier</div>
+<p class="font-['Inter'] font-light text-sm tracking-wide text-[#1b1c1a]/60">Elevating home spaces through artisanal craftsmanship and timeless design language.</p>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline font-bold text-sm uppercase tracking-widest text-[#78591e]">Explore</h4>
+<ul class="font-['Inter'] font-light text-sm space-y-2 text-[#1b1c1a]/60">
+<li><a class="hover:text-[#78591e] transition-colors duration-300" href="#">New Arrivals</a></li>
+<li><a class="hover:text-[#78591e] transition-colors duration-300" href="#">Collections</a></li>
+<li><a class="hover:text-[#78591e] transition-colors duration-300" href="#">Journal</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline font-bold text-sm uppercase tracking-widest text-[#78591e]">Customer Care</h4>
+<ul class="font-['Inter'] font-light text-sm space-y-2 text-[#1b1c1a]/60">
+<li><a class="hover:text-[#78591e] transition-colors duration-300" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-[#78591e] transition-colors duration-300" href="#">Shipping &amp; Returns</a></li>
+<li><a class="hover:text-[#78591e] transition-colors duration-300" href="#">Contact Us</a></li>
+<li><a class="hover:text-[#78591e] transition-colors duration-300" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline font-bold text-sm uppercase tracking-widest text-[#78591e]">Connect</h4>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#1b1c1a]/60 cursor-pointer hover:text-[#78591e]">public</span>
+<span class="material-symbols-outlined text-[#1b1c1a]/60 cursor-pointer hover:text-[#78591e]">share</span>
+</div>
+<p class="text-[#1b1c1a]/60 text-xs mt-8">© 2024 The Curated Atelier. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</body></html>

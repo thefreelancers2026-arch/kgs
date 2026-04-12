@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KGS Home Decors — E-Commerce Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0a0a0a;
+            color: #f5f3ef;
+            min-height: 100vh;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 24px 40px;
+            background: linear-gradient(180deg, #1a1508 0%, #0a0a0a 100%);
+            border-bottom: 1px solid rgba(184, 147, 82, 0.15);
+        }
+
+        .hero .badge {
+            display: inline-block;
+            padding: 6px 20px;
+            background: rgba(184, 147, 82, 0.12);
+            border: 1px solid rgba(184, 147, 82, 0.3);
+            border-radius: 30px;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #B89352;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #B89352, #e9c07b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: rgba(245, 243, 239, 0.5);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            padding: 32px 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat .number {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #B89352, #e9c07b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat .label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(245, 243, 239, 0.4);
+            margin-top: 4px;
+        }
+
+        .grid-section {
+            padding: 48px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #B89352;
+            margin-bottom: 32px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(184, 147, 82, 0.2);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 28px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #B89352, #e9c07b);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .card:hover {
+            background: rgba(184, 147, 82, 0.06);
+            border-color: rgba(184, 147, 82, 0.25);
+            transform: translateY(-4px);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card .icon {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .card .desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: rgba(245, 243, 239, 0.45);
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .card .device-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .card .device-tag.desktop {
+            background: rgba(184, 147, 82, 0.15);
+            color: #e9c07b;
+        }
+
+        .card .device-tag.live {
+            background: rgba(82, 184, 120, 0.15);
+            color: #52b878;
+        }
+
+        .card .arrow {
+            position: absolute;
+            top: 28px;
+            right: 28px;
+            font-size: 18px;
+            color: rgba(184, 147, 82, 0.4);
+            transition: all 0.3s;
+        }
+
+        .card:hover .arrow {
+            color: #B89352;
+            transform: translateX(4px);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(184, 147, 82, 0.1);
+            border: 1px solid rgba(184, 147, 82, 0.3);
+            border-radius: 10px;
+            color: #B89352;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            margin-top: 24px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: rgba(184, 147, 82, 0.2);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: rgba(245, 243, 239, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .stats { gap: 24px; flex-wrap: wrap; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="badge">Client Preview</div>
+        <h1>KGS Home Decors <span>E-Commerce</span></h1>
+        <p>Complete e-commerce website design — all pages designed with the Luxe Canvas design system. Click any page to preview.</p>
+        <a href="../index.html" class="back-link">← View Current Live Homepage</a>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="number">13</div>
+            <div class="label">Pages Designed</div>
+        </div>
+        <div class="stat">
+            <div class="number">8</div>
+            <div class="label">Categories</div>
+        </div>
+        <div class="stat">
+            <div class="number">500+</div>
+            <div class="label">Products Ready</div>
+        </div>
+    </div>
+
+    <div class="grid-section">
+        <div class="section-title">🛍️ Shopping Experience</div>
+        <div class="grid">
+            <a href="collections.html" class="card">
+                <span class="arrow">→</span>
+                <div class="icon">🏪</div>
+                <h3>Collections</h3>
+                <div class="desc">Browse all products with category filters, sorting, and search. Sofas, Clocks, Fountains, Plants & more.</div>
+                <span class="device-tag desktop">Desktop</span>
+            </a>
+            <a href="product.html" class="card">
+                <span class="arrow">→</span>
+                <div class="icon">🔍</div>
+                <h3>Product Detail</h3>
+                <div class="desc">Full product page with image gallery, specs, pricing, ratings, and Add to Cart / Buy Now.</div>
+                <span class="device-tag desktop">Desktop</span>
+            </a>
+            <a href="search.html" class="card">
+                <span class="arrow">→</span>
+                <div class="icon">🔎</div>
+                <h3>Search Results</h3>
+                <div class="desc">Search products by name, filter by category, price range, rating. Sort results instantly.</div>
+                <span class="device-tag desktop">Desktop</span>
+            </a>
+            <a href="cart.html" class="card">
+                <span class="arrow">→</span>
+                <div class="icon">🛒</div>
+                <h3>Shopping Cart</h3>
+                <div class="desc">View cart items, change quantities, apply discount codes, see order total. WhatsApp order option.</div>
+                <span class="device-tag desktop">Desktop</span>
+            </a>
+            <a href="checkout.html" class="card">
+                <span class="arrow">→</span>
+                <div class="icon">💳</div>
+                <h3>Checkout</h3>
+                <div class="desc">Multi-step checkout: Shipping → Payment (Razorpay: UPI, Cards, COD) → Review & Place Order.</div>
+                <span class="device-tag desktop">Desktop</span>
+            </a>
+            <a href="wishlist.html" class="card">
+                <span class="arrow">→</span>
+                <div class="icon">❤️</div>
+                <h3>Wishlist</h3>
+                <div class="desc">Saved products with Add to Cart option. Share wishlist via WhatsApp with friends & family.</div>
+                <span class="device-tag desktop">Desktop</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="grid-section">
+        <div class="section-title">👤 Customer Account</div>
+        <div class="grid">
+            <a href="login.html" class="card">
+                <span class="arrow">→</span>
+                <div class="icon">🔐</div>
+                <h3>Login & Register</h3>
+                <div class="desc">Customer login/signup with email, phone, password. Google sign-in. Forgot password flow.</div>
+                <span class="device-tag desktop">Desktop</span>
+            </a>
+            <a href="account.html" class="card">
+                <span class="arrow">→</span>
+                <div class="icon">📊</div>
+                <h3>My Account</h3>
+                <div class="desc">Dashboard with order history, saved addresses, account settings. Quick order status overview.</div>
+                <span class="device-tag desktop">Desktop</span>
+            </a>
+            <a href="order-confirmation.html" class="card">
+                <span class="arrow">→</span>
+                <div class="icon">✅</div>
+                <h3>Order Confirmation</h3>
+                <div class="desc">Thank you page with order summary, estimated delivery (3-7 days Tamil Nadu), WhatsApp notification.</div>
+                <span class="device-tag desktop">Desktop</span>
+            </a>
+            <a href="order-tracking.html" class="card">
+                <span class="arrow">→</span>
+                <div class="icon">📦</div>
+                <h3>Order Tracking</h3>
+                <div class="desc">Live order status: Placed → Processing → Shipped → Out for Delivery → Delivered.</div>
+                <span class="device-tag desktop">Desktop</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="grid-section">
+        <div class="section-title">📄 Information Pages</div>
+        <div class="grid">
+            <a href="about.html" class="card">
+                <span class="arrow">→</span>
+                <div class="icon">🏠</div>
+                <h3>About KGS</h3>
+                <div class="desc">Brand story from Virudhachalam. Our values: Quality, Craftsmanship, Affordable Luxury.</div>
+                <span class="device-tag desktop">Desktop</span>
+            </a>
+            <a href="contact.html" class="card">
+                <span class="arrow">→</span>
+                <div class="icon">📞</div>
+                <h3>Contact Us</h3>
+                <div class="desc">Contact form, Google Maps location, WhatsApp, phone, email. Business hours Mon-Sat 9AM-9PM.</div>
+                <span class="device-tag desktop">Desktop</span>
+            </a>
+            <a href="faq.html" class="card">
+                <span class="arrow">→</span>
+                <div class="icon">❓</div>
+                <h3>FAQ</h3>
+                <div class="desc">Ordering, shipping across Tamil Nadu, returns, payment methods (UPI, Card, COD), account help.</div>
+                <span class="device-tag desktop">Desktop</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>KGS Home Decors — E-Commerce Design by The Freelancers | April 2026</p>
+        <p style="margin-top: 8px;">Powered by Luxe Canvas Design System</p>
+    </div>
+
+</body>
+</html>

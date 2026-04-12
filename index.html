@@ -631,14 +631,7 @@
             text-align: center;
             color: rgba(213, 206, 196, 0.5);
         }
-        .search-icon-active {
-            animation: searchPulse 0.6s ease-in-out infinite;
-            color: #D4AF37 !important;
-        }
-        @keyframes searchPulse {
-            0%, 100% { opacity: 0.5; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.1); }
-        }
+
         
         /* FAQ Accordion */
         .faq-item {
@@ -1759,7 +1752,6 @@
         }
         
         if (searchInput) {
-            const searchIcon = searchInput.parentElement.querySelector('.material-symbols-outlined');
             searchInput.addEventListener('input', (e) => {
                 const container = searchInput.parentElement;
                 let resultsDiv = container.querySelector('.search-results');
@@ -1773,11 +1765,6 @@
                     resultsDiv.style.zIndex = '100';
                     container.style.position = 'relative';
                     container.appendChild(resultsDiv);
-                }
-                if (e.target.value.length > 0 && searchIcon) {
-                    searchIcon.classList.add('search-icon-active');
-                } else if (searchIcon) {
-                    searchIcon.classList.remove('search-icon-active');
                 }
                 performSearch(e.target.value, resultsDiv);
                 searchClose.classList.toggle('hidden', e.target.value.length === 0);
@@ -1820,7 +1807,6 @@
                 const results = searchInput.parentElement.querySelector('.search-results');
                 if (results) results.classList.remove('show');
                 searchClose.classList.add('hidden');
-                if (searchIcon) searchIcon.classList.remove('search-icon-active');
                 searchInput.focus();
             });
         }

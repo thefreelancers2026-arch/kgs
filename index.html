@@ -741,8 +741,8 @@
                 </a>
                 
                 <!-- Search Bar -->
-                <div class="hidden md:flex flex-1 max-w-md mx-4">
-                    <div class="relative w-full search-container" style="position: relative;">
+                <div class="hidden md:flex flex-1 max-w-md mx-4" style="position: relative;">
+                    <div class="relative w-full search-container">
                         <input type="text" id="searchInput" placeholder="Search products..." 
                                class="w-full bg-onyx-800/50 border border-onyx-600/30 rounded-full py-2 pl-10 pr-10 text-sm text-white placeholder-sand-300/50 focus:outline-none focus:border-gold-500/50 focus:bg-onyx-800/80 transition-all">
                         <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-sand-300/50 text-lg">search</span>
@@ -1789,8 +1789,8 @@
         
         if (searchInput) {
             searchInput.addEventListener('input', (e) => {
-                const container = searchInput.parentElement;
-                // Ensure container has position relative
+                // Get the outer container (with position: relative)
+                const container = searchInput.parentElement.parentElement;
                 container.style.position = 'relative';
                 let resultsDiv = container.querySelector('.search-results');
                 if (!resultsDiv) {
@@ -1811,7 +1811,8 @@
             
             searchInput.addEventListener('blur', () => {
                 setTimeout(() => {
-                    const results = searchInput.parentElement.querySelector('.search-results');
+                    const container = searchInput.parentElement.parentElement;
+                    const results = container.querySelector('.search-results');
                     if (results) results.classList.remove('show');
                 }, 200);
             });
@@ -1843,7 +1844,8 @@
         if (searchClose) {
             searchClose.addEventListener('click', () => {
                 searchInput.value = '';
-                const results = searchInput.parentElement.querySelector('.search-results');
+                const container = searchInput.parentElement.parentElement;
+                const results = container.querySelector('.search-results');
                 if (results) results.classList.remove('show');
                 searchClose.classList.add('hidden');
                 searchInput.focus();
